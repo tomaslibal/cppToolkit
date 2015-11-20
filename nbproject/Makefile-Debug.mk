@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/linkedList/src/LinkedList.o \
+	${OBJECTDIR}/linkedList/src/linkedNode.o \
 	${OBJECTDIR}/main.o
 
 # Test Directory
@@ -72,12 +73,17 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cpptoolkit: ${OBJECTFILES}
 ${OBJECTDIR}/linkedList/src/LinkedList.o: linkedList/src/LinkedList.cpp 
 	${MKDIR} -p ${OBJECTDIR}/linkedList/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/linkedList/src/LinkedList.o linkedList/src/LinkedList.cpp
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/linkedList/src/LinkedList.o linkedList/src/LinkedList.cpp
+
+${OBJECTDIR}/linkedList/src/linkedNode.o: linkedList/src/linkedNode.cpp 
+	${MKDIR} -p ${OBJECTDIR}/linkedList/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/linkedList/src/linkedNode.o linkedList/src/linkedNode.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:
@@ -92,13 +98,13 @@ ${TESTDIR}/TestFiles/f1: ${TESTDIR}/linkedList/test/linkedListTest.o ${TESTDIR}/
 ${TESTDIR}/linkedList/test/linkedListTest.o: linkedList/test/linkedListTest.cpp 
 	${MKDIR} -p ${TESTDIR}/linkedList/test
 	${RM} "$@.d"
-	$(COMPILE.cc) -g `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/linkedList/test/linkedListTest.o linkedList/test/linkedListTest.cpp
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/linkedList/test/linkedListTest.o linkedList/test/linkedListTest.cpp
 
 
 ${TESTDIR}/linkedList/test/linkedListTestRunner.o: linkedList/test/linkedListTestRunner.cpp 
 	${MKDIR} -p ${TESTDIR}/linkedList/test
 	${RM} "$@.d"
-	$(COMPILE.cc) -g `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/linkedList/test/linkedListTestRunner.o linkedList/test/linkedListTestRunner.cpp
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/linkedList/test/linkedListTestRunner.o linkedList/test/linkedListTestRunner.cpp
 
 
 ${OBJECTDIR}/linkedList/src/LinkedList_nomain.o: ${OBJECTDIR}/linkedList/src/LinkedList.o linkedList/src/LinkedList.cpp 
@@ -109,9 +115,22 @@ ${OBJECTDIR}/linkedList/src/LinkedList_nomain.o: ${OBJECTDIR}/linkedList/src/Lin
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/linkedList/src/LinkedList_nomain.o linkedList/src/LinkedList.cpp;\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/linkedList/src/LinkedList_nomain.o linkedList/src/LinkedList.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/linkedList/src/LinkedList.o ${OBJECTDIR}/linkedList/src/LinkedList_nomain.o;\
+	fi
+
+${OBJECTDIR}/linkedList/src/linkedNode_nomain.o: ${OBJECTDIR}/linkedList/src/linkedNode.o linkedList/src/linkedNode.cpp 
+	${MKDIR} -p ${OBJECTDIR}/linkedList/src
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/linkedList/src/linkedNode.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/linkedList/src/linkedNode_nomain.o linkedList/src/linkedNode.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/linkedList/src/linkedNode.o ${OBJECTDIR}/linkedList/src/linkedNode_nomain.o;\
 	fi
 
 ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp 
@@ -122,7 +141,7 @@ ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main_nomain.o main.cpp;\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main_nomain.o main.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/main.o ${OBJECTDIR}/main_nomain.o;\
 	fi

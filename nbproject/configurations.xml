@@ -15,6 +15,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>linkedList/src/LinkedList.cpp</itemPath>
+      <itemPath>linkedList/src/linkedNode.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -46,6 +47,9 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <standard>8</standard>
+        </ccTool>
       </compileType>
       <folder path="TestFiles/f1">
         <cTool>
@@ -64,6 +68,8 @@
       <item path="linkedList/src/LinkedList.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="linkedList/src/LinkedList.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="linkedList/src/linkedNode.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="linkedList/src/linkedNode.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -116,6 +122,8 @@
       <item path="linkedList/src/LinkedList.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="linkedList/src/LinkedList.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="linkedList/src/linkedNode.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="linkedList/src/linkedNode.h" ex="false" tool="3" flavor2="0">
       </item>
