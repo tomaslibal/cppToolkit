@@ -57,6 +57,20 @@ template <typename T> void freeList(linkedNode<T> *node) {
     }
 }
 
+template <typename T> void printList(linkedNode<T> *first) {
+    linkedNode<T> *curr;
+    
+    curr = first;
+    
+    while(curr) {
+        cout << curr->value << "::";
+        curr = curr->next;
+    }
+    
+    cout << "END" << std::endl;
+}
+
 template linkedNode<int>* addNodeWithValue(linkedNode<int> *parent, int value);
 template void removeNodeByValue(linkedNode<int> *node, int value);
 template void freeList(linkedNode<int> *node);
+template void printList(linkedNode<int> *first);

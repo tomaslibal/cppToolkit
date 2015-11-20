@@ -23,6 +23,7 @@ public:
     void addNode(T value);
     void removeNode(T value);
     int getLength();
+    void print();
 private:
     void updatePointerToLastNode();
 

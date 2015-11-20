@@ -23,7 +23,7 @@ template <class T> LinkedList<T>::LinkedList(const LinkedList& orig) {
 }
 
 template <class T> LinkedList<T>::~LinkedList() {
-    freeList(this->first);
+    freeList<T>(this->first);
 }
 
 template <class T> void LinkedList<T>::addNode(T value) {
@@ -50,7 +50,7 @@ template <class T> int LinkedList<T>::getLength() {
 }
 
 template <class T> void LinkedList<T>::removeNode(T value) {
-    removeNodeByValue(this->first, value);
+    removeNodeByValue<T>(this->first, value);
     this->updatePointerToLastNode();
 }
 
@@ -62,6 +62,10 @@ template <class T> void LinkedList<T>::updatePointerToLastNode() {
     }
     
     this->last = node;
+}
+
+template <class T> void LinkedList<T>::print() {
+    printList<T>(this->first);
 }
 
 template class LinkedList<int>;
