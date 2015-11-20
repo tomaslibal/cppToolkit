@@ -15,7 +15,9 @@
 class linkedListTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST_SUITE(linkedListTest);
 
-    CPPUNIT_TEST(testItInitializesWithFirstAndLastSetToNull);
+    CPPUNIT_TEST(testItInitializesWithFirstNodeAllocated);
+    CPPUNIT_TEST(testItInitializesWithLastNodeNull);
+    CPPUNIT_TEST(testAddNodeAddsNewNode);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -27,7 +29,9 @@ public:
     void tearDown();
 
 private:
-    void testItInitializesWithFirstAndLastSetToNull();
+    void testItInitializesWithFirstNodeAllocated();
+    void testItInitializesWithLastNodeNull();
+    void testAddNodeAddsNewNode();
 };
 
 #endif	/* LINKEDLISTTEST_H */

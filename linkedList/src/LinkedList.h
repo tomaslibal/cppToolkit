@@ -19,6 +19,8 @@ public:
     LinkedList();
     LinkedList(const LinkedList& orig);
     virtual ~LinkedList();
+    
+    void addNode(T value);
 private:
 
 };

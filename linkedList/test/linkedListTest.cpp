@@ -24,10 +24,26 @@ void linkedListTest::setUp() {
 void linkedListTest::tearDown() {
 }
 
-void linkedListTest::testItInitializesWithFirstAndLastSetToNull() {
+void linkedListTest::testItInitializesWithFirstNodeAllocated() {
     LinkedList<int> linkedList;
     
-    CPPUNIT_ASSERT(NULL == linkedList.first);
+    
+    CPPUNIT_ASSERT(NULL != linkedList.first);
+    CPPUNIT_ASSERT(1 == linkedList.first->id);
+}
+
+void linkedListTest::testItInitializesWithLastNodeNull() {
+    LinkedList<int> linkedList;
+    
     CPPUNIT_ASSERT(NULL == linkedList.last);
+}
+
+void linkedListTest::testAddNodeAddsNewNode() {
+    LinkedList<int> linkedList;
+    
+    CPPUNIT_ASSERT(NULL == linkedList.last);
+    linkedList.addNode(42);
+    CPPUNIT_ASSERT(NULL != linkedList.last);
+    CPPUNIT_ASSERT(linkedList.first->next == linkedList.last);
 }
 
