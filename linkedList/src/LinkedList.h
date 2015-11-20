@@ -21,6 +21,7 @@ public:
     virtual ~LinkedList();
     
     void addNode(T value);
+    int getLength();
 private:
 
 };

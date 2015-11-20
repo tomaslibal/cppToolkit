@@ -35,4 +35,17 @@ template <class T> void LinkedList<T>::addNode(T value) {
     this->last = addNodeWithValue<T>(last, value);
 }
 
+template <class T> int LinkedList<T>::getLength() {
+    int c = 0;
+    
+    linkedNode<T> *node = this->first;
+    
+    while(node) {
+        c++;
+        node = node->next;
+    }
+    
+    return c;
+}
+
 template class LinkedList<int>;

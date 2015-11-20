@@ -47,3 +47,12 @@ void linkedListTest::testAddNodeAddsNewNode() {
     CPPUNIT_ASSERT(linkedList.first->next == linkedList.last);
 }
 
+void linkedListTest::testGetLengthReturnsNumOfNodes() {
+    LinkedList<int> linkedList;
+    
+    CPPUNIT_ASSERT(1 == linkedList.getLength());
+    linkedList.addNode(42);
+    CPPUNIT_ASSERT(2 == linkedList.getLength());
+    linkedList.addNode(43);
+    CPPUNIT_ASSERT(3 == linkedList.getLength());
+}
