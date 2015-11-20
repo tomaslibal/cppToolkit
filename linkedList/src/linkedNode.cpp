@@ -47,5 +47,16 @@ template <typename T> void removeNodeByValue(linkedNode<T> *node, T value) {
     }
 }
 
+template <typename T> void freeList(linkedNode<T> *node) {
+    linkedNode<T> *next;
+    
+    while(node) {
+        next = node->next;
+        free(node);
+        node = next;
+    }
+}
+
 template linkedNode<int>* addNodeWithValue(linkedNode<int> *parent, int value);
 template void removeNodeByValue(linkedNode<int> *node, int value);
+template void freeList(linkedNode<int> *node);

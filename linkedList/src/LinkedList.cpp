@@ -23,6 +23,7 @@ template <class T> LinkedList<T>::LinkedList(const LinkedList& orig) {
 }
 
 template <class T> LinkedList<T>::~LinkedList() {
+    freeList(this->first);
 }
 
 template <class T> void LinkedList<T>::addNode(T value) {
