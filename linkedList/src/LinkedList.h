@@ -21,8 +21,10 @@ public:
     virtual ~LinkedList();
     
     void addNode(T value);
+    void removeNode(T value);
     int getLength();
 private:
+    void updatePointerToLastNode();
 
 };
 

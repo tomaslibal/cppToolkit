@@ -29,4 +29,23 @@ template <typename T> linkedNode<T>* addNodeWithValue(linkedNode<T> *parent, T v
     return newNode;
 }
 
+template <typename T> void removeNodeByValue(linkedNode<T> *node, T value) {
+    linkedNode<T> *prev = NULL;
+    
+    while(node) {
+        if (node->value == value) {
+            if (prev) {
+                prev->next = node->next;
+                free(node);
+            } else {
+                free(node);
+            }
+            break;
+        }
+        prev = node;
+        node = node->next;
+    }
+}
+
 template linkedNode<int>* addNodeWithValue(linkedNode<int> *parent, int value);
+template void removeNodeByValue(linkedNode<int> *node, int value);

@@ -20,6 +20,8 @@ template <typename T> linkedNode<T>* addEmptyNode(linkedNode<T> *parent);
 template <typename T> linkedNode<T>* addNodeWithValue(linkedNode<T> *parent, T value);
 template <typename T, typename... Args> void addListOfNodesWithValues(linkedNode<T> *parent, Args... values);
 
+template <typename T> void removeNodeByValue(linkedNode<T> *first, T value);
+
 template <typename T> void printList(linkedNode<T> *first);
 
 template <typename T> void freeList(linkedNode<T> *first);

@@ -56,3 +56,21 @@ void linkedListTest::testGetLengthReturnsNumOfNodes() {
     linkedList.addNode(43);
     CPPUNIT_ASSERT(3 == linkedList.getLength());
 }
+
+void linkedListTest::testRemoveNodeRemovesNodes() {
+    LinkedList<int> linkedList;
+    
+    linkedList.addNode(42);
+    linkedList.addNode(43);
+    linkedList.addNode(44);
+    
+    linkedNode<int> *originalLast = linkedList.last;
+    
+    CPPUNIT_ASSERT(4 == linkedList.getLength());
+    
+    linkedList.removeNode(44);
+    
+    CPPUNIT_ASSERT(3 == linkedList.getLength());
+    CPPUNIT_ASSERT(originalLast != linkedList.last);
+    CPPUNIT_ASSERT(linkedList.last == linkedList.first->next->next);
+}

@@ -48,4 +48,19 @@ template <class T> int LinkedList<T>::getLength() {
     return c;
 }
 
+template <class T> void LinkedList<T>::removeNode(T value) {
+    removeNodeByValue(this->first, value);
+    this->updatePointerToLastNode();
+}
+
+template <class T> void LinkedList<T>::updatePointerToLastNode() {
+    linkedNode<T> *node = this->first;
+    
+    while(node->next) {
+        node = node->next;
+    }
+    
+    this->last = node;
+}
+
 template class LinkedList<int>;
