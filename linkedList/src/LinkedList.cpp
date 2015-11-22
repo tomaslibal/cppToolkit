@@ -9,6 +9,7 @@
 #include <new>
 #include <string.h>
 #include "LinkedList.h"
+#include <cassert>
 
 using namespace std;
 
@@ -62,6 +63,24 @@ template <class T> int LinkedList<T>::getLength() {
     }
     
     return c;
+}
+
+template <class T> linkedNode<T>* LinkedList<T>::getAtIndex(int idx) {
+    linkedNode<T> *node = this->first;
+    
+    int c = 0;
+    
+    assert(idx >= 0);
+    
+    while(node) {
+        if (c == idx) {
+            return node;
+        }
+        c++;
+        node = node->next;
+    }
+    
+    return NULL;
 }
 
 template <class T> void LinkedList<T>::removeNode(T value) {

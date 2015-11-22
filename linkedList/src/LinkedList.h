@@ -23,6 +23,7 @@ public:
     void addNode(T value);
     void removeNode(T value);
     int getLength();
+    linkedNode<T>* getAtIndex(int idx);
     void print();
     void setKey(linkedNode<T> *node, const char* key);
 private:

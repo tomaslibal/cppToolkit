@@ -20,6 +20,8 @@ class linkedListTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST(testAddNodeAddsNewNode);
     CPPUNIT_TEST(testGetLengthReturnsNumOfNodes);
     CPPUNIT_TEST(testRemoveNodeRemovesNodes);
+    CPPUNIT_TEST(testGetAtIndexReturnsNodeAtGivenIndex);
+    CPPUNIT_TEST(testGetAtIndexReturnsNullIfIndexOutOfBounds);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -31,11 +33,14 @@ public:
     void tearDown();
 
 private:
+    LinkedList<int>* list;
     void testItInitializesWithFirstNodeAllocated();
     void testItInitializesWithLastNodeNull();
     void testAddNodeAddsNewNode();
     void testGetLengthReturnsNumOfNodes();
     void testRemoveNodeRemovesNodes();
+    void testGetAtIndexReturnsNodeAtGivenIndex();
+    void testGetAtIndexReturnsNullIfIndexOutOfBounds();
 };
 
 #endif	/* LINKEDLISTTEST_H */

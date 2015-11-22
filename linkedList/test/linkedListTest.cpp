@@ -18,10 +18,11 @@ linkedListTest::~linkedListTest() {
 }
 
 void linkedListTest::setUp() {
-    
+    this->list = new LinkedList<int>();
 }
 
 void linkedListTest::tearDown() {
+    delete this->list;
 }
 
 void linkedListTest::testItInitializesWithFirstNodeAllocated() {
@@ -73,4 +74,30 @@ void linkedListTest::testRemoveNodeRemovesNodes() {
     CPPUNIT_ASSERT(3 == linkedList.getLength());
     CPPUNIT_ASSERT(originalLast != linkedList.last);
     CPPUNIT_ASSERT(linkedList.last == linkedList.first->next->next);
+}
+
+void linkedListTest::testGetAtIndexReturnsNodeAtGivenIndex() {
+    this->list->addNode(42);
+    this->list->addNode(43);
+    this->list->addNode(44);
+    
+    linkedNode<int> *result = this->list->getAtIndex(2);
+    
+    CPPUNIT_ASSERT(result != NULL);
+    CPPUNIT_ASSERT(result->value == 43);
+    
+    result = this->list->getAtIndex(3);
+    
+    CPPUNIT_ASSERT(result != NULL);
+    CPPUNIT_ASSERT(result->value == 44);
+}
+
+void linkedListTest::testGetAtIndexReturnsNullIfIndexOutOfBounds() {
+    this->list->addNode(42);
+    this->list->addNode(43);
+    this->list->addNode(44);
+    
+    linkedNode<int> *result = this->list->getAtIndex(4);
+    
+    CPPUNIT_ASSERT(result == NULL);
 }
