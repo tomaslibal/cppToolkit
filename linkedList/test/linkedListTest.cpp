@@ -27,87 +27,76 @@ void linkedListTest::tearDown() {
 }
 
 void linkedListTest::testItInitializesWithFirstNodeAllocated() {
-    LinkedList<int> linkedList;
-    
-    
-    CPPUNIT_ASSERT(NULL != linkedList.first);
-    CPPUNIT_ASSERT(NULL == linkedList.first->key);
+    CPPUNIT_ASSERT(NULL != list->first);
+    CPPUNIT_ASSERT(NULL == list->first->key);
 }
 
 void linkedListTest::testItInitializesWithLastNodeNull() {
-    LinkedList<int> linkedList;
-    
-    CPPUNIT_ASSERT(NULL == linkedList.last);
+    CPPUNIT_ASSERT(NULL == list->last);
 }
 
 void linkedListTest::testAddNodeAddsNewNode() {
-    LinkedList<int> linkedList;
-    
-    CPPUNIT_ASSERT(NULL == linkedList.last);
-    linkedList.addNode(42);
-    CPPUNIT_ASSERT(NULL != linkedList.last);
-    CPPUNIT_ASSERT(linkedList.first->next == linkedList.last);
+    CPPUNIT_ASSERT(NULL == list->last);
+    list->addNode(42);
+    CPPUNIT_ASSERT(NULL != list->last);
+    CPPUNIT_ASSERT(list->first->next == list->last);
 }
 
 void linkedListTest::testAddNodeWithKeyValue() {
-    this->list->addNode("Foo", 42);
+    list->addNode("Foo", 42);
     
-    linkedNode<int> *result = this->list->getAtIndex(1);
+    linkedNode<int> *result = list->getAtIndex(1);
     
     CPPUNIT_ASSERT(strcmp(result->key, "Foo") == 0);
     CPPUNIT_ASSERT(result->value == 42);
 }
 
 void linkedListTest::testGetLengthReturnsNumOfNodes() {
-    LinkedList<int> linkedList;
-    
-    CPPUNIT_ASSERT(1 == linkedList.getLength());
-    linkedList.addNode(42);
-    CPPUNIT_ASSERT(2 == linkedList.getLength());
-    linkedList.addNode(43);
-    CPPUNIT_ASSERT(3 == linkedList.getLength());
+    CPPUNIT_ASSERT(1 == list->getLength());
+    list->addNode(42);
+    CPPUNIT_ASSERT(2 == list->getLength());
+    list->addNode(43);
+    CPPUNIT_ASSERT(3 == list->getLength());
 }
 
 void linkedListTest::testRemoveNodeRemovesNodes() {
-    LinkedList<int> linkedList;
+    list->addNode(42);
+    list->addNode(43);
+    list->addNode(44);
     
-    linkedList.addNode(42);
-    linkedList.addNode(43);
-    linkedList.addNode(44);
+    linkedNode<int> *originalLast = list->last;
     
-    linkedNode<int> *originalLast = linkedList.last;
+    CPPUNIT_ASSERT(4 == list->getLength());
     
-    CPPUNIT_ASSERT(4 == linkedList.getLength());
+    list->removeNode(44);
     
-    linkedList.removeNode(44);
-    
-    CPPUNIT_ASSERT(3 == linkedList.getLength());
-    CPPUNIT_ASSERT(originalLast != linkedList.last);
-    CPPUNIT_ASSERT(linkedList.last == linkedList.first->next->next);
+    CPPUNIT_ASSERT(3 == list->getLength());
+    CPPUNIT_ASSERT(originalLast != list->last);
+    CPPUNIT_ASSERT(list->last == list->first->next->next);
 }
 
 void linkedListTest::testGetAtIndexReturnsNodeAtGivenIndex() {
-    this->list->addNode(42);
-    this->list->addNode(43);
-    this->list->addNode(44);
+    list->addNode(42);
+    list->addNode(43);
+    list->addNode(44);
     
-    linkedNode<int> *result = this->list->getAtIndex(2);
+    linkedNode<int> *result = list->getAtIndex(2);
     
     CPPUNIT_ASSERT(result != NULL);
     CPPUNIT_ASSERT(result->value == 43);
     
-    result = this->list->getAtIndex(3);
+    result = list->getAtIndex(3);
     
     CPPUNIT_ASSERT(result != NULL);
     CPPUNIT_ASSERT(result->value == 44);
 }
 
 void linkedListTest::testGetAtIndexReturnsNullIfIndexOutOfBounds() {
-    this->list->addNode(42);
-    this->list->addNode(43);
-    this->list->addNode(44);
+    list->addNode(42);
+    list->addNode(43);
+    list->addNode(44);
     
-    linkedNode<int> *result = this->list->getAtIndex(4);
+    linkedNode<int> *result = list->getAtIndex(4);
     
     CPPUNIT_ASSERT(result == NULL);
 }
