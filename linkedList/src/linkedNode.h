@@ -19,6 +19,7 @@ template <typename T> struct linkedNode {
 template <typename T> linkedNode<T>* addEmptyNode(linkedNode<T> *parent);
 template <typename T> linkedNode<T>* addNodeWithValue(linkedNode<T> *parent, T value);
 template <typename T, typename... Args> void addListOfNodesWithValues(linkedNode<T> *parent, Args... values);
+template <typename T> linkedNode<T>* addNodeWithKeyValue(linkedNode<T> *parent, const char* key, T value);
 
 template <typename T> void removeNodeByValue(linkedNode<T> *first, T value);
 

@@ -18,6 +18,7 @@ class linkedListTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST(testItInitializesWithFirstNodeAllocated);
     CPPUNIT_TEST(testItInitializesWithLastNodeNull);
     CPPUNIT_TEST(testAddNodeAddsNewNode);
+    CPPUNIT_TEST(testAddNodeWithKeyValue);
     CPPUNIT_TEST(testGetLengthReturnsNumOfNodes);
     CPPUNIT_TEST(testRemoveNodeRemovesNodes);
     CPPUNIT_TEST(testGetAtIndexReturnsNodeAtGivenIndex);
@@ -37,6 +38,7 @@ private:
     void testItInitializesWithFirstNodeAllocated();
     void testItInitializesWithLastNodeNull();
     void testAddNodeAddsNewNode();
+    void testAddNodeWithKeyValue();
     void testGetLengthReturnsNumOfNodes();
     void testRemoveNodeRemovesNodes();
     void testGetAtIndexReturnsNodeAtGivenIndex();

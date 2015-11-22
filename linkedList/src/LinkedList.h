@@ -21,6 +21,7 @@ public:
     virtual ~LinkedList();
     
     void addNode(T value);
+    void addNode(const char* key, T value);
     void removeNode(T value);
     int getLength();
     linkedNode<T>* getAtIndex(int idx);

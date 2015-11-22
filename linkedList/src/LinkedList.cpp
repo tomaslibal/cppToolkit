@@ -52,6 +52,16 @@ template <class T> void LinkedList<T>::addNode(T value) {
     this->last = addNodeWithValue<T>(last, value);
 }
 
+template <class T> void LinkedList<T>::addNode(const char* key, T value) {
+    linkedNode<T> *last = this->last;
+    
+    if (last == NULL) {
+        last = this->first;
+    }
+    
+    this->last = addNodeWithKeyValue<T>(last, key, value);
+}
+
 template <class T> int LinkedList<T>::getLength() {
     int c = 0;
     

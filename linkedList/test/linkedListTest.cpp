@@ -8,6 +8,7 @@
 #include "linkedListTest.h"
 
 #include <cstdlib>
+#include <cstring>
 
 CPPUNIT_TEST_SUITE_REGISTRATION(linkedListTest);
 
@@ -46,6 +47,15 @@ void linkedListTest::testAddNodeAddsNewNode() {
     linkedList.addNode(42);
     CPPUNIT_ASSERT(NULL != linkedList.last);
     CPPUNIT_ASSERT(linkedList.first->next == linkedList.last);
+}
+
+void linkedListTest::testAddNodeWithKeyValue() {
+    this->list->addNode("Foo", 42);
+    
+    linkedNode<int> *result = this->list->getAtIndex(1);
+    
+    CPPUNIT_ASSERT(strcmp(result->key, "Foo") == 0);
+    CPPUNIT_ASSERT(result->value == 42);
 }
 
 void linkedListTest::testGetLengthReturnsNumOfNodes() {

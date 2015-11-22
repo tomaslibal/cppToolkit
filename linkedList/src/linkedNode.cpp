@@ -1,6 +1,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <cassert>
+#include <cstring>
 #include "linkedNode.h"
 
 using namespace std;
@@ -77,7 +78,18 @@ template <typename T> void printList(linkedNode<T> *first) {
     cout << "END" << std::endl;
 }
 
+template <typename T> linkedNode<T>* addNodeWithKeyValue(linkedNode<T> *parent, const char* key, T value) {
+    linkedNode<T> *newNode = addNodeWithValue<T>(parent, value);
+    if (newNode->key = (char*) malloc(sizeof(key)+1)) {
+        strcpy(newNode->key, key);
+    } else {
+        throw bad_alloc();
+    }
+    return newNode;
+}
+
 template linkedNode<int>* addNodeWithValue(linkedNode<int> *parent, int value);
+template linkedNode<int>* addNodeWithKeyValue(linkedNode<int> *parent, const char* key, int value);
 template void removeNodeByValue(linkedNode<int> *node, int value);
 template void freeList(linkedNode<int> *node);
 template void printList(linkedNode<int> *first);
