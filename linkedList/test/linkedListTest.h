@@ -23,6 +23,9 @@ class linkedListTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST(testRemoveNodeRemovesNodes);
     CPPUNIT_TEST(testGetAtIndexReturnsNodeAtGivenIndex);
     CPPUNIT_TEST(testGetAtIndexReturnsNullIfIndexOutOfBounds);
+    CPPUNIT_TEST(testGetNodeByValue);
+    CPPUNIT_TEST(testGetNodeByKey);
+    CPPUNIT_TEST(testGetNodeByKeyValue);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -43,6 +46,9 @@ private:
     void testRemoveNodeRemovesNodes();
     void testGetAtIndexReturnsNodeAtGivenIndex();
     void testGetAtIndexReturnsNullIfIndexOutOfBounds();
+    void testGetNodeByValue();
+    void testGetNodeByKey();
+    void testGetNodeByKeyValue();
 };
 
 #endif	/* LINKEDLISTTEST_H */

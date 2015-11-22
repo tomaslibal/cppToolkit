@@ -25,6 +25,9 @@ public:
     void removeNode(T value);
     int getLength();
     linkedNode<T>* getAtIndex(int idx);
+    linkedNode<T>* getNode(T value);
+    linkedNode<T>* getNode(const char* key);
+    linkedNode<T>* getNode(const char* key, T value);
     void print();
     void setKey(linkedNode<T> *node, const char* key);
 private:

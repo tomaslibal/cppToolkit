@@ -100,3 +100,43 @@ void linkedListTest::testGetAtIndexReturnsNullIfIndexOutOfBounds() {
     
     CPPUNIT_ASSERT(result == NULL);
 }
+
+void linkedListTest::testGetNodeByKey() {
+    list->addNode("Foo", 42);
+    list->addNode("Bar", 43);
+    
+    linkedNode<int> *result = list->getNode("Bar");
+    
+    CPPUNIT_ASSERT(result->value == 43);
+    
+    result = list->getNode("NonExisting");
+    
+    CPPUNIT_ASSERT(result == NULL);
+}
+
+void linkedListTest::testGetNodeByValue() {
+    list->addNode("Foo", 42);
+    list->addNode("Bar", 43);
+    
+    linkedNode<int> *result = list->getNode(43);
+    
+    CPPUNIT_ASSERT(strcmp(result->key, "Bar") == 0);
+    
+    result = list->getNode(1024);
+    
+    CPPUNIT_ASSERT(result == NULL);
+}
+
+void linkedListTest::testGetNodeByKeyValue() {
+    list->addNode("Foo", 42);
+    list->addNode("Bar", 43);
+    
+    linkedNode<int> *result = list->getNode("Bar", 43);
+    
+    CPPUNIT_ASSERT(result->value == 43);
+    CPPUNIT_ASSERT(strcmp(result->key, "Bar") == 0);
+    
+    result = list->getNode("Foo", 1024);
+    
+    CPPUNIT_ASSERT(result == NULL);
+}

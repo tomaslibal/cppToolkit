@@ -112,4 +112,16 @@ template <class T> void LinkedList<T>::print() {
     printList<T>(this->first);
 }
 
+template <class T> linkedNode<T>* LinkedList<T>::getNode(T value) {
+    return getNodeByValue(this->first, value);
+}
+
+template <class T> linkedNode<T>* LinkedList<T>::getNode(const char* key) {
+    return getNodeByKey(this->first, key);
+}
+
+template <class T> linkedNode<T>* LinkedList<T>::getNode(const char* key, T value) {
+    return getNodeByKeyValue(this->first, key, value);
+}
+
 template class LinkedList<int>;

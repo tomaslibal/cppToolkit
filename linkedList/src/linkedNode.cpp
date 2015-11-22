@@ -88,8 +88,50 @@ template <typename T> linkedNode<T>* addNodeWithKeyValue(linkedNode<T> *parent, 
     return newNode;
 }
 
+template <typename T> linkedNode<T>* getNodeByValue(linkedNode<T> *first, T value) {
+    linkedNode<T> *node = first;
+    
+    while(node) {
+        if (node->value == value) {
+            return node;
+        }
+        node = node->next;
+    }
+    
+    return NULL;
+}
+
+template <typename T> linkedNode<T>* getNodeByKey(linkedNode<T> *first, const char *key) {
+    linkedNode<T> *node = first;
+    
+    while(node) {
+        if (node->key != NULL && strcmp(node->key, key) == 0) {
+            return node;
+        }
+        node = node->next;
+    }
+    
+    return NULL;
+}
+
+template <typename T> linkedNode<T>* getNodeByKeyValue(linkedNode<T> *first, const char *key, T value) {
+    linkedNode<T> *node = first;
+    
+    while(node) {
+        if (node->key != NULL && strcmp(node->key, key) == 0 && node->value == value) {
+            return node;
+        }
+        node = node->next;
+    }
+    
+    return NULL;
+}
+
 template linkedNode<int>* addNodeWithValue(linkedNode<int> *parent, int value);
 template linkedNode<int>* addNodeWithKeyValue(linkedNode<int> *parent, const char* key, int value);
 template void removeNodeByValue(linkedNode<int> *node, int value);
 template void freeList(linkedNode<int> *node);
 template void printList(linkedNode<int> *first);
+template linkedNode<int>* getNodeByKey(linkedNode<int>* first, const char* key);
+template linkedNode<int>* getNodeByValue(linkedNode<int>* first, int value);
+template linkedNode<int>* getNodeByKeyValue(linkedNode<int>* first, const char* key, int value);
