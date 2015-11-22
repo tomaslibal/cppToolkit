@@ -11,7 +11,7 @@
 #include <initializer_list>
 
 template <typename T> struct linkedNode {
-    int id;
+    char* key;
     T value;
     linkedNode<T> *next;
 };
@@ -25,6 +25,7 @@ template <typename T> void removeNodeByValue(linkedNode<T> *first, T value);
 template <typename T> void printList(linkedNode<T> *first);
 
 template <typename T> void freeList(linkedNode<T> *first);
+template <typename T> void freeNode(linkedNode<T> *node);
 
 
 #endif	/* LINKEDNODE_H */

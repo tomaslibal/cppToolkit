@@ -29,7 +29,7 @@ void linkedListTest::testItInitializesWithFirstNodeAllocated() {
     
     
     CPPUNIT_ASSERT(NULL != linkedList.first);
-    CPPUNIT_ASSERT(1 == linkedList.first->id);
+    CPPUNIT_ASSERT(NULL == linkedList.first->key);
 }
 
 void linkedListTest::testItInitializesWithLastNodeNull() {

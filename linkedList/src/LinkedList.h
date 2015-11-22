@@ -24,6 +24,7 @@ public:
     void removeNode(T value);
     int getLength();
     void print();
+    void setKey(linkedNode<T> *node, const char* key);
 private:
     void updatePointerToLastNode();
 

@@ -13,7 +13,7 @@ template <typename T> linkedNode<T>* addEmptyNode(linkedNode<T> *parent)
     
     assert(newNode != NULL);
     
-    newNode->id = 0;
+    newNode->key = NULL;
     newNode->value = (T) 0;
     newNode->next = NULL;
     
@@ -36,9 +36,9 @@ template <typename T> void removeNodeByValue(linkedNode<T> *node, T value) {
         if (node->value == value) {
             if (prev) {
                 prev->next = node->next;
-                free(node);
+                freeNode<T>(node);
             } else {
-                free(node);
+                freeNode<T>(node);
             }
             break;
         }
@@ -52,9 +52,16 @@ template <typename T> void freeList(linkedNode<T> *node) {
     
     while(node) {
         next = node->next;
-        free(node);
+        freeNode<T>(node);
         node = next;
     }
+}
+
+template <typename T> void freeNode(linkedNode<T> *node) {
+    if (node->key != NULL) {
+        free(node->key);
+    }
+    free(node);
 }
 
 template <typename T> void printList(linkedNode<T> *first) {

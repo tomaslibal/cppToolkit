@@ -6,13 +6,15 @@
  */
 
 #include <cstdlib>
+#include <new>
+#include <string.h>
 #include "LinkedList.h"
 
 using namespace std;
 
 template <class T> LinkedList<T>::LinkedList() {
     this->first = (linkedNode<T>*) malloc(sizeof(linkedNode<T>));
-    this->first->id = 1;
+    this->first->key = NULL;
     this->first->value = (T) 0;
     this->first->next = NULL;
     
@@ -24,6 +26,19 @@ template <class T> LinkedList<T>::LinkedList(const LinkedList& orig) {
 
 template <class T> LinkedList<T>::~LinkedList() {
     freeList<T>(this->first);
+}
+
+template <class T> void LinkedList<T>::setKey(linkedNode<T> *node, const char* key) {
+    if (node->key != NULL) {
+        node->key = (char*) realloc(node->key, sizeof(key)+1);
+        if (!node->key) {
+            throw bad_alloc();
+        }
+    } else {
+        node->key = (char*) malloc(sizeof(key)+1);
+    }
+    
+    strcpy(node->key, key);
 }
 
 template <class T> void LinkedList<T>::addNode(T value) {
