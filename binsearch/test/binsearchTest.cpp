@@ -7,7 +7,7 @@
 
 #include "binsearchTest.h"
 
-#include "../binsearch/binsearch.h"
+#include "../src/binsearch.h"
 
 CPPUNIT_TEST_SUITE_REGISTRATION(binsearchTest);
 
