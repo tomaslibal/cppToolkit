@@ -8,7 +8,7 @@
 #ifndef BINSEARCH_H
 #define	BINSEARCH_H
 
-template <typename T> T binsearch(T lookup, T* list, const int listLen);
+template <typename T> int binsearch(T lookup, T* list, const int listLen);
 
 #endif	/* BINSEARCH_H */
 
