@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/binsearch/binsearch.o \
 	${OBJECTDIR}/linkedList/src/LinkedList.o \
 	${OBJECTDIR}/linkedList/src/linkedNode.o \
 	${OBJECTDIR}/main.o
@@ -44,6 +45,7 @@ TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
 
 # Test Files
 TESTFILES= \
+	${TESTDIR}/TestFiles/f2 \
 	${TESTDIR}/TestFiles/f1
 
 # C Compiler Flags
@@ -70,6 +72,11 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cpptoolkit: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cpptoolkit ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/binsearch/binsearch.o: binsearch/binsearch.cpp 
+	${MKDIR} -p ${OBJECTDIR}/binsearch
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/binsearch/binsearch.o binsearch/binsearch.cpp
+
 ${OBJECTDIR}/linkedList/src/LinkedList.o: linkedList/src/LinkedList.cpp 
 	${MKDIR} -p ${OBJECTDIR}/linkedList/src
 	${RM} "$@.d"
@@ -90,9 +97,25 @@ ${OBJECTDIR}/main.o: main.cpp
 
 # Build Test Targets
 .build-tests-conf: .build-conf ${TESTFILES}
+${TESTDIR}/TestFiles/f2: ${TESTDIR}/tests/binsearchTest.o ${TESTDIR}/tests/binsearchTestRunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f2 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+
 ${TESTDIR}/TestFiles/f1: ${TESTDIR}/linkedList/test/linkedListTest.o ${TESTDIR}/linkedList/test/linkedListTestRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+
+
+${TESTDIR}/tests/binsearchTest.o: tests/binsearchTest.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/binsearchTest.o tests/binsearchTest.cpp
+
+
+${TESTDIR}/tests/binsearchTestRunner.o: tests/binsearchTestRunner.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/binsearchTestRunner.o tests/binsearchTestRunner.cpp
 
 
 ${TESTDIR}/linkedList/test/linkedListTest.o: linkedList/test/linkedListTest.cpp 
@@ -106,6 +129,19 @@ ${TESTDIR}/linkedList/test/linkedListTestRunner.o: linkedList/test/linkedListTes
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/linkedList/test/linkedListTestRunner.o linkedList/test/linkedListTestRunner.cpp
 
+
+${OBJECTDIR}/binsearch/binsearch_nomain.o: ${OBJECTDIR}/binsearch/binsearch.o binsearch/binsearch.cpp 
+	${MKDIR} -p ${OBJECTDIR}/binsearch
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/binsearch/binsearch.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/binsearch/binsearch_nomain.o binsearch/binsearch.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/binsearch/binsearch.o ${OBJECTDIR}/binsearch/binsearch_nomain.o;\
+	fi
 
 ${OBJECTDIR}/linkedList/src/LinkedList_nomain.o: ${OBJECTDIR}/linkedList/src/LinkedList.o linkedList/src/LinkedList.cpp 
 	${MKDIR} -p ${OBJECTDIR}/linkedList/src
@@ -150,6 +186,7 @@ ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp
 .test-conf:
 	@if [ "${TEST}" = "" ]; \
 	then  \
+	    ${TESTDIR}/TestFiles/f2 || true; \
 	    ${TESTDIR}/TestFiles/f1 || true; \
 	else  \
 	    ./${TEST} || true; \
