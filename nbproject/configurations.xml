@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>chainedHashTable/src/ChainedHashTable.h</itemPath>
       <itemPath>linkedList/src/LinkedList.h</itemPath>
       <itemPath>binsearch/src/binsearch.h</itemPath>
       <itemPath>linkedList/src/linkedNode.h</itemPath>
@@ -15,6 +16,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>chainedHashTable/src/ChainedHashTable.cpp</itemPath>
       <itemPath>linkedList/src/LinkedList.cpp</itemPath>
       <itemPath>binsearch/src/binsearch.cpp</itemPath>
       <itemPath>linkedList/src/linkedNode.cpp</itemPath>
@@ -73,6 +75,16 @@
       <item path="binsearch/test/binsearchTestRunner.cpp"
             ex="false"
             tool="1"
+            flavor2="0">
+      </item>
+      <item path="chainedHashTable/src/ChainedHashTable.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="chainedHashTable/src/ChainedHashTable.h"
+            ex="false"
+            tool="3"
             flavor2="0">
       </item>
       <folder path="TestFiles/f1">
@@ -156,6 +168,16 @@
       <item path="binsearch/test/binsearchTestRunner.cpp"
             ex="false"
             tool="1"
+            flavor2="0">
+      </item>
+      <item path="chainedHashTable/src/ChainedHashTable.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="chainedHashTable/src/ChainedHashTable.h"
+            ex="false"
+            tool="3"
             flavor2="0">
       </item>
       <folder path="TestFiles/f1">

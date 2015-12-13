@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/binsearch/src/binsearch.o \
+	${OBJECTDIR}/chainedHashTable/src/ChainedHashTable.o \
 	${OBJECTDIR}/linkedList/src/LinkedList.o \
 	${OBJECTDIR}/linkedList/src/linkedNode.o \
 	${OBJECTDIR}/main.o
@@ -76,6 +77,11 @@ ${OBJECTDIR}/binsearch/src/binsearch.o: binsearch/src/binsearch.cpp
 	${MKDIR} -p ${OBJECTDIR}/binsearch/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/binsearch/src/binsearch.o binsearch/src/binsearch.cpp
+
+${OBJECTDIR}/chainedHashTable/src/ChainedHashTable.o: chainedHashTable/src/ChainedHashTable.cpp 
+	${MKDIR} -p ${OBJECTDIR}/chainedHashTable/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/chainedHashTable/src/ChainedHashTable.o chainedHashTable/src/ChainedHashTable.cpp
 
 ${OBJECTDIR}/linkedList/src/LinkedList.o: linkedList/src/LinkedList.cpp 
 	${MKDIR} -p ${OBJECTDIR}/linkedList/src
@@ -141,6 +147,19 @@ ${OBJECTDIR}/binsearch/src/binsearch_nomain.o: ${OBJECTDIR}/binsearch/src/binsea
 	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/binsearch/src/binsearch_nomain.o binsearch/src/binsearch.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/binsearch/src/binsearch.o ${OBJECTDIR}/binsearch/src/binsearch_nomain.o;\
+	fi
+
+${OBJECTDIR}/chainedHashTable/src/ChainedHashTable_nomain.o: ${OBJECTDIR}/chainedHashTable/src/ChainedHashTable.o chainedHashTable/src/ChainedHashTable.cpp 
+	${MKDIR} -p ${OBJECTDIR}/chainedHashTable/src
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/chainedHashTable/src/ChainedHashTable.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/chainedHashTable/src/ChainedHashTable_nomain.o chainedHashTable/src/ChainedHashTable.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/chainedHashTable/src/ChainedHashTable.o ${OBJECTDIR}/chainedHashTable/src/ChainedHashTable_nomain.o;\
 	fi
 
 ${OBJECTDIR}/linkedList/src/LinkedList_nomain.o: ${OBJECTDIR}/linkedList/src/LinkedList.o linkedList/src/LinkedList.cpp 
