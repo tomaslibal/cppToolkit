@@ -26,6 +26,7 @@ template <typename T> linkedNode<T>* getNodeByKey(linkedNode<T> *first, const ch
 template <typename T> linkedNode<T>* getNodeByKeyValue(linkedNode<T> *first, const char *key, T value);
 
 template <typename T> void removeNodeByValue(linkedNode<T> *first, T value);
+template <typename T> void removeNodeByKey(linkedNode<T> *first, const char* key);
 
 template <typename T> void printList(linkedNode<T> *first);
 
