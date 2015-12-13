@@ -24,10 +24,6 @@ void chainedHashTableTest::tearDown() {
     delete this->ht;
 }
 
-void chainedHashTableTest::testItCreatesTheInitialHashTable() {
-    CPPUNIT_ASSERT(true);
-}
-
 void chainedHashTableTest::testInsert() {
     CPPUNIT_ASSERT(true);
 }

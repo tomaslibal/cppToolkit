@@ -15,7 +15,6 @@
 class chainedHashTableTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST_SUITE(chainedHashTableTest);
 
-    CPPUNIT_TEST(testItCreatesTheInitialHashTable);
     CPPUNIT_TEST(testInsert);
     CPPUNIT_TEST(testSearch);
     CPPUNIT_TEST(testDelete);
@@ -30,7 +29,6 @@ public:
 
 private:
     ChainedHashTable* ht;
-    void testItCreatesTheInitialHashTable();
     void testInsert();
     void testSearch();
     void testDelete();
