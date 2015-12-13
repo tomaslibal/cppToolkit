@@ -6,6 +6,7 @@
  */
 
 #include <cstdlib>
+#include <string.h>
 
 #include "ChainedHashTable.h"
 
@@ -28,5 +29,35 @@ ChainedHashTable::~ChainedHashTable() {
         }
     }
     free(this->hashTable);
+}
+
+int ChainedHashTable::hash(const char* key) {
+    // Use 4 char folding
+    int intLen = strlen(key) / 4;
+    long sum = 0;
+    
+    for(int r = 0; r <= intLen; r++) {
+        char c[4] = { key[r * 4], key[(r * 4)+1], key[(r * 4)+2], key[(r * 4)+3] };
+        long mult = 1;
+        for (int s = 0; s < strlen(c); s++) {
+            sum += c[s] * mult;
+            mult *= 256;
+        }
+    }
+    
+    // Normalize the hash value to the size of the hash table
+    return(abs(sum) % this->tableSize);
+}
+
+void ChainedHashTable::insert(const char* key, int value) {
+    
+}
+
+int ChainedHashTable::search(const char* key) {
+    
+}
+
+int ChainedHashTable::del(const char* key) {
+    
 }
 
