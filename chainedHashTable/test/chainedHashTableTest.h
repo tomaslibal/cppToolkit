@@ -10,6 +10,8 @@
 
 #include <cppunit/extensions/HelperMacros.h>
 
+#include "../src/ChainedHashTable.h"
+
 class chainedHashTableTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST_SUITE(chainedHashTableTest);
 
@@ -27,6 +29,7 @@ public:
     void tearDown();
 
 private:
+    ChainedHashTable* ht;
     void testItCreatesTheInitialHashTable();
     void testInsert();
     void testSearch();
