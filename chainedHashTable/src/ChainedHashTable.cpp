@@ -7,13 +7,14 @@
 
 #include <cstdlib>
 #include <string.h>
+#include <new>
 
 #include "ChainedHashTable.h"
 
 using namespace std;
 
 ChainedHashTable::ChainedHashTable() {
-    this->hashTable = (LinkedList<int>**) malloc(sizeof(LinkedList<int>**) * this->tableSize);
+    this->hashTable = (LinkedList<int>**) malloc(sizeof(LinkedList<int>*) * this->tableSize);
     for(short int i = 0; i < this->tableSize; i++) {
         this->hashTable[i] = NULL;
     }
@@ -50,14 +51,43 @@ int ChainedHashTable::hash(const char* key) {
 }
 
 void ChainedHashTable::insert(const char* key, int value) {
+    // get the hash index
+    int idx = this->hash(key);
+    // obtain the linked list from the index
+    LinkedList<int>* list = this->hashTable[idx];
     
+    // if this index has uninitialized list, initialize it
+    if (list == NULL) {
+        this->hashTable[idx] = new LinkedList<int>();
+        list = this->hashTable[idx];
+    } else {
+        throw bad_alloc();
+    }
+    // insert the value into the list
+    list->addNode(key, value);
 }
 
 int ChainedHashTable::search(const char* key) {
-    
+    // get the hash index
+    int idx = this->hash(key);
+    // obtain the linked list from the index
+    LinkedList<int>* list = this->hashTable[idx];
+    if (list == NULL) {
+        return NULL;
+    }
+    // search and return by the key
+    return list->getNode(key)->value;
 }
 
-int ChainedHashTable::del(const char* key) {
-    
+void ChainedHashTable::del(const char* key) {
+    // get the hash index
+    int idx = this->hash(key);
+    // obtain the linked list from the index
+    LinkedList<int>* list = this->hashTable[idx];
+    if (list == NULL) {
+        return;
+    }
+    // search and return by the key
+    list->removeNode(key);
 }
 

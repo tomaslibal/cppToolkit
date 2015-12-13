@@ -18,7 +18,7 @@ public:
     
     void insert(const char* key, int value);
     int search(const char* key);
-    int del(const char* key);
+    void del(const char* key);
 private:
     short int tableSize = 100;
     int hash(const char* key);

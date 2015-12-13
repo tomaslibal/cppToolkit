@@ -25,13 +25,25 @@ void chainedHashTableTest::tearDown() {
 }
 
 void chainedHashTableTest::testInsert() {
-    CPPUNIT_ASSERT(true);
+    this->ht->insert("foo", 42);
+    
+    CPPUNIT_ASSERT(this->ht->search("foo") == 42);
+    
+    this->ht->insert("bar", 420);
+    
+    CPPUNIT_ASSERT(this->ht->search("bar") == 420);
 }
 
 void chainedHashTableTest::testSearch() {
-    CPPUNIT_ASSERT(true);
+    CPPUNIT_ASSERT(this->ht->search("foo") == NULL);
 }
 
 void chainedHashTableTest::testDelete() {
-    CPPUNIT_ASSERT(true);
+    this->ht->insert("bar", 42);
+    
+    CPPUNIT_ASSERT(this->ht->search("bar") == 42);
+    
+    this->ht->del("bar");
+            
+    CPPUNIT_ASSERT(this->ht->search("bar") == NULL);
 }
