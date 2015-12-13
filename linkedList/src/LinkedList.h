@@ -17,12 +17,12 @@ public:
     linkedNode<T> *last;
     
     LinkedList();
-    LinkedList(const LinkedList& orig);
     virtual ~LinkedList();
     
     void addNode(T value);
     void addNode(const char* key, T value);
     void removeNode(T value);
+    void removeNode(const char* key);
     int getLength();
     linkedNode<T>* getAtIndex(int idx);
     linkedNode<T>* getNode(T value);

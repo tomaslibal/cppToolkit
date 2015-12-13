@@ -22,9 +22,6 @@ template <class T> LinkedList<T>::LinkedList() {
     this->last = NULL;
 }
 
-template <class T> LinkedList<T>::LinkedList(const LinkedList& orig) {
-}
-
 template <class T> LinkedList<T>::~LinkedList() {
     freeList<T>(this->first);
 }
@@ -95,6 +92,11 @@ template <class T> linkedNode<T>* LinkedList<T>::getAtIndex(int idx) {
 
 template <class T> void LinkedList<T>::removeNode(T value) {
     removeNodeByValue<T>(this->first, value);
+    this->updatePointerToLastNode();
+}
+
+template <class T> void LinkedList<T>::removeNode(const char* key) {
+    removeNodeByKey<T>(this->first, key);
     this->updatePointerToLastNode();
 }
 
