@@ -22,11 +22,18 @@ void chainedHashTableTest::setUp() {
 void chainedHashTableTest::tearDown() {
 }
 
-void chainedHashTableTest::testMethod() {
+void chainedHashTableTest::testItCreatesTheInitialHashTable() {
     CPPUNIT_ASSERT(true);
 }
 
-void chainedHashTableTest::testFailedMethod() {
-    CPPUNIT_ASSERT(false);
+void chainedHashTableTest::testInsert() {
+    CPPUNIT_ASSERT(true);
 }
 
+void chainedHashTableTest::testSearch() {
+    CPPUNIT_ASSERT(true);
+}
+
+void chainedHashTableTest::testDelete() {
+    CPPUNIT_ASSERT(true);
+}
