@@ -22,7 +22,7 @@ public:
 private:
     short int tableSize = 100;
     int hash(const char* key);
-    LinkedList<int> *hashTable [];
+    LinkedList<int> **hashTable;
     void createHashTable(short int size);
     void resizeHashTable(short int newSize);
 };
