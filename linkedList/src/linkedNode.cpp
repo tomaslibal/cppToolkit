@@ -52,7 +52,7 @@ template <typename T> void removeNodeByKey(linkedNode<T> *node, const char* key)
     linkedNode<T> *prev = NULL;
     
     while(node) {
-        if (strcmp(node->key, key) == 0) {
+        if (node->key && (strcmp(node->key, key) == 0)) {
             if (prev) {
                 prev->next = node->next;
                 freeNode<T>(node);
