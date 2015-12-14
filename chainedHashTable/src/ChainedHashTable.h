@@ -10,19 +10,19 @@
 
 #include "../../linkedList/src/LinkedList.h"
 
-class ChainedHashTable {
+template <class T> class ChainedHashTable {
 public:
     ChainedHashTable();
     ChainedHashTable(const ChainedHashTable& orig);
     virtual ~ChainedHashTable();
     
-    void insert(const char* key, int value);
-    int search(const char* key);
+    void insert(const char* key, T value);
+    T search(const char* key);
     void del(const char* key);
 private:
     short int tableSize = 100;
     int hash(const char* key);
-    LinkedList<int> **hashTable;
+    LinkedList<T> **hashTable;
     void createHashTable(short int size);
     void resizeHashTable(short int newSize);
 };

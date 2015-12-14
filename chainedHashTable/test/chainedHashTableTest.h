@@ -28,7 +28,7 @@ public:
     void tearDown();
 
 private:
-    ChainedHashTable* ht;
+    ChainedHashTable<int>* ht;
     void testInsert();
     void testSearch();
     void testDelete();

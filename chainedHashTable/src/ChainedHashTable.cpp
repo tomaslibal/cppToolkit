@@ -13,17 +13,17 @@
 
 using namespace std;
 
-ChainedHashTable::ChainedHashTable() {
-    this->hashTable = (LinkedList<int>**) malloc(sizeof(LinkedList<int>*) * this->tableSize);
+template <class T> ChainedHashTable<T>::ChainedHashTable() {
+    this->hashTable = (LinkedList<T>**) malloc(sizeof(LinkedList<T>*) * this->tableSize);
     for(short int i = 0; i < this->tableSize; i++) {
         this->hashTable[i] = NULL;
     }
 }
 
-ChainedHashTable::ChainedHashTable(const ChainedHashTable& orig) {
+template <class T> ChainedHashTable<T>::ChainedHashTable(const ChainedHashTable& orig) {
 }
 
-ChainedHashTable::~ChainedHashTable() {
+template <class T> ChainedHashTable<T>::~ChainedHashTable() {
     for(short int i = 0; i < this->tableSize; i++) {
         if (this->hashTable[i] != NULL) {
             delete this->hashTable[i]; // ->~LinkedList();
@@ -32,7 +32,7 @@ ChainedHashTable::~ChainedHashTable() {
     free(this->hashTable);
 }
 
-int ChainedHashTable::hash(const char* key) {
+template <class T> int ChainedHashTable<T>::hash(const char* key) {
     // Use 4 char folding
     int intLen = strlen(key) / 4;
     long sum = 0;
@@ -50,15 +50,15 @@ int ChainedHashTable::hash(const char* key) {
     return(abs(sum) % this->tableSize);
 }
 
-void ChainedHashTable::insert(const char* key, int value) {
+template <class T> void ChainedHashTable<T>::insert(const char* key, T value) {
     // get the hash index
     int idx = this->hash(key);
     // obtain the linked list from the index
-    LinkedList<int>* list = this->hashTable[idx];
+    LinkedList<T>* list = this->hashTable[idx];
     
     // if this index has uninitialized list, initialize it
     if (list == NULL) {
-        this->hashTable[idx] = new LinkedList<int>();
+        this->hashTable[idx] = new LinkedList<T>();
         list = this->hashTable[idx];
     } else {
         throw bad_alloc();
@@ -67,23 +67,28 @@ void ChainedHashTable::insert(const char* key, int value) {
     list->addNode(key, value);
 }
 
-int ChainedHashTable::search(const char* key) {
+template <class T> T ChainedHashTable<T>::search(const char* key) {
     // get the hash index
     int idx = this->hash(key);
     // obtain the linked list from the index
-    LinkedList<int>* list = this->hashTable[idx];
+    LinkedList<T>* list = this->hashTable[idx];
     if (list == NULL) {
         return NULL;
     }
     // search and return by the key
-    return list->getNode(key)->value;
+    linkedNode<T>* found = list->getNode(key);
+    if (found) {
+        return found->value;
+    } else {
+        return NULL;
+    }
 }
 
-void ChainedHashTable::del(const char* key) {
+template <class T> void ChainedHashTable<T>::del(const char* key) {
     // get the hash index
     int idx = this->hash(key);
     // obtain the linked list from the index
-    LinkedList<int>* list = this->hashTable[idx];
+    LinkedList<T>* list = this->hashTable[idx];
     if (list == NULL) {
         return;
     }
@@ -91,3 +96,4 @@ void ChainedHashTable::del(const char* key) {
     list->removeNode(key);
 }
 
+template class ChainedHashTable<int>;

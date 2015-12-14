@@ -17,7 +17,7 @@ chainedHashTableTest::~chainedHashTableTest() {
 }
 
 void chainedHashTableTest::setUp() {
-    this->ht = new ChainedHashTable();
+    this->ht = new ChainedHashTable<int>();
 }
 
 void chainedHashTableTest::tearDown() {
