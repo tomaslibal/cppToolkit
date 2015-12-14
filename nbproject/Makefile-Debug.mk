@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/binsearch/src/binsearch.o \
 	${OBJECTDIR}/chainedHashTable/src/ChainedHashTable.o \
+	${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList.o \
 	${OBJECTDIR}/linkedList/src/LinkedList.o \
 	${OBJECTDIR}/linkedList/src/linkedNode.o \
 	${OBJECTDIR}/main.o
@@ -83,6 +84,11 @@ ${OBJECTDIR}/chainedHashTable/src/ChainedHashTable.o: chainedHashTable/src/Chain
 	${MKDIR} -p ${OBJECTDIR}/chainedHashTable/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/chainedHashTable/src/ChainedHashTable.o chainedHashTable/src/ChainedHashTable.cpp
+
+${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList.o: doublyLinkedList/src/DoublyLinkedList.cpp 
+	${MKDIR} -p ${OBJECTDIR}/doublyLinkedList/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList.o doublyLinkedList/src/DoublyLinkedList.cpp
 
 ${OBJECTDIR}/linkedList/src/LinkedList.o: linkedList/src/LinkedList.cpp 
 	${MKDIR} -p ${OBJECTDIR}/linkedList/src
@@ -177,6 +183,19 @@ ${OBJECTDIR}/chainedHashTable/src/ChainedHashTable_nomain.o: ${OBJECTDIR}/chaine
 	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/chainedHashTable/src/ChainedHashTable_nomain.o chainedHashTable/src/ChainedHashTable.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/chainedHashTable/src/ChainedHashTable.o ${OBJECTDIR}/chainedHashTable/src/ChainedHashTable_nomain.o;\
+	fi
+
+${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList_nomain.o: ${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList.o doublyLinkedList/src/DoublyLinkedList.cpp 
+	${MKDIR} -p ${OBJECTDIR}/doublyLinkedList/src
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList_nomain.o doublyLinkedList/src/DoublyLinkedList.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList.o ${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList_nomain.o;\
 	fi
 
 ${OBJECTDIR}/linkedList/src/LinkedList_nomain.o: ${OBJECTDIR}/linkedList/src/LinkedList.o linkedList/src/LinkedList.cpp 
