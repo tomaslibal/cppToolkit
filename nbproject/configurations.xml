@@ -8,6 +8,7 @@
       <itemPath>doublyLinkedList/src/DoublyLinkedList.h</itemPath>
       <itemPath>linkedList/src/LinkedList.h</itemPath>
       <itemPath>binsearch/src/binsearch.h</itemPath>
+      <itemPath>bitflags/src/bitflags.h</itemPath>
       <itemPath>linkedList/src/linkedNode.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -86,6 +87,8 @@
             ex="false"
             tool="1"
             flavor2="0">
+      </item>
+      <item path="bitflags/src/bitflags.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="chainedHashTable/src/ChainedHashTable.cpp"
             ex="false"
@@ -218,6 +221,8 @@
             ex="false"
             tool="1"
             flavor2="0">
+      </item>
+      <item path="bitflags/src/bitflags.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="chainedHashTable/src/ChainedHashTable.cpp"
             ex="false"
