@@ -38,6 +38,14 @@
         <itemPath>binsearch/test/binsearchTest.h</itemPath>
         <itemPath>binsearch/test/binsearchTestRunner.cpp</itemPath>
       </logicalFolder>
+      <logicalFolder name="f4"
+                     displayName="Bitflags test"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>bitflags/test/BitflagsTest.cpp</itemPath>
+        <itemPath>bitflags/test/BitflagsTest.h</itemPath>
+        <itemPath>bitflags/test/bitflagsTestRunner.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="f3"
                      displayName="Chained Hash Table Test"
                      projectFiles="true"
@@ -89,6 +97,15 @@
             flavor2="0">
       </item>
       <item path="bitflags/src/bitflags.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="bitflags/test/BitflagsTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="bitflags/test/BitflagsTest.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="bitflags/test/bitflagsTestRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="chainedHashTable/src/ChainedHashTable.cpp"
             ex="false"
@@ -162,6 +179,20 @@
         </ccTool>
         <linkerTool>
           <output>${TESTDIR}/TestFiles/f3</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f4">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f4</output>
           <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
           </linkerLibItems>
@@ -224,6 +255,15 @@
       </item>
       <item path="bitflags/src/bitflags.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="bitflags/test/BitflagsTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="bitflags/test/BitflagsTest.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="bitflags/test/bitflagsTestRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <item path="chainedHashTable/src/ChainedHashTable.cpp"
             ex="false"
             tool="1"
@@ -296,6 +336,20 @@
         </ccTool>
         <linkerTool>
           <output>${TESTDIR}/TestFiles/f3</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f4">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f4</output>
           <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
           </linkerLibItems>

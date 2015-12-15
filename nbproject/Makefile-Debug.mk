@@ -48,6 +48,7 @@ TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
 # Test Files
 TESTFILES= \
 	${TESTDIR}/TestFiles/f2 \
+	${TESTDIR}/TestFiles/f4 \
 	${TESTDIR}/TestFiles/f3 \
 	${TESTDIR}/TestFiles/f1
 
@@ -114,6 +115,10 @@ ${TESTDIR}/TestFiles/f2: ${TESTDIR}/binsearch/test/binsearchTest.o ${TESTDIR}/bi
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f2 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
 
+${TESTDIR}/TestFiles/f4: ${TESTDIR}/bitflags/test/BitflagsTest.o ${TESTDIR}/bitflags/test/bitflagsTestRunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f4 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+
 ${TESTDIR}/TestFiles/f3: ${TESTDIR}/chainedHashTable/test/chainedHashTableTest.o ${TESTDIR}/chainedHashTable/test/chainedHashTableTestRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f3 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
@@ -133,6 +138,18 @@ ${TESTDIR}/binsearch/test/binsearchTestRunner.o: binsearch/test/binsearchTestRun
 	${MKDIR} -p ${TESTDIR}/binsearch/test
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/binsearch/test/binsearchTestRunner.o binsearch/test/binsearchTestRunner.cpp
+
+
+${TESTDIR}/bitflags/test/BitflagsTest.o: bitflags/test/BitflagsTest.cpp 
+	${MKDIR} -p ${TESTDIR}/bitflags/test
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/bitflags/test/BitflagsTest.o bitflags/test/BitflagsTest.cpp
+
+
+${TESTDIR}/bitflags/test/bitflagsTestRunner.o: bitflags/test/bitflagsTestRunner.cpp 
+	${MKDIR} -p ${TESTDIR}/bitflags/test
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/bitflags/test/bitflagsTestRunner.o bitflags/test/bitflagsTestRunner.cpp
 
 
 ${TESTDIR}/chainedHashTable/test/chainedHashTableTest.o: chainedHashTable/test/chainedHashTableTest.cpp 
@@ -242,6 +259,7 @@ ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp
 	@if [ "${TEST}" = "" ]; \
 	then  \
 	    ${TESTDIR}/TestFiles/f2 || true; \
+	    ${TESTDIR}/TestFiles/f4 || true; \
 	    ${TESTDIR}/TestFiles/f3 || true; \
 	    ${TESTDIR}/TestFiles/f1 || true; \
 	else  \
