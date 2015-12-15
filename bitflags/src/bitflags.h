@@ -21,12 +21,12 @@ const short FLAG_2 = 1 << 1;
 const short FLAG_3 = 1 << 2;
 const short FLAG_4 = 1 << 3;
 
-inline void set_flag(short settings, const short flag) {
-    settings |= flag;
+inline void set_flag(short *settings, const short flag) {
+    *settings |= flag;
 }
 
-inline void unset_flag(short settings, const short flag) {
-    settings &= ~flag;
+inline void unset_flag(short *settings, const short flag) {
+    *settings &= ~flag;
 }
 
 inline int is_flag_set(short settings, const short flag) {
