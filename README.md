@@ -3,6 +3,7 @@
 - *Hash Table (chained)* Collisions are stored at the same index as a linked list of values
 - *Linked List (simple)* 
 - *Binary search algorithm*
+- *Bit flags operations* set and unset flag bitwise operations, as a header file only implementation
 
 ## Working with the project
 
