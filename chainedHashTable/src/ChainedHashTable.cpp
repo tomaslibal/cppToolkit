@@ -20,9 +20,6 @@ template <class T> ChainedHashTable<T>::ChainedHashTable() {
     }
 }
 
-template <class T> ChainedHashTable<T>::ChainedHashTable(const ChainedHashTable& orig) {
-}
-
 template <class T> ChainedHashTable<T>::~ChainedHashTable() {
     for(short int i = 0; i < this->tableSize; i++) {
         if (this->hashTable[i] != NULL) {

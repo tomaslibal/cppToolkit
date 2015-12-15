@@ -13,7 +13,6 @@
 template <class T> class ChainedHashTable {
 public:
     ChainedHashTable();
-    ChainedHashTable(const ChainedHashTable& orig);
     virtual ~ChainedHashTable();
     
     void insert(const char* key, T value);
