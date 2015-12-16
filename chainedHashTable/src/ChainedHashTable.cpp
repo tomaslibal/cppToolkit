@@ -37,10 +37,18 @@ template <class T> int ChainedHashTable<T>::hash(const char* key) {
     for(int r = 0; r <= intLen; r++) {
         char c[4] = { key[r * 4], key[(r * 4)+1], key[(r * 4)+2], key[(r * 4)+3] };
         long mult = 1;
-        for (int s = 0; s < strlen(c); s++) {
+        for (int s = 0; s < 4; s++) {
             sum += c[s] * mult;
             mult *= 256;
         }
+    }
+    
+    // if strlen(key) % 4 > 0:
+    int diff = (intLen * 4) - strlen(key);
+    long mult = 1;
+    for(int x = 0; x < diff; x++) {
+        sum += key[(intLen * 4) + x] * mult;
+        mult *= 256;
     }
     
     // Normalize the hash value to the size of the hash table
