@@ -126,4 +126,17 @@ template <class T> linkedNode<T>* LinkedList<T>::getNode(const char* key, T valu
     return getNodeByKeyValue(this->first, key, value);
 }
 
+template <class T> T LinkedList<T>::sum() {
+    T sum = (T) 0;
+    
+    linkedNode<T>* node = this->first;
+    
+    while(node) {
+        sum += node->value;
+        node = node->next;
+    }
+    
+    return sum;
+}
+
 template class LinkedList<int>;

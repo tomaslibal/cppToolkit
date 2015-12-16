@@ -140,3 +140,13 @@ void linkedListTest::testGetNodeByKeyValue() {
     
     CPPUNIT_ASSERT(result == NULL);
 }
+
+void linkedListTest::testSum() {
+    list->addNode("Foo", 1);
+    list->addNode("Bar", 2);
+    list->addNode("Baz", 3);
+    
+    int result = list->sum();
+    
+    CPPUNIT_ASSERT(result == 6);
+}

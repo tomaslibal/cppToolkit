@@ -30,6 +30,7 @@ public:
     linkedNode<T>* getNode(const char* key, T value);
     void print();
     void setKey(linkedNode<T> *node, const char* key);
+    T sum();
 private:
     void updatePointerToLastNode();
 
