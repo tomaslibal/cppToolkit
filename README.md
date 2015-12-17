@@ -1,6 +1,6 @@
 # In the toolkit
 
-- *Hash Table (chained)* Collisions are stored at the same index as a linked list of values
+- *Hash Table (chained)* Contains a string hashing function. Collisions are stored at the same index as a linked list of values. Uses the Linked List from the next example.
 - *Linked List (simple)* 
 - *Binary search algorithm*
 - *Bit flags operations* set and unset flag bitwise operations, as a header file only implementation
