@@ -45,11 +45,10 @@ template <class T> void LinkedList<T>::setKey(linkedNode<T> *node, const char* k
         if (!node->key) {
             throw bad_alloc();
         }
+        strcpy(node->key, key);
     } else {
-        node->key = (char*) malloc(sizeof(key)+1);
+        node->key = strdup(key);
     }
-    
-    strcpy(node->key, key);
 }
 
 template <class T> void LinkedList<T>::addNode(T value) {

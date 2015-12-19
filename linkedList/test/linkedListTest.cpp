@@ -157,3 +157,11 @@ void linkedListTest::testInsertAtHead() {
     
     CPPUNIT_ASSERT(list->first->value == 24);
 }
+
+void linkedListTest::testSetKey() {
+    list->addNodeAtHead("binky", 1);
+    
+    list->setKey(list->first, "minky_foo");
+    
+    CPPUNIT_ASSERT(strcmp(list->first->key, "minky_foo") == 0);
+}
