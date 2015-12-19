@@ -135,15 +135,39 @@ template <class T> void LinkedList<T>::print() {
 }
 
 template <class T> linkedNode<T>* LinkedList<T>::getNode(T value) {
-    return getNodeByValue(this->first, value);
+    linkedNode<T> *node = this->first;
+    
+    while(node) {
+        if (node->value == value) {
+            return node;
+        }
+        node = node->next;
+    }
+    
+    return NULL;
 }
 
 template <class T> linkedNode<T>* LinkedList<T>::getNode(const char* key) {
-    return getNodeByKey(this->first, key);
+    linkedNode<T> *node = this->first;
+    
+    while(node) {
+        if (node->key != NULL && strcmp(node->key, key) == 0) {
+            return node;
+        }
+        node = node->next;
+    }
+    
+    return NULL;
 }
 
 template <class T> linkedNode<T>* LinkedList<T>::getNode(const char* key, T value) {
-    return getNodeByKeyValue(this->first, key, value);
+    linkedNode<T> *node = this->getNode(key);
+    
+    if (node->value == value) {
+        return node;
+    } else {
+        return NULL;
+    }
 }
 
 template <class T> T LinkedList<T>::sum() {
