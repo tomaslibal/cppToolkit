@@ -23,7 +23,14 @@ template <class T> LinkedList<T>::LinkedList() {
 }
 
 template <class T> LinkedList<T>::~LinkedList() {
-    freeList<T>(this->first);
+    linkedNode<T> *node = this->first;
+    linkedNode<T> *next;
+    
+    while(node) {
+        next = node->next;
+        this->freeNode(node);
+        node = next;
+    }
 }
 
 template <class T> linkedNode<T>* LinkedList<T>::createNewNode(const char* key, T value) {
@@ -181,6 +188,13 @@ template <class T> T LinkedList<T>::sum() {
     }
     
     return sum;
+}
+
+template <class T> void LinkedList<T>::freeNode(linkedNode<T>* node) {
+    if (node->key != NULL) {
+        free(node->key);
+    }
+    free(node);
 }
 
 template class LinkedList<int>;

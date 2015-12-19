@@ -32,6 +32,7 @@ public:
     void print();
     void setKey(linkedNode<T> *node, const char* key);
     T sum();
+    void freeNode(linkedNode<T>* node);
 private:
     void updatePointerToLastNode();
     linkedNode<T>* createNewNode(const char* key, T value);
