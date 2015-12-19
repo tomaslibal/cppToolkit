@@ -34,6 +34,7 @@ public:
     T sum();
 private:
     void updatePointerToLastNode();
+    linkedNode<T>* getNewNode(const char* key, T value);
 
 };
 

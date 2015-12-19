@@ -26,6 +26,19 @@ template <class T> LinkedList<T>::~LinkedList() {
     freeList<T>(this->first);
 }
 
+template <class T> linkedNode<T>* LinkedList<T>::getNewNode(const char* key, T value) {
+    linkedNode<T>* node = (linkedNode<T>*) malloc(sizeof(linkedNode<T>));
+    
+    if (!node) {
+        throw bad_alloc();
+    }
+    
+    node->key = strdup(key);
+    node->value = value;
+    
+    return node;
+}
+
 template <class T> void LinkedList<T>::setKey(linkedNode<T> *node, const char* key) {
     if (node->key != NULL) {
         node->key = (char*) realloc(node->key, sizeof(key)+1);
@@ -62,11 +75,8 @@ template <class T> void LinkedList<T>::addNode(const char* key, T value) {
 template <class T> void LinkedList<T>::addNodeAtHead(const char* key, T value) {
     linkedNode<T>* first = this->first;
     
-    linkedNode<T>* node = (linkedNode<T>*) malloc(sizeof(linkedNode<T>));
-    node->key = strdup(key);
-    node->value = value;
+    linkedNode<T>* node = this->getNewNode(key, value);
     node->next = first; 
-   
     this->first = node;
 }
 
