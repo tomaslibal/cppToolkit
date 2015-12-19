@@ -26,7 +26,7 @@ template <class T> LinkedList<T>::~LinkedList() {
     freeList<T>(this->first);
 }
 
-template <class T> linkedNode<T>* LinkedList<T>::getNewNode(const char* key, T value) {
+template <class T> linkedNode<T>* LinkedList<T>::createNewNode(const char* key, T value) {
     linkedNode<T>* node = (linkedNode<T>*) malloc(sizeof(linkedNode<T>));
     
     if (!node) {
@@ -74,7 +74,7 @@ template <class T> void LinkedList<T>::addNode(const char* key, T value) {
 template <class T> void LinkedList<T>::addNodeAtHead(const char* key, T value) {
     linkedNode<T>* first = this->first;
     
-    linkedNode<T>* node = this->getNewNode(key, value);
+    linkedNode<T>* node = this->createNewNode(key, value);
     node->next = first; 
     this->first = node;
 }
