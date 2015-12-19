@@ -27,6 +27,7 @@ class linkedListTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST(testGetNodeByKey);
     CPPUNIT_TEST(testGetNodeByKeyValue);
     CPPUNIT_TEST(testSum);
+    CPPUNIT_TEST(testInsertAtHead);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -51,6 +52,7 @@ private:
     void testGetNodeByKey();
     void testGetNodeByKeyValue();
     void testSum();
+    void testInsertAtHead();
 };
 
 #endif	/* LINKEDLISTTEST_H */

@@ -150,3 +150,10 @@ void linkedListTest::testSum() {
     
     CPPUNIT_ASSERT(result == 6);
 }
+
+void linkedListTest::testInsertAtHead() {
+    list->addNode("foo", 42);
+    list->addNodeAtHead("bar", 24);
+    
+    CPPUNIT_ASSERT(list->first->value == 24);
+}

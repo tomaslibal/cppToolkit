@@ -59,6 +59,17 @@ template <class T> void LinkedList<T>::addNode(const char* key, T value) {
     this->last = addNodeWithKeyValue<T>(last, key, value);
 }
 
+template <class T> void LinkedList<T>::addNodeAtHead(const char* key, T value) {
+    linkedNode<T>* first = this->first;
+    
+    linkedNode<T>* node = (linkedNode<T>*) malloc(sizeof(linkedNode<T>));
+    node->key = strdup(key);
+    node->value = value;
+    node->next = first; 
+   
+    this->first = node;
+}
+
 template <class T> int LinkedList<T>::getLength() {
     int c = 0;
     

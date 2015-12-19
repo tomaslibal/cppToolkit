@@ -21,6 +21,7 @@ public:
     
     void addNode(T value);
     void addNode(const char* key, T value);
+    void addNodeAtHead(const char* key, T value);
     void removeNode(T value);
     void removeNode(const char* key);
     int getLength();
