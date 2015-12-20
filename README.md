@@ -1,16 +1,18 @@
 # In the toolkit
 
 - *Hash Table (chained)* Contains a string hashing function. Collisions are stored at the same index as a linked list of values. Uses the Linked List from the next example.
-- *Linked List (simple):* Each node points to the next link in the chain.
+- *Double Linked List:* Each node points to the next and previous link in the chain.
     
 ```
-    |----------------------|          |----------------------|
-    | const char* key      |          | const char* key      |
-    | <T> value            |          | <T> value            |
-    | node<T>* next   --------------> | node<T>* next ----------------> /
-    |----------------------|          |----------------------|
+             |----------------------|          |----------------------|
+             | std::string key      |          | std::string key      |
+             | <T> value            |          | <T> value            |
+  / <--------- node<T>* prev        |-<--------- node<T>* prev        |
+             | node<T>* next   --------------> | node<T>* next ----------------> /
+             |----------------------|          |----------------------|
 ```
 
+- *Simple Linked List*
 - *Binary search algorithm*
 - *Bit flags operations* set and unset flag bitwise operations, as a header file only implementation
 
