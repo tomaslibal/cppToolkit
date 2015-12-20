@@ -43,7 +43,7 @@ template <class T> int ChainedHashTable<T>::hash(const char* key) {
         }
     }
     
-    // if strlen(key) % 4 > 0:
+    // remainding chars: if strlen(key) % 4 > 0:
     int diff = (intLen * 4) - strlen(key);
     long mult = 1;
     for(int x = 0; x < diff; x++) {
