@@ -16,8 +16,8 @@ struct DoubleLinkNode {
 
 class DoublyLinkedList {
 public:
-    DoubleLinkNode* first;
-    DoubleLinkNode* last;
+    DoubleLinkNode* head;
+    DoubleLinkNode* tail;
     DoublyLinkedList();
     virtual ~DoublyLinkedList();
 private:
