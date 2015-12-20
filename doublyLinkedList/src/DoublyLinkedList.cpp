@@ -11,7 +11,6 @@ using namespace std;
 
 DoublyLinkedList::DoublyLinkedList() {
     this->head = NULL;
-    this->tail = NULL;
 }
 
 DoublyLinkedList::~DoublyLinkedList() {
@@ -65,8 +64,6 @@ void DoublyLinkedList::insert(DoubleLinkNode* node) {
     node->prev = NULL;
     if (this->head) {
         this->head->prev = node;
-    } else {
-        this->tail = node;
     }
     this->head = node;
 }

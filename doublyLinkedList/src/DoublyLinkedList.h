@@ -21,7 +21,6 @@ struct DoubleLinkNode {
 class DoublyLinkedList {
 public:
     DoubleLinkNode* head;
-    DoubleLinkNode* tail;
     DoublyLinkedList();
     virtual ~DoublyLinkedList();
     

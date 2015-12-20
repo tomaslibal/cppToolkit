@@ -33,17 +33,14 @@ void doublyLinkedListTest::testCreateNode() {
 
 void doublyLinkedListTest::testInsert() {
     CPPUNIT_ASSERT(this->list->head == NULL);
-    CPPUNIT_ASSERT(this->list->tail == NULL);
     
     this->list->insert("Bar", 24);
     
     CPPUNIT_ASSERT(this->list->head->key == "Bar");
-    CPPUNIT_ASSERT(this->list->tail->key == "Bar");
     
     this->list->insert("Binky", 1);
     
     CPPUNIT_ASSERT(this->list->head->key == "Binky");
-    CPPUNIT_ASSERT(this->list->tail->key == "Bar");
 }
 
 void doublyLinkedListTest::testSearch() {
