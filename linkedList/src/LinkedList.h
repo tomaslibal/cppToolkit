@@ -13,8 +13,8 @@
 template <class T>
 class LinkedList {
 public:
-    linkedNode<T> *first;
-    linkedNode<T> *last;
+    linkedNode<T> *head;
+    linkedNode<T> *tail;
     
     LinkedList();
     virtual ~LinkedList();
@@ -34,7 +34,7 @@ public:
     T sum();
     void freeNode(linkedNode<T>* node);
 private:
-    void updatePointerToLastNode();
+    void updatePointerToTailNode();
     linkedNode<T>* createNewNode(const char* key, T value);
 
 };

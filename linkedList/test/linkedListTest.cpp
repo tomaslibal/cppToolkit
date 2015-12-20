@@ -27,19 +27,19 @@ void linkedListTest::tearDown() {
 }
 
 void linkedListTest::testItInitializesWithFirstNodeAllocated() {
-    CPPUNIT_ASSERT(NULL != list->first);
-    CPPUNIT_ASSERT(NULL == list->first->key);
+    CPPUNIT_ASSERT(NULL != list->head);
+    CPPUNIT_ASSERT(NULL == list->head->key);
 }
 
 void linkedListTest::testItInitializesWithLastNodeNull() {
-    CPPUNIT_ASSERT(NULL == list->last);
+    CPPUNIT_ASSERT(NULL == list->tail);
 }
 
 void linkedListTest::testAddNodeAddsNewNode() {
-    CPPUNIT_ASSERT(NULL == list->last);
+    CPPUNIT_ASSERT(NULL == list->tail);
     list->addNode(42);
-    CPPUNIT_ASSERT(NULL != list->last);
-    CPPUNIT_ASSERT(list->first->next == list->last);
+    CPPUNIT_ASSERT(NULL != list->tail);
+    CPPUNIT_ASSERT(list->head->next == list->tail);
 }
 
 void linkedListTest::testAddNodeWithKeyValue() {
@@ -64,15 +64,15 @@ void linkedListTest::testRemoveNodeRemovesNodes() {
     list->addNode(43);
     list->addNode(44);
     
-    linkedNode<int> *originalLast = list->last;
+    linkedNode<int> *originalLast = list->tail;
     
     CPPUNIT_ASSERT(4 == list->getLength());
     
     list->removeNode(44);
     
     CPPUNIT_ASSERT(3 == list->getLength());
-    CPPUNIT_ASSERT(originalLast != list->last);
-    CPPUNIT_ASSERT(list->last == list->first->next->next);
+    CPPUNIT_ASSERT(originalLast != list->tail);
+    CPPUNIT_ASSERT(list->tail == list->head->next->next);
 }
 
 void linkedListTest::testGetAtIndexReturnsNodeAtGivenIndex() {
@@ -155,13 +155,13 @@ void linkedListTest::testInsertAtHead() {
     list->addNode("foo", 42);
     list->addNodeAtHead("bar", 24);
     
-    CPPUNIT_ASSERT(list->first->value == 24);
+    CPPUNIT_ASSERT(list->head->value == 24);
 }
 
 void linkedListTest::testSetKey() {
     list->addNodeAtHead("binky", 1);
     
-    list->setKey(list->first, "minky_foo");
+    list->setKey(list->head, "minky_foo");
     
-    CPPUNIT_ASSERT(strcmp(list->first->key, "minky_foo") == 0);
+    CPPUNIT_ASSERT(strcmp(list->head->key, "minky_foo") == 0);
 }

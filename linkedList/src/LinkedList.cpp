@@ -14,16 +14,16 @@
 using namespace std;
 
 template <class T> LinkedList<T>::LinkedList() {
-    this->first = (linkedNode<T>*) malloc(sizeof(linkedNode<T>));
-    this->first->key = NULL;
-    this->first->value = (T) 0;
-    this->first->next = NULL;
+    this->head = (linkedNode<T>*) malloc(sizeof(linkedNode<T>));
+    this->head->key = NULL;
+    this->head->value = (T) 0;
+    this->head->next = NULL;
     
-    this->last = NULL;
+    this->tail = NULL;
 }
 
 template <class T> LinkedList<T>::~LinkedList() {
-    linkedNode<T> *node = this->first;
+    linkedNode<T> *node = this->head;
     linkedNode<T> *next;
     
     while(node) {
@@ -59,37 +59,37 @@ template <class T> void LinkedList<T>::setKey(linkedNode<T> *node, const char* k
 }
 
 template <class T> void LinkedList<T>::addNode(T value) {
-    linkedNode<T> *last = this->last;
+    linkedNode<T> *last = this->tail;
     
     if (last == NULL) {
-        last = this->first;
+        last = this->head;
     }
     
-    this->last = addNodeWithValue<T>(last, value);
+    this->tail = addNodeWithValue<T>(last, value);
 }
 
 template <class T> void LinkedList<T>::addNode(const char* key, T value) {
-    linkedNode<T> *last = this->last;
+    linkedNode<T> *last = this->tail;
     
     if (last == NULL) {
-        last = this->first;
+        last = this->head;
     }
     
-    this->last = addNodeWithKeyValue<T>(last, key, value);
+    this->tail = addNodeWithKeyValue<T>(last, key, value);
 }
 
 template <class T> void LinkedList<T>::addNodeAtHead(const char* key, T value) {
-    linkedNode<T>* first = this->first;
+    linkedNode<T>* first = this->head;
     
     linkedNode<T>* node = this->createNewNode(key, value);
     node->next = first; 
-    this->first = node;
+    this->head = node;
 }
 
 template <class T> int LinkedList<T>::getLength() {
     int c = 0;
     
-    linkedNode<T> *node = this->first;
+    linkedNode<T> *node = this->head;
     
     while(node) {
         c++;
@@ -100,7 +100,7 @@ template <class T> int LinkedList<T>::getLength() {
 }
 
 template <class T> linkedNode<T>* LinkedList<T>::getAtIndex(int idx) {
-    linkedNode<T> *node = this->first;
+    linkedNode<T> *node = this->head;
     
     int c = 0;
     
@@ -118,31 +118,31 @@ template <class T> linkedNode<T>* LinkedList<T>::getAtIndex(int idx) {
 }
 
 template <class T> void LinkedList<T>::removeNode(T value) {
-    removeNodeByValue<T>(this->first, value);
-    this->updatePointerToLastNode();
+    removeNodeByValue<T>(this->head, value);
+    this->updatePointerToTailNode();
 }
 
 template <class T> void LinkedList<T>::removeNode(const char* key) {
-    removeNodeByKey<T>(this->first, key);
-    this->updatePointerToLastNode();
+    removeNodeByKey<T>(this->head, key);
+    this->updatePointerToTailNode();
 }
 
-template <class T> void LinkedList<T>::updatePointerToLastNode() {
-    linkedNode<T> *node = this->first;
+template <class T> void LinkedList<T>::updatePointerToTailNode() {
+    linkedNode<T> *node = this->head;
     
     while(node->next) {
         node = node->next;
     }
     
-    this->last = node;
+    this->tail = node;
 }
 
 template <class T> void LinkedList<T>::print() {
-    printList<T>(this->first);
+    printList<T>(this->head);
 }
 
 template <class T> linkedNode<T>* LinkedList<T>::getNode(T value) {
-    linkedNode<T> *node = this->first;
+    linkedNode<T> *node = this->head;
     
     while(node) {
         if (node->value == value) {
@@ -155,7 +155,7 @@ template <class T> linkedNode<T>* LinkedList<T>::getNode(T value) {
 }
 
 template <class T> linkedNode<T>* LinkedList<T>::getNode(const char* key) {
-    linkedNode<T> *node = this->first;
+    linkedNode<T> *node = this->head;
     
     while(node) {
         if (node->key != NULL && strcmp(node->key, key) == 0) {
@@ -180,7 +180,7 @@ template <class T> linkedNode<T>* LinkedList<T>::getNode(const char* key, T valu
 template <class T> T LinkedList<T>::sum() {
     T sum = (T) 0;
     
-    linkedNode<T>* node = this->first;
+    linkedNode<T>* node = this->head;
     
     while(node) {
         sum += node->value;
