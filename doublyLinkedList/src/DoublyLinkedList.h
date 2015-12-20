@@ -11,24 +11,25 @@
 #include <cstdlib>
 #include <string>
 
-struct DoubleLinkNode {
+template <typename T> struct DoubleLinkNode {
     std::string key;
-    int value;
-    DoubleLinkNode* prev;
-    DoubleLinkNode* next;
+    T value;
+    DoubleLinkNode<T>* prev;
+    DoubleLinkNode<T>* next;
 };
 
+template <class T>
 class DoublyLinkedList {
 public:
-    DoubleLinkNode* head;
+    DoubleLinkNode<T>* head;
     DoublyLinkedList();
     virtual ~DoublyLinkedList();
     
-    DoubleLinkNode* createNode(std::string key, int value);
-    DoubleLinkNode* search(std::string key);
-    void insert(DoubleLinkNode* node);
-    void insert(std::string key, int value);
-    void remove(DoubleLinkNode* node);
+    DoubleLinkNode<T>* createNode(std::string key, T value);
+    DoubleLinkNode<T>* search(std::string key);
+    void insert(DoubleLinkNode<T>* node);
+    void insert(std::string key, T value);
+    void remove(DoubleLinkNode<T>* node);
     void remove(std::string key);
 private:
 

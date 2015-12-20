@@ -29,7 +29,7 @@ public:
     void tearDown();
 
 private:
-    DoublyLinkedList* list;
+    DoublyLinkedList<int>* list;
     void testCreateNode();
     void testInsert();
     void testSearch();

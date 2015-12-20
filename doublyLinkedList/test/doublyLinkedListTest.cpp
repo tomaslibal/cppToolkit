@@ -18,7 +18,7 @@ doublyLinkedListTest::~doublyLinkedListTest() {
 }
 
 void doublyLinkedListTest::setUp() {
-    this->list = new DoublyLinkedList();
+    this->list = new DoublyLinkedList<int>();
 }
 
 void doublyLinkedListTest::tearDown() {
@@ -26,7 +26,7 @@ void doublyLinkedListTest::tearDown() {
 }
 
 void doublyLinkedListTest::testCreateNode() {
-    DoubleLinkNode* node = this->list->createNode("Foo", 42);
+    DoubleLinkNode<int>* node = this->list->createNode("Foo", 42);
     
     CPPUNIT_ASSERT(node->key == "Foo");
 }
@@ -44,7 +44,7 @@ void doublyLinkedListTest::testInsert() {
 }
 
 void doublyLinkedListTest::testSearch() {
-    DoubleLinkNode* x = this->list->search("Bar");
+    DoubleLinkNode<int>* x = this->list->search("Bar");
             
     CPPUNIT_ASSERT(x == NULL);
     

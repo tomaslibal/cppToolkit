@@ -9,13 +9,13 @@
 
 using namespace std;
 
-DoublyLinkedList::DoublyLinkedList() {
+template <class T> DoublyLinkedList<T>::DoublyLinkedList() {
     this->head = NULL;
 }
 
-DoublyLinkedList::~DoublyLinkedList() {
-    DoubleLinkNode* x = this->head;
-    DoubleLinkNode* next = NULL;
+template <class T> DoublyLinkedList<T>::~DoublyLinkedList() {
+    DoubleLinkNode<T>* x = this->head;
+    DoubleLinkNode<T>* next = NULL;
     
     while(x) {
         next = x->next;
@@ -24,8 +24,8 @@ DoublyLinkedList::~DoublyLinkedList() {
     }
 }
 
-DoubleLinkNode* DoublyLinkedList::search(string key) {
-    DoubleLinkNode* x = this->head;
+template <class T> DoubleLinkNode<T>* DoublyLinkedList<T>::search(string key) {
+    DoubleLinkNode<T>* x = this->head;
     
     while(x && x->key != key) {
         x = x->next;
@@ -34,7 +34,7 @@ DoubleLinkNode* DoublyLinkedList::search(string key) {
     return x;
 }
 
-void DoublyLinkedList::remove(DoubleLinkNode* node) {
+template <class T> void DoublyLinkedList<T>::remove(DoubleLinkNode<T>* node) {
     if (node->prev) {
         node->prev->next = node->next;
     }
@@ -44,22 +44,22 @@ void DoublyLinkedList::remove(DoubleLinkNode* node) {
     delete node;
 }
 
-void DoublyLinkedList::remove(std::string key) {
-    DoubleLinkNode* x = this->search(key);
+template <class T> void DoublyLinkedList<T>::remove(std::string key) {
+    DoubleLinkNode<T>* x = this->search(key);
     if (x) {
         this->remove(x);
     }
 }
 
-DoubleLinkNode* DoublyLinkedList::createNode(string key, int value) {
-    DoubleLinkNode* node = new DoubleLinkNode;
+template <class T> DoubleLinkNode<T>* DoublyLinkedList<T>::createNode(string key, T value) {
+    DoubleLinkNode<T>* node = new DoubleLinkNode<T>;
     node->key = key;
     node->value = value;
     
     return node;
 }
 
-void DoublyLinkedList::insert(DoubleLinkNode* node) {
+template <class T> void DoublyLinkedList<T>::insert(DoubleLinkNode<T>* node) {
     node->next = this->head;
     node->prev = NULL;
     if (this->head) {
@@ -68,7 +68,9 @@ void DoublyLinkedList::insert(DoubleLinkNode* node) {
     this->head = node;
 }
 
-void DoublyLinkedList::insert(std::string key, int value) {
-    DoubleLinkNode* node = this->createNode(key, value);
+template <class T> void DoublyLinkedList<T>::insert(std::string key, T value) {
+    DoubleLinkNode<T>* node = this->createNode(key, value);
     this->insert(node);
 }
+
+template class DoublyLinkedList<int>;
