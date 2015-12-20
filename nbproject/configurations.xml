@@ -6,7 +6,7 @@
                    projectFiles="true">
       <itemPath>chainedHashTable/src/ChainedHashTable.h</itemPath>
       <itemPath>doublyLinkedList/src/DoublyLinkedList.h</itemPath>
-      <itemPath>linkedList/src/LinkedList.h</itemPath>
+      <itemPath>linkedList/src/SimpleLinkedList.h</itemPath>
       <itemPath>binsearch/src/binsearch.h</itemPath>
       <itemPath>bitflags/src/bitflags.h</itemPath>
       <itemPath>linkedList/src/linkedNode.h</itemPath>
@@ -20,7 +20,7 @@
                    projectFiles="true">
       <itemPath>chainedHashTable/src/ChainedHashTable.cpp</itemPath>
       <itemPath>doublyLinkedList/src/DoublyLinkedList.cpp</itemPath>
-      <itemPath>linkedList/src/LinkedList.cpp</itemPath>
+      <itemPath>linkedList/src/SimpleLinkedList.cpp</itemPath>
       <itemPath>binsearch/src/binsearch.cpp</itemPath>
       <itemPath>linkedList/src/linkedNode.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -63,7 +63,7 @@
         <itemPath>doublyLinkedList/test/doublyLinkedListTestRunner.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f1"
-                     displayName="Linked List Test"
+                     displayName="Simple Linked List Test"
                      projectFiles="true"
                      kind="TEST">
         <itemPath>linkedList/test/linkedListTest.cpp</itemPath>
@@ -235,9 +235,12 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
-      <item path="linkedList/src/LinkedList.cpp" ex="false" tool="1" flavor2="0">
+      <item path="linkedList/src/SimpleLinkedList.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="linkedList/src/LinkedList.h" ex="false" tool="3" flavor2="0">
+      <item path="linkedList/src/SimpleLinkedList.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="linkedList/src/linkedNode.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -421,9 +424,12 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
-      <item path="linkedList/src/LinkedList.cpp" ex="false" tool="1" flavor2="0">
+      <item path="linkedList/src/SimpleLinkedList.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="linkedList/src/LinkedList.h" ex="false" tool="3" flavor2="0">
+      <item path="linkedList/src/SimpleLinkedList.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="linkedList/src/linkedNode.cpp" ex="false" tool="1" flavor2="0">
       </item>

@@ -38,7 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/binsearch/src/binsearch.o \
 	${OBJECTDIR}/chainedHashTable/src/ChainedHashTable.o \
 	${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList.o \
-	${OBJECTDIR}/linkedList/src/LinkedList.o \
+	${OBJECTDIR}/linkedList/src/SimpleLinkedList.o \
 	${OBJECTDIR}/linkedList/src/linkedNode.o \
 	${OBJECTDIR}/main.o
 
@@ -92,10 +92,10 @@ ${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList.o: doublyLinkedList/src/Doubl
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList.o doublyLinkedList/src/DoublyLinkedList.cpp
 
-${OBJECTDIR}/linkedList/src/LinkedList.o: linkedList/src/LinkedList.cpp 
+${OBJECTDIR}/linkedList/src/SimpleLinkedList.o: linkedList/src/SimpleLinkedList.cpp 
 	${MKDIR} -p ${OBJECTDIR}/linkedList/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/linkedList/src/LinkedList.o linkedList/src/LinkedList.cpp
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/linkedList/src/SimpleLinkedList.o linkedList/src/SimpleLinkedList.cpp
 
 ${OBJECTDIR}/linkedList/src/linkedNode.o: linkedList/src/linkedNode.cpp 
 	${MKDIR} -p ${OBJECTDIR}/linkedList/src
@@ -232,17 +232,17 @@ ${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList_nomain.o: ${OBJECTDIR}/doubly
 	    ${CP} ${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList.o ${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList_nomain.o;\
 	fi
 
-${OBJECTDIR}/linkedList/src/LinkedList_nomain.o: ${OBJECTDIR}/linkedList/src/LinkedList.o linkedList/src/LinkedList.cpp 
+${OBJECTDIR}/linkedList/src/SimpleLinkedList_nomain.o: ${OBJECTDIR}/linkedList/src/SimpleLinkedList.o linkedList/src/SimpleLinkedList.cpp 
 	${MKDIR} -p ${OBJECTDIR}/linkedList/src
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/linkedList/src/LinkedList.o`; \
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/linkedList/src/SimpleLinkedList.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/linkedList/src/LinkedList_nomain.o linkedList/src/LinkedList.cpp;\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/linkedList/src/SimpleLinkedList_nomain.o linkedList/src/SimpleLinkedList.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/linkedList/src/LinkedList.o ${OBJECTDIR}/linkedList/src/LinkedList_nomain.o;\
+	    ${CP} ${OBJECTDIR}/linkedList/src/SimpleLinkedList.o ${OBJECTDIR}/linkedList/src/SimpleLinkedList_nomain.o;\
 	fi
 
 ${OBJECTDIR}/linkedList/src/linkedNode_nomain.o: ${OBJECTDIR}/linkedList/src/linkedNode.o linkedList/src/linkedNode.cpp 

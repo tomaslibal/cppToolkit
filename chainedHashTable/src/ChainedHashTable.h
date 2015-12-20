@@ -8,7 +8,7 @@
 #ifndef CHAINEDHASHTABLE_H
 #define	CHAINEDHASHTABLE_H
 
-#include "../../linkedList/src/LinkedList.h"
+#include "../../linkedList/src/SimpleLinkedList.h"
 
 template <class T> class ChainedHashTable {
 public:

@@ -10,7 +10,7 @@
 
 #include <cppunit/extensions/HelperMacros.h>
 
-#include "../src/LinkedList.h"
+#include "../src/SimpleLinkedList.h"
 
 class linkedListTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST_SUITE(linkedListTest);

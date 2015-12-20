@@ -8,7 +8,7 @@
 #include <cstdlib>
 #include <new>
 #include <string.h>
-#include "LinkedList.h"
+#include "SimpleLinkedList.h"
 #include <cassert>
 
 using namespace std;
