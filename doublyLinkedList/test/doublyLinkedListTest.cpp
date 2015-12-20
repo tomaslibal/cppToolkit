@@ -45,3 +45,17 @@ void doublyLinkedListTest::testInsert() {
     CPPUNIT_ASSERT(this->list->head->key == "Binky");
     CPPUNIT_ASSERT(this->list->tail->key == "Bar");
 }
+
+void doublyLinkedListTest::testSearch() {
+    DoubleLinkNode* x = this->list->search("Bar");
+            
+    CPPUNIT_ASSERT(x == NULL);
+    
+    this->list->insert("Baz", 1);
+    this->list->insert("Bar", 2);
+    this->list->insert("Qux", 3);
+    
+    x = this->list->search("Bar");
+    
+    CPPUNIT_ASSERT(x->value == 2);
+}
