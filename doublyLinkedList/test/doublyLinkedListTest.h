@@ -18,6 +18,7 @@ class doublyLinkedListTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST(testCreateNode);
     CPPUNIT_TEST(testInsert);
     CPPUNIT_TEST(testSearch);
+    CPPUNIT_TEST(testRemove);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -32,6 +33,7 @@ private:
     void testCreateNode();
     void testInsert();
     void testSearch();
+    void testRemove();
 };
 
 #endif	/* DOUBLYLINKEDLISTTEST_H */

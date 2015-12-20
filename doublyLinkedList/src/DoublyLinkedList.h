@@ -30,6 +30,7 @@ public:
     void insert(DoubleLinkNode* node);
     void insert(std::string key, int value);
     void remove(DoubleLinkNode* node);
+    void remove(std::string key);
 private:
 
 };

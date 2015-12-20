@@ -59,3 +59,13 @@ void doublyLinkedListTest::testSearch() {
     
     CPPUNIT_ASSERT(x->value == 2);
 }
+
+void doublyLinkedListTest::testRemove() {
+    this->list->insert("Baz", 1);
+    this->list->insert("Bar", 2);
+    this->list->insert("Qux", 3);
+    
+    this->list->remove("Bar");
+    
+    CPPUNIT_ASSERT(this->list->head->next->key == "Baz");
+}

@@ -35,6 +35,23 @@ DoubleLinkNode* DoublyLinkedList::search(string key) {
     return x;
 }
 
+void DoublyLinkedList::remove(DoubleLinkNode* node) {
+    if (node->prev) {
+        node->prev->next = node->next;
+    }
+    if (node->next) {
+        node->next->prev = node->prev;
+    }
+    delete node;
+}
+
+void DoublyLinkedList::remove(std::string key) {
+    DoubleLinkNode* x = this->search(key);
+    if (x) {
+        this->remove(x);
+    }
+}
+
 DoubleLinkNode* DoublyLinkedList::createNode(string key, int value) {
     DoubleLinkNode* node = new DoubleLinkNode;
     node->key = key;
