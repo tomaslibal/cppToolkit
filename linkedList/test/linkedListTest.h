@@ -40,7 +40,7 @@ public:
     void tearDown();
 
 private:
-    LinkedList<int>* list;
+    SimpleLinkedList<int>* list;
     void testItInitializesWithFirstNodeAllocated();
     void testItInitializesWithLastNodeNull();
     void testAddNodeAddsNewNode();

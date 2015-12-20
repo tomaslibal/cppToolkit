@@ -21,7 +21,7 @@ public:
 private:
     short int tableSize = 100;
     int hash(const char* key);
-    LinkedList<T> **hashTable;
+    SimpleLinkedList<T> **hashTable;
     void createHashTable(short int size);
     void resizeHashTable(short int newSize);
 };

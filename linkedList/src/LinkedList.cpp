@@ -13,7 +13,7 @@
 
 using namespace std;
 
-template <class T> LinkedList<T>::LinkedList() {
+template <class T> SimpleLinkedList<T>::SimpleLinkedList() {
     this->head = (linkedNode<T>*) malloc(sizeof(linkedNode<T>));
     this->head->key = NULL;
     this->head->value = (T) 0;
@@ -22,7 +22,7 @@ template <class T> LinkedList<T>::LinkedList() {
     this->tail = NULL;
 }
 
-template <class T> LinkedList<T>::~LinkedList() {
+template <class T> SimpleLinkedList<T>::~SimpleLinkedList() {
     linkedNode<T> *node = this->head;
     linkedNode<T> *next;
     
@@ -33,7 +33,7 @@ template <class T> LinkedList<T>::~LinkedList() {
     }
 }
 
-template <class T> linkedNode<T>* LinkedList<T>::createNewNode(const char* key, T value) {
+template <class T> linkedNode<T>* SimpleLinkedList<T>::createNewNode(const char* key, T value) {
     linkedNode<T>* node = (linkedNode<T>*) malloc(sizeof(linkedNode<T>));
     
     if (!node) {
@@ -46,7 +46,7 @@ template <class T> linkedNode<T>* LinkedList<T>::createNewNode(const char* key, 
     return node;
 }
 
-template <class T> void LinkedList<T>::setKey(linkedNode<T> *node, const char* key) {
+template <class T> void SimpleLinkedList<T>::setKey(linkedNode<T> *node, const char* key) {
     if (node->key != NULL) {
         node->key = (char*) realloc(node->key, sizeof(key)+1);
         if (!node->key) {
@@ -58,7 +58,7 @@ template <class T> void LinkedList<T>::setKey(linkedNode<T> *node, const char* k
     }
 }
 
-template <class T> void LinkedList<T>::addNode(T value) {
+template <class T> void SimpleLinkedList<T>::addNode(T value) {
     linkedNode<T> *last = this->tail;
     
     if (last == NULL) {
@@ -68,7 +68,7 @@ template <class T> void LinkedList<T>::addNode(T value) {
     this->tail = addNodeWithValue<T>(last, value);
 }
 
-template <class T> void LinkedList<T>::addNode(const char* key, T value) {
+template <class T> void SimpleLinkedList<T>::addNode(const char* key, T value) {
     linkedNode<T> *last = this->tail;
     
     if (last == NULL) {
@@ -78,7 +78,7 @@ template <class T> void LinkedList<T>::addNode(const char* key, T value) {
     this->tail = addNodeWithKeyValue<T>(last, key, value);
 }
 
-template <class T> void LinkedList<T>::addNodeAtHead(const char* key, T value) {
+template <class T> void SimpleLinkedList<T>::addNodeAtHead(const char* key, T value) {
     linkedNode<T>* first = this->head;
     
     linkedNode<T>* node = this->createNewNode(key, value);
@@ -86,7 +86,7 @@ template <class T> void LinkedList<T>::addNodeAtHead(const char* key, T value) {
     this->head = node;
 }
 
-template <class T> int LinkedList<T>::getLength() {
+template <class T> int SimpleLinkedList<T>::getLength() {
     int c = 0;
     
     linkedNode<T> *node = this->head;
@@ -99,7 +99,7 @@ template <class T> int LinkedList<T>::getLength() {
     return c;
 }
 
-template <class T> linkedNode<T>* LinkedList<T>::getAtIndex(int idx) {
+template <class T> linkedNode<T>* SimpleLinkedList<T>::getAtIndex(int idx) {
     linkedNode<T> *node = this->head;
     
     int c = 0;
@@ -117,17 +117,17 @@ template <class T> linkedNode<T>* LinkedList<T>::getAtIndex(int idx) {
     return NULL;
 }
 
-template <class T> void LinkedList<T>::removeNode(T value) {
+template <class T> void SimpleLinkedList<T>::removeNode(T value) {
     removeNodeByValue<T>(this->head, value);
     this->updatePointerToTailNode();
 }
 
-template <class T> void LinkedList<T>::removeNode(const char* key) {
+template <class T> void SimpleLinkedList<T>::removeNode(const char* key) {
     removeNodeByKey<T>(this->head, key);
     this->updatePointerToTailNode();
 }
 
-template <class T> void LinkedList<T>::updatePointerToTailNode() {
+template <class T> void SimpleLinkedList<T>::updatePointerToTailNode() {
     linkedNode<T> *node = this->head;
     
     while(node->next) {
@@ -137,11 +137,11 @@ template <class T> void LinkedList<T>::updatePointerToTailNode() {
     this->tail = node;
 }
 
-template <class T> void LinkedList<T>::print() {
+template <class T> void SimpleLinkedList<T>::print() {
     printList<T>(this->head);
 }
 
-template <class T> linkedNode<T>* LinkedList<T>::getNode(T value) {
+template <class T> linkedNode<T>* SimpleLinkedList<T>::getNode(T value) {
     linkedNode<T> *node = this->head;
     
     while(node) {
@@ -154,7 +154,7 @@ template <class T> linkedNode<T>* LinkedList<T>::getNode(T value) {
     return NULL;
 }
 
-template <class T> linkedNode<T>* LinkedList<T>::getNode(const char* key) {
+template <class T> linkedNode<T>* SimpleLinkedList<T>::getNode(const char* key) {
     linkedNode<T> *node = this->head;
     
     while(node) {
@@ -167,7 +167,7 @@ template <class T> linkedNode<T>* LinkedList<T>::getNode(const char* key) {
     return NULL;
 }
 
-template <class T> linkedNode<T>* LinkedList<T>::getNode(const char* key, T value) {
+template <class T> linkedNode<T>* SimpleLinkedList<T>::getNode(const char* key, T value) {
     linkedNode<T> *node = this->getNode(key);
     
     if (node->value == value) {
@@ -177,7 +177,7 @@ template <class T> linkedNode<T>* LinkedList<T>::getNode(const char* key, T valu
     }
 }
 
-template <class T> T LinkedList<T>::sum() {
+template <class T> T SimpleLinkedList<T>::sum() {
     T sum = (T) 0;
     
     linkedNode<T>* node = this->head;
@@ -190,11 +190,11 @@ template <class T> T LinkedList<T>::sum() {
     return sum;
 }
 
-template <class T> void LinkedList<T>::freeNode(linkedNode<T>* node) {
+template <class T> void SimpleLinkedList<T>::freeNode(linkedNode<T>* node) {
     if (node->key != NULL) {
         free(node->key);
     }
     free(node);
 }
 
-template class LinkedList<int>;
+template class SimpleLinkedList<int>;

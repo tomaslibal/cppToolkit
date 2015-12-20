@@ -11,13 +11,13 @@
 #include "linkedNode.h"
 
 template <class T>
-class LinkedList {
+class SimpleLinkedList {
 public:
     linkedNode<T> *head;
     linkedNode<T> *tail;
     
-    LinkedList();
-    virtual ~LinkedList();
+    SimpleLinkedList();
+    virtual ~SimpleLinkedList();
     
     void addNode(T value);
     void addNode(const char* key, T value);

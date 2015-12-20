@@ -14,7 +14,7 @@
 using namespace std;
 
 template <class T> ChainedHashTable<T>::ChainedHashTable() {
-    this->hashTable = (LinkedList<T>**) malloc(sizeof(LinkedList<T>*) * this->tableSize);
+    this->hashTable = (SimpleLinkedList<T>**) malloc(sizeof(SimpleLinkedList<T>*) * this->tableSize);
     for(short int i = 0; i < this->tableSize; i++) {
         this->hashTable[i] = NULL;
     }
@@ -59,11 +59,11 @@ template <class T> void ChainedHashTable<T>::insert(const char* key, T value) {
     // get the hash index
     int idx = this->hash(key);
     // obtain the linked list from the index
-    LinkedList<T>* list = this->hashTable[idx];
+    SimpleLinkedList<T>* list = this->hashTable[idx];
     
     // if this index has uninitialized list, initialize it
     if (list == NULL) {
-        this->hashTable[idx] = new LinkedList<T>();
+        this->hashTable[idx] = new SimpleLinkedList<T>();
         list = this->hashTable[idx];
     } else {
         throw bad_alloc();
@@ -76,7 +76,7 @@ template <class T> T ChainedHashTable<T>::search(const char* key) {
     // get the hash index
     int idx = this->hash(key);
     // obtain the linked list from the index
-    LinkedList<T>* list = this->hashTable[idx];
+    SimpleLinkedList<T>* list = this->hashTable[idx];
     if (list == NULL) {
         return NULL;
     }
@@ -93,7 +93,7 @@ template <class T> void ChainedHashTable<T>::del(const char* key) {
     // get the hash index
     int idx = this->hash(key);
     // obtain the linked list from the index
-    LinkedList<T>* list = this->hashTable[idx];
+    SimpleLinkedList<T>* list = this->hashTable[idx];
     if (list == NULL) {
         return;
     }

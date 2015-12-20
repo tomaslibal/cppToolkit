@@ -19,7 +19,7 @@ linkedListTest::~linkedListTest() {
 }
 
 void linkedListTest::setUp() {
-    this->list = new LinkedList<int>();
+    this->list = new SimpleLinkedList<int>();
 }
 
 void linkedListTest::tearDown() {
