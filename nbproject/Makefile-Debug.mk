@@ -50,6 +50,7 @@ TESTFILES= \
 	${TESTDIR}/TestFiles/f2 \
 	${TESTDIR}/TestFiles/f4 \
 	${TESTDIR}/TestFiles/f3 \
+	${TESTDIR}/TestFiles/f5 \
 	${TESTDIR}/TestFiles/f1
 
 # C Compiler Flags
@@ -123,6 +124,10 @@ ${TESTDIR}/TestFiles/f3: ${TESTDIR}/chainedHashTable/test/chainedHashTableTest.o
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f3 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
 
+${TESTDIR}/TestFiles/f5: ${TESTDIR}/doublyLinkedList/test/doublyLinkedListTest.o ${TESTDIR}/doublyLinkedList/test/doublyLinkedListTestRunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f5 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+
 ${TESTDIR}/TestFiles/f1: ${TESTDIR}/linkedList/test/linkedListTest.o ${TESTDIR}/linkedList/test/linkedListTestRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
@@ -162,6 +167,18 @@ ${TESTDIR}/chainedHashTable/test/chainedHashTableTestRunner.o: chainedHashTable/
 	${MKDIR} -p ${TESTDIR}/chainedHashTable/test
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/chainedHashTable/test/chainedHashTableTestRunner.o chainedHashTable/test/chainedHashTableTestRunner.cpp
+
+
+${TESTDIR}/doublyLinkedList/test/doublyLinkedListTest.o: doublyLinkedList/test/doublyLinkedListTest.cpp 
+	${MKDIR} -p ${TESTDIR}/doublyLinkedList/test
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/doublyLinkedList/test/doublyLinkedListTest.o doublyLinkedList/test/doublyLinkedListTest.cpp
+
+
+${TESTDIR}/doublyLinkedList/test/doublyLinkedListTestRunner.o: doublyLinkedList/test/doublyLinkedListTestRunner.cpp 
+	${MKDIR} -p ${TESTDIR}/doublyLinkedList/test
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/doublyLinkedList/test/doublyLinkedListTestRunner.o doublyLinkedList/test/doublyLinkedListTestRunner.cpp
 
 
 ${TESTDIR}/linkedList/test/linkedListTest.o: linkedList/test/linkedListTest.cpp 
@@ -261,6 +278,7 @@ ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp
 	    ${TESTDIR}/TestFiles/f2 || true; \
 	    ${TESTDIR}/TestFiles/f4 || true; \
 	    ${TESTDIR}/TestFiles/f3 || true; \
+	    ${TESTDIR}/TestFiles/f5 || true; \
 	    ${TESTDIR}/TestFiles/f1 || true; \
 	else  \
 	    ./${TEST} || true; \

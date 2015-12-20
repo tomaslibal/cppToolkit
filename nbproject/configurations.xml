@@ -54,6 +54,14 @@
         <itemPath>chainedHashTable/test/chainedHashTableTest.h</itemPath>
         <itemPath>chainedHashTable/test/chainedHashTableTestRunner.cpp</itemPath>
       </logicalFolder>
+      <logicalFolder name="f5"
+                     displayName="DoublyLinkedList Test"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>doublyLinkedList/test/doublyLinkedListTest.cpp</itemPath>
+        <itemPath>doublyLinkedList/test/doublyLinkedListTest.h</itemPath>
+        <itemPath>doublyLinkedList/test/doublyLinkedListTestRunner.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="f1"
                      displayName="Linked List Test"
                      projectFiles="true"
@@ -142,6 +150,21 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="doublyLinkedList/test/doublyLinkedListTest.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="doublyLinkedList/test/doublyLinkedListTest.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="doublyLinkedList/test/doublyLinkedListTestRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <folder path="TestFiles/f1">
         <cTool>
           <commandLine>`cppunit-config --cflags`</commandLine>
@@ -193,6 +216,20 @@
         </ccTool>
         <linkerTool>
           <output>${TESTDIR}/TestFiles/f4</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f5">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f5</output>
           <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
           </linkerLibItems>
@@ -299,6 +336,21 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="doublyLinkedList/test/doublyLinkedListTest.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="doublyLinkedList/test/doublyLinkedListTest.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="doublyLinkedList/test/doublyLinkedListTestRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <folder path="TestFiles/f1">
         <cTool>
           <commandLine>`cppunit-config --cflags`</commandLine>
@@ -350,6 +402,20 @@
         </ccTool>
         <linkerTool>
           <output>${TESTDIR}/TestFiles/f4</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f5">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f5</output>
           <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
           </linkerLibItems>
