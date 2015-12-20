@@ -38,9 +38,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/binsearch/src/binsearch.o \
 	${OBJECTDIR}/chainedHashTable/src/ChainedHashTable.o \
 	${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList.o \
-	${OBJECTDIR}/linkedList/src/SimpleLinkedList.o \
-	${OBJECTDIR}/linkedList/src/linkedNode.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList.o \
+	${OBJECTDIR}/simpleLinkedList/src/linkedNode.o
 
 # Test Directory
 TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
@@ -92,20 +92,20 @@ ${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList.o: doublyLinkedList/src/Doubl
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList.o doublyLinkedList/src/DoublyLinkedList.cpp
 
-${OBJECTDIR}/linkedList/src/SimpleLinkedList.o: linkedList/src/SimpleLinkedList.cpp 
-	${MKDIR} -p ${OBJECTDIR}/linkedList/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/linkedList/src/SimpleLinkedList.o linkedList/src/SimpleLinkedList.cpp
-
-${OBJECTDIR}/linkedList/src/linkedNode.o: linkedList/src/linkedNode.cpp 
-	${MKDIR} -p ${OBJECTDIR}/linkedList/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/linkedList/src/linkedNode.o linkedList/src/linkedNode.cpp
-
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList.o: simpleLinkedList/src/SimpleLinkedList.cpp 
+	${MKDIR} -p ${OBJECTDIR}/simpleLinkedList/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList.o simpleLinkedList/src/SimpleLinkedList.cpp
+
+${OBJECTDIR}/simpleLinkedList/src/linkedNode.o: simpleLinkedList/src/linkedNode.cpp 
+	${MKDIR} -p ${OBJECTDIR}/simpleLinkedList/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/simpleLinkedList/src/linkedNode.o simpleLinkedList/src/linkedNode.cpp
 
 # Subprojects
 .build-subprojects:
@@ -128,7 +128,7 @@ ${TESTDIR}/TestFiles/f5: ${TESTDIR}/doublyLinkedList/test/doublyLinkedListTest.o
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f5 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
 
-${TESTDIR}/TestFiles/f1: ${TESTDIR}/linkedList/test/simpleLinkedListTest.o ${TESTDIR}/linkedList/test/simpleLinkedListTestRunner.o ${OBJECTFILES:%.o=%_nomain.o}
+${TESTDIR}/TestFiles/f1: ${TESTDIR}/simpleLinkedList/test/simpleLinkedListTest.o ${TESTDIR}/simpleLinkedList/test/simpleLinkedListTestRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
 
@@ -181,16 +181,16 @@ ${TESTDIR}/doublyLinkedList/test/doublyLinkedListTestRunner.o: doublyLinkedList/
 	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/doublyLinkedList/test/doublyLinkedListTestRunner.o doublyLinkedList/test/doublyLinkedListTestRunner.cpp
 
 
-${TESTDIR}/linkedList/test/simpleLinkedListTest.o: linkedList/test/simpleLinkedListTest.cpp 
-	${MKDIR} -p ${TESTDIR}/linkedList/test
+${TESTDIR}/simpleLinkedList/test/simpleLinkedListTest.o: simpleLinkedList/test/simpleLinkedListTest.cpp 
+	${MKDIR} -p ${TESTDIR}/simpleLinkedList/test
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/linkedList/test/simpleLinkedListTest.o linkedList/test/simpleLinkedListTest.cpp
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/simpleLinkedList/test/simpleLinkedListTest.o simpleLinkedList/test/simpleLinkedListTest.cpp
 
 
-${TESTDIR}/linkedList/test/simpleLinkedListTestRunner.o: linkedList/test/simpleLinkedListTestRunner.cpp 
-	${MKDIR} -p ${TESTDIR}/linkedList/test
+${TESTDIR}/simpleLinkedList/test/simpleLinkedListTestRunner.o: simpleLinkedList/test/simpleLinkedListTestRunner.cpp 
+	${MKDIR} -p ${TESTDIR}/simpleLinkedList/test
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/linkedList/test/simpleLinkedListTestRunner.o linkedList/test/simpleLinkedListTestRunner.cpp
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/simpleLinkedList/test/simpleLinkedListTestRunner.o simpleLinkedList/test/simpleLinkedListTestRunner.cpp
 
 
 ${OBJECTDIR}/binsearch/src/binsearch_nomain.o: ${OBJECTDIR}/binsearch/src/binsearch.o binsearch/src/binsearch.cpp 
@@ -232,32 +232,6 @@ ${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList_nomain.o: ${OBJECTDIR}/doubly
 	    ${CP} ${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList.o ${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList_nomain.o;\
 	fi
 
-${OBJECTDIR}/linkedList/src/SimpleLinkedList_nomain.o: ${OBJECTDIR}/linkedList/src/SimpleLinkedList.o linkedList/src/SimpleLinkedList.cpp 
-	${MKDIR} -p ${OBJECTDIR}/linkedList/src
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/linkedList/src/SimpleLinkedList.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/linkedList/src/SimpleLinkedList_nomain.o linkedList/src/SimpleLinkedList.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/linkedList/src/SimpleLinkedList.o ${OBJECTDIR}/linkedList/src/SimpleLinkedList_nomain.o;\
-	fi
-
-${OBJECTDIR}/linkedList/src/linkedNode_nomain.o: ${OBJECTDIR}/linkedList/src/linkedNode.o linkedList/src/linkedNode.cpp 
-	${MKDIR} -p ${OBJECTDIR}/linkedList/src
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/linkedList/src/linkedNode.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/linkedList/src/linkedNode_nomain.o linkedList/src/linkedNode.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/linkedList/src/linkedNode.o ${OBJECTDIR}/linkedList/src/linkedNode_nomain.o;\
-	fi
-
 ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/main.o`; \
@@ -269,6 +243,32 @@ ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp
 	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main_nomain.o main.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/main.o ${OBJECTDIR}/main_nomain.o;\
+	fi
+
+${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList_nomain.o: ${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList.o simpleLinkedList/src/SimpleLinkedList.cpp 
+	${MKDIR} -p ${OBJECTDIR}/simpleLinkedList/src
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList_nomain.o simpleLinkedList/src/SimpleLinkedList.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList.o ${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList_nomain.o;\
+	fi
+
+${OBJECTDIR}/simpleLinkedList/src/linkedNode_nomain.o: ${OBJECTDIR}/simpleLinkedList/src/linkedNode.o simpleLinkedList/src/linkedNode.cpp 
+	${MKDIR} -p ${OBJECTDIR}/simpleLinkedList/src
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/simpleLinkedList/src/linkedNode.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/simpleLinkedList/src/linkedNode_nomain.o simpleLinkedList/src/linkedNode.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/simpleLinkedList/src/linkedNode.o ${OBJECTDIR}/simpleLinkedList/src/linkedNode_nomain.o;\
 	fi
 
 # Run Test Targets
