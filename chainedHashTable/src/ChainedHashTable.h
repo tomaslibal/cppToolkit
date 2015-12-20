@@ -8,7 +8,7 @@
 #ifndef CHAINEDHASHTABLE_H
 #define	CHAINEDHASHTABLE_H
 
-#include "../../linkedList/src/SimpleLinkedList.h"
+#include "../../simpleLinkedList/src/SimpleLinkedList.h"
 
 template <class T> class ChainedHashTable {
 public:
@@ -17,7 +17,7 @@ public:
     
     void insert(const char* key, T value);
     T search(const char* key);
-    void del(const char* key);
+    void remove(const char* key);
 private:
     short int tableSize = 100;
     int hash(const char* key);

@@ -89,7 +89,7 @@ template <class T> T ChainedHashTable<T>::search(const char* key) {
     }
 }
 
-template <class T> void ChainedHashTable<T>::del(const char* key) {
+template <class T> void ChainedHashTable<T>::remove(const char* key) {
     // get the hash index
     int idx = this->hash(key);
     // obtain the linked list from the index

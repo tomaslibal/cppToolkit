@@ -43,7 +43,7 @@ void chainedHashTableTest::testDelete() {
     
     CPPUNIT_ASSERT(this->ht->search("bar") == 42);
     
-    this->ht->del("bar");
+    this->ht->remove("bar");
             
     CPPUNIT_ASSERT(this->ht->search("bar") == NULL);
 }
