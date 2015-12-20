@@ -5,7 +5,7 @@
  * Created on Nov 20, 2015, 10:14:00 PM
  */
 
-#include "linkedListTest.h"
+#include "simpleLinkedListTest.h"
 
 #include <cstdlib>
 #include <cstring>

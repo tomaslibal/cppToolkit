@@ -66,9 +66,9 @@
                      displayName="Simple Linked List Test"
                      projectFiles="true"
                      kind="TEST">
-        <itemPath>linkedList/test/linkedListTest.cpp</itemPath>
-        <itemPath>linkedList/test/linkedListTest.h</itemPath>
-        <itemPath>linkedList/test/linkedListTestRunner.cpp</itemPath>
+        <itemPath>linkedList/test/simpleLinkedListTest.cpp</itemPath>
+        <itemPath>linkedList/test/simpleLinkedListTest.h</itemPath>
+        <itemPath>linkedList/test/simpleLinkedListTestRunner.cpp</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -246,11 +246,17 @@
       </item>
       <item path="linkedList/src/linkedNode.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="linkedList/test/linkedListTest.cpp" ex="false" tool="1" flavor2="0">
+      <item path="linkedList/test/simpleLinkedListTest.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="linkedList/test/linkedListTest.h" ex="false" tool="3" flavor2="0">
+      <item path="linkedList/test/simpleLinkedListTest.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="linkedList/test/linkedListTestRunner.cpp"
+      <item path="linkedList/test/simpleLinkedListTestRunner.cpp"
             ex="false"
             tool="1"
             flavor2="0">
@@ -435,11 +441,17 @@
       </item>
       <item path="linkedList/src/linkedNode.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="linkedList/test/linkedListTest.cpp" ex="false" tool="1" flavor2="0">
+      <item path="linkedList/test/simpleLinkedListTest.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="linkedList/test/linkedListTest.h" ex="false" tool="3" flavor2="0">
+      <item path="linkedList/test/simpleLinkedListTest.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="linkedList/test/linkedListTestRunner.cpp"
+      <item path="linkedList/test/simpleLinkedListTestRunner.cpp"
             ex="false"
             tool="1"
             flavor2="0">

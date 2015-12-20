@@ -128,7 +128,7 @@ ${TESTDIR}/TestFiles/f5: ${TESTDIR}/doublyLinkedList/test/doublyLinkedListTest.o
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f5 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
 
-${TESTDIR}/TestFiles/f1: ${TESTDIR}/linkedList/test/linkedListTest.o ${TESTDIR}/linkedList/test/linkedListTestRunner.o ${OBJECTFILES:%.o=%_nomain.o}
+${TESTDIR}/TestFiles/f1: ${TESTDIR}/linkedList/test/simpleLinkedListTest.o ${TESTDIR}/linkedList/test/simpleLinkedListTestRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
 
@@ -181,16 +181,16 @@ ${TESTDIR}/doublyLinkedList/test/doublyLinkedListTestRunner.o: doublyLinkedList/
 	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/doublyLinkedList/test/doublyLinkedListTestRunner.o doublyLinkedList/test/doublyLinkedListTestRunner.cpp
 
 
-${TESTDIR}/linkedList/test/linkedListTest.o: linkedList/test/linkedListTest.cpp 
+${TESTDIR}/linkedList/test/simpleLinkedListTest.o: linkedList/test/simpleLinkedListTest.cpp 
 	${MKDIR} -p ${TESTDIR}/linkedList/test
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/linkedList/test/linkedListTest.o linkedList/test/linkedListTest.cpp
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/linkedList/test/simpleLinkedListTest.o linkedList/test/simpleLinkedListTest.cpp
 
 
-${TESTDIR}/linkedList/test/linkedListTestRunner.o: linkedList/test/linkedListTestRunner.cpp 
+${TESTDIR}/linkedList/test/simpleLinkedListTestRunner.o: linkedList/test/simpleLinkedListTestRunner.cpp 
 	${MKDIR} -p ${TESTDIR}/linkedList/test
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/linkedList/test/linkedListTestRunner.o linkedList/test/linkedListTestRunner.cpp
+	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/linkedList/test/simpleLinkedListTestRunner.o linkedList/test/simpleLinkedListTestRunner.cpp
 
 
 ${OBJECTDIR}/binsearch/src/binsearch_nomain.o: ${OBJECTDIR}/binsearch/src/binsearch.o binsearch/src/binsearch.cpp 
