@@ -15,10 +15,8 @@
 class linkedListTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST_SUITE(linkedListTest);
 
-    CPPUNIT_TEST(testItInitializesWithFirstNodeAllocated);
-    CPPUNIT_TEST(testItInitializesWithLastNodeNull);
+    CPPUNIT_TEST(testItInitializesWithFirstNodeNULL);
     CPPUNIT_TEST(testAddNodeAddsNewNode);
-    CPPUNIT_TEST(testAddNodeWithKeyValue);
     CPPUNIT_TEST(testGetLengthReturnsNumOfNodes);
     CPPUNIT_TEST(testRemoveNodeRemovesNodes);
     CPPUNIT_TEST(testGetAtIndexReturnsNodeAtGivenIndex);
@@ -27,7 +25,6 @@ class linkedListTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST(testGetNodeByKey);
     CPPUNIT_TEST(testGetNodeByKeyValue);
     CPPUNIT_TEST(testSum);
-    CPPUNIT_TEST(testInsertAtHead);
     CPPUNIT_TEST(testSetKey);
 
     CPPUNIT_TEST_SUITE_END();
@@ -41,10 +38,8 @@ public:
 
 private:
     SimpleLinkedList<int>* list;
-    void testItInitializesWithFirstNodeAllocated();
-    void testItInitializesWithLastNodeNull();
+    void testItInitializesWithFirstNodeNULL();
     void testAddNodeAddsNewNode();
-    void testAddNodeWithKeyValue();
     void testGetLengthReturnsNumOfNodes();
     void testRemoveNodeRemovesNodes();
     void testGetAtIndexReturnsNodeAtGivenIndex();
@@ -53,7 +48,6 @@ private:
     void testGetNodeByKey();
     void testGetNodeByKeyValue();
     void testSum();
-    void testInsertAtHead();
     void testSetKey();
 };
 

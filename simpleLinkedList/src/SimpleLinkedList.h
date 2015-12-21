@@ -14,7 +14,7 @@ template <typename T> struct linkedNode {
     linkedNode<T> *next;
 };
 
-
+#include <cstdlib>
 #include <initializer_list>
 
 template <typename T> linkedNode<T>* addEmptyNode(linkedNode<T> *parent);
@@ -39,12 +39,13 @@ class SimpleLinkedList {
 public:
     linkedNode<T> *head;
     linkedNode<T> *tail;
-    
+
     SimpleLinkedList();
     virtual ~SimpleLinkedList();
     
-    void addNode(T value);
-    void addNode(const char* key, T value);
+    linkedNode<T>* createNode(const char* key, T value);
+    
+    void insert(linkedNode<T>* node);
     void insert(const char* key, T value);
     
     void removeNode(T value);
