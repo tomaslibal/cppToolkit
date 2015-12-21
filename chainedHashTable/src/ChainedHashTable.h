@@ -9,6 +9,7 @@
 #define	CHAINEDHASHTABLE_H
 
 #include "../../simpleLinkedList/src/SimpleLinkedList.h"
+#include "../../doublyLinkedList/src/DoublyLinkedList.h"
 
 template <class T> class ChainedHashTable {
 public:
@@ -21,7 +22,7 @@ public:
 private:
     short int tableSize = 100;
     int hash(const char* key);
-    SimpleLinkedList<T> **hashTable;
+    DoublyLinkedList<T> **hashTable;
     void createHashTable(short int size);
     void resizeHashTable(short int newSize);
 };
