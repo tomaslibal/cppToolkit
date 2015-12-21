@@ -9,7 +9,6 @@
       <itemPath>simpleLinkedList/src/SimpleLinkedList.h</itemPath>
       <itemPath>binsearch/src/binsearch.h</itemPath>
       <itemPath>bitflags/src/bitflags.h</itemPath>
-      <itemPath>simpleLinkedList/src/linkedNode.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -22,7 +21,6 @@
       <itemPath>doublyLinkedList/src/DoublyLinkedList.cpp</itemPath>
       <itemPath>simpleLinkedList/src/SimpleLinkedList.cpp</itemPath>
       <itemPath>binsearch/src/binsearch.cpp</itemPath>
-      <itemPath>simpleLinkedList/src/linkedNode.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -235,16 +233,17 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="simpleLinkedList/src/SimpleLinkedList.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="simpleLinkedList/src/SimpleLinkedList.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="simpleLinkedList/src/linkedNode.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="simpleLinkedList/src/linkedNode.h" ex="false" tool="3" flavor2="0">
+      <item path="simpleLinkedList/src/SimpleLinkedList.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="simpleLinkedList/test/simpleLinkedListTest.cpp"
             ex="false"
@@ -260,8 +259,6 @@
             ex="false"
             tool="1"
             flavor2="0">
-      </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/binsearchTest.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -430,16 +427,17 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="simpleLinkedList/src/SimpleLinkedList.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="simpleLinkedList/src/SimpleLinkedList.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="simpleLinkedList/src/linkedNode.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="simpleLinkedList/src/linkedNode.h" ex="false" tool="3" flavor2="0">
+      <item path="simpleLinkedList/src/SimpleLinkedList.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="simpleLinkedList/test/simpleLinkedListTest.cpp"
             ex="false"
@@ -455,8 +453,6 @@
             ex="false"
             tool="1"
             flavor2="0">
-      </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/binsearchTest.h" ex="false" tool="3" flavor2="0">
       </item>

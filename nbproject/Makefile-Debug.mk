@@ -39,8 +39,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/chainedHashTable/src/ChainedHashTable.o \
 	${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList.o \
 	${OBJECTDIR}/main.o \
-	${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList.o \
-	${OBJECTDIR}/simpleLinkedList/src/linkedNode.o
+	${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList.o
 
 # Test Directory
 TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
@@ -101,11 +100,6 @@ ${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList.o: simpleLinkedList/src/Simpl
 	${MKDIR} -p ${OBJECTDIR}/simpleLinkedList/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList.o simpleLinkedList/src/SimpleLinkedList.cpp
-
-${OBJECTDIR}/simpleLinkedList/src/linkedNode.o: simpleLinkedList/src/linkedNode.cpp 
-	${MKDIR} -p ${OBJECTDIR}/simpleLinkedList/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/simpleLinkedList/src/linkedNode.o simpleLinkedList/src/linkedNode.cpp
 
 # Subprojects
 .build-subprojects:
@@ -256,19 +250,6 @@ ${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList_nomain.o: ${OBJECTDIR}/simple
 	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList_nomain.o simpleLinkedList/src/SimpleLinkedList.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList.o ${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList_nomain.o;\
-	fi
-
-${OBJECTDIR}/simpleLinkedList/src/linkedNode_nomain.o: ${OBJECTDIR}/simpleLinkedList/src/linkedNode.o simpleLinkedList/src/linkedNode.cpp 
-	${MKDIR} -p ${OBJECTDIR}/simpleLinkedList/src
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/simpleLinkedList/src/linkedNode.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/simpleLinkedList/src/linkedNode_nomain.o simpleLinkedList/src/linkedNode.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/simpleLinkedList/src/linkedNode.o ${OBJECTDIR}/simpleLinkedList/src/linkedNode_nomain.o;\
 	fi
 
 # Run Test Targets
