@@ -45,7 +45,7 @@ void linkedListTest::testAddNodeAddsNewNode() {
 void linkedListTest::testAddNodeWithKeyValue() {
     list->addNode("Foo", 42);
     
-    linkedNode<int> *result = list->getAtIndex(1);
+    linkedNode<int> *result = list->atIndex(1);
     
     CPPUNIT_ASSERT(strcmp(result->key, "Foo") == 0);
     CPPUNIT_ASSERT(result->value == 42);
@@ -80,12 +80,12 @@ void linkedListTest::testGetAtIndexReturnsNodeAtGivenIndex() {
     list->addNode(43);
     list->addNode(44);
     
-    linkedNode<int> *result = list->getAtIndex(2);
+    linkedNode<int> *result = list->atIndex(2);
     
     CPPUNIT_ASSERT(result != NULL);
     CPPUNIT_ASSERT(result->value == 43);
     
-    result = list->getAtIndex(3);
+    result = list->atIndex(3);
     
     CPPUNIT_ASSERT(result != NULL);
     CPPUNIT_ASSERT(result->value == 44);
@@ -96,7 +96,7 @@ void linkedListTest::testGetAtIndexReturnsNullIfIndexOutOfBounds() {
     list->addNode(43);
     list->addNode(44);
     
-    linkedNode<int> *result = list->getAtIndex(4);
+    linkedNode<int> *result = list->atIndex(4);
     
     CPPUNIT_ASSERT(result == NULL);
 }
@@ -105,11 +105,11 @@ void linkedListTest::testGetNodeByKey() {
     list->addNode("Foo", 42);
     list->addNode("Bar", 43);
     
-    linkedNode<int> *result = list->getNode("Bar");
+    linkedNode<int> *result = list->search("Bar");
     
     CPPUNIT_ASSERT(result->value == 43);
     
-    result = list->getNode("NonExisting");
+    result = list->search("NonExisting");
     
     CPPUNIT_ASSERT(result == NULL);
 }
@@ -118,11 +118,11 @@ void linkedListTest::testGetNodeByValue() {
     list->addNode("Foo", 42);
     list->addNode("Bar", 43);
     
-    linkedNode<int> *result = list->getNode(43);
+    linkedNode<int> *result = list->search(43);
     
     CPPUNIT_ASSERT(strcmp(result->key, "Bar") == 0);
     
-    result = list->getNode(1024);
+    result = list->search(1024);
     
     CPPUNIT_ASSERT(result == NULL);
 }
@@ -131,12 +131,12 @@ void linkedListTest::testGetNodeByKeyValue() {
     list->addNode("Foo", 42);
     list->addNode("Bar", 43);
     
-    linkedNode<int> *result = list->getNode("Bar", 43);
+    linkedNode<int> *result = list->search("Bar", 43);
     
     CPPUNIT_ASSERT(result->value == 43);
     CPPUNIT_ASSERT(strcmp(result->key, "Bar") == 0);
     
-    result = list->getNode("Foo", 1024);
+    result = list->search("Foo", 1024);
     
     CPPUNIT_ASSERT(result == NULL);
 }
@@ -153,13 +153,13 @@ void linkedListTest::testSum() {
 
 void linkedListTest::testInsertAtHead() {
     list->addNode("foo", 42);
-    list->addNodeAtHead("bar", 24);
+    list->insert("bar", 24);
     
     CPPUNIT_ASSERT(list->head->value == 24);
 }
 
 void linkedListTest::testSetKey() {
-    list->addNodeAtHead("binky", 1);
+    list->insert("binky", 1);
     
     list->setKey(list->head, "minky_foo");
     

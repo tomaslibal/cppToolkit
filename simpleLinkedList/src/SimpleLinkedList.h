@@ -45,14 +45,18 @@ public:
     
     void addNode(T value);
     void addNode(const char* key, T value);
-    void addNodeAtHead(const char* key, T value);
+    void insert(const char* key, T value);
+    
     void removeNode(T value);
     void removeNode(const char* key);
+    
     int getLength();
-    linkedNode<T>* getAtIndex(int idx);
-    linkedNode<T>* getNode(T value);
-    linkedNode<T>* getNode(const char* key);
-    linkedNode<T>* getNode(const char* key, T value);
+    
+    linkedNode<T>* atIndex(int idx);
+    linkedNode<T>* search(T value);
+    linkedNode<T>* search(const char* key);
+    linkedNode<T>* search(const char* key, T value);
+    
     void print();
     void setKey(linkedNode<T> *node, const char* key);
     T sum();

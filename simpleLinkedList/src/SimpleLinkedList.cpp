@@ -231,7 +231,7 @@ template <class T> void SimpleLinkedList<T>::addNode(const char* key, T value) {
     this->tail = addNodeWithKeyValue<T>(last, key, value);
 }
 
-template <class T> void SimpleLinkedList<T>::addNodeAtHead(const char* key, T value) {
+template <class T> void SimpleLinkedList<T>::insert(const char* key, T value) {
     linkedNode<T>* first = this->head;
     
     linkedNode<T>* node = this->createNewNode(key, value);
@@ -252,7 +252,7 @@ template <class T> int SimpleLinkedList<T>::getLength() {
     return c;
 }
 
-template <class T> linkedNode<T>* SimpleLinkedList<T>::getAtIndex(int idx) {
+template <class T> linkedNode<T>* SimpleLinkedList<T>::atIndex(int idx) {
     linkedNode<T> *node = this->head;
     
     int c = 0;
@@ -294,7 +294,7 @@ template <class T> void SimpleLinkedList<T>::print() {
     printList<T>(this->head);
 }
 
-template <class T> linkedNode<T>* SimpleLinkedList<T>::getNode(T value) {
+template <class T> linkedNode<T>* SimpleLinkedList<T>::search(T value) {
     linkedNode<T> *node = this->head;
     
     while(node) {
@@ -307,7 +307,7 @@ template <class T> linkedNode<T>* SimpleLinkedList<T>::getNode(T value) {
     return NULL;
 }
 
-template <class T> linkedNode<T>* SimpleLinkedList<T>::getNode(const char* key) {
+template <class T> linkedNode<T>* SimpleLinkedList<T>::search(const char* key) {
     linkedNode<T> *node = this->head;
     
     while(node) {
@@ -320,8 +320,8 @@ template <class T> linkedNode<T>* SimpleLinkedList<T>::getNode(const char* key) 
     return NULL;
 }
 
-template <class T> linkedNode<T>* SimpleLinkedList<T>::getNode(const char* key, T value) {
-    linkedNode<T> *node = this->getNode(key);
+template <class T> linkedNode<T>* SimpleLinkedList<T>::search(const char* key, T value) {
+    linkedNode<T> *node = this->search(key);
     
     if (node->value == value) {
         return node;
