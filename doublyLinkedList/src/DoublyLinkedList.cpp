@@ -83,24 +83,29 @@ void DoublyLinkedList<T>::insert(std::string key, T value) {
 
 template <class T>
 int DoublyLinkedList<T>::sum() {
-    DoubleLinkNode<T>* node = this->head;
     int sum = 0;
-    while (node) {
-        sum += node->value;
-        node = node->next;
-    }
+    forEach([&sum](T val) {
+        sum += val;
+    });
     return sum;
 }
 
 template <class T>
 int DoublyLinkedList<T>::getLength() {
+    int len = 0;
+    forEach([&len](T val) {
+       len++; 
+    });
+    return len;
+}
+
+template <class T>
+void DoublyLinkedList<T>::forEach(const function <void (T)>& f) {
     DoubleLinkNode<T>* node = this->head;
-    int l = 0;
     while (node) {
-        l++;
+        f(node->value);
         node = node->next;
     }
-    return l;
 }
 
 template class DoublyLinkedList<int>;

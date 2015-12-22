@@ -10,6 +10,7 @@
 
 #include <cstdlib>
 #include <string>
+#include <functional>
 
 template <typename T> struct DoubleLinkNode {
     std::string key;
@@ -34,6 +35,7 @@ public:
     int sum();
     int getLength();
 private:
+    void forEach(const std::function <void (T)>& f);
 
 };
 
