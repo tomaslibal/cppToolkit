@@ -38,8 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/binsearch/src/binsearch.o \
 	${OBJECTDIR}/chainedHashTable/src/ChainedHashTable.o \
 	${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList.o \
-	${OBJECTDIR}/main.o \
-	${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList.o
+	${OBJECTDIR}/main.o
 
 # Test Directory
 TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
@@ -49,8 +48,7 @@ TESTFILES= \
 	${TESTDIR}/TestFiles/f2 \
 	${TESTDIR}/TestFiles/f4 \
 	${TESTDIR}/TestFiles/f3 \
-	${TESTDIR}/TestFiles/f5 \
-	${TESTDIR}/TestFiles/f1
+	${TESTDIR}/TestFiles/f5
 
 # C Compiler Flags
 CFLAGS=
@@ -96,11 +94,6 @@ ${OBJECTDIR}/main.o: main.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
-${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList.o: simpleLinkedList/src/SimpleLinkedList.cpp 
-	${MKDIR} -p ${OBJECTDIR}/simpleLinkedList/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList.o simpleLinkedList/src/SimpleLinkedList.cpp
-
 # Subprojects
 .build-subprojects:
 
@@ -121,10 +114,6 @@ ${TESTDIR}/TestFiles/f3: ${TESTDIR}/chainedHashTable/test/chainedHashTableTest.o
 ${TESTDIR}/TestFiles/f5: ${TESTDIR}/doublyLinkedList/test/doublyLinkedListTest.o ${TESTDIR}/doublyLinkedList/test/doublyLinkedListTestRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f5 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
-
-${TESTDIR}/TestFiles/f1: ${TESTDIR}/simpleLinkedList/test/simpleLinkedListTest.o ${TESTDIR}/simpleLinkedList/test/simpleLinkedListTestRunner.o ${OBJECTFILES:%.o=%_nomain.o}
-	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
 
 
 ${TESTDIR}/binsearch/test/binsearchTest.o: binsearch/test/binsearchTest.cpp 
@@ -173,18 +162,6 @@ ${TESTDIR}/doublyLinkedList/test/doublyLinkedListTestRunner.o: doublyLinkedList/
 	${MKDIR} -p ${TESTDIR}/doublyLinkedList/test
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/doublyLinkedList/test/doublyLinkedListTestRunner.o doublyLinkedList/test/doublyLinkedListTestRunner.cpp
-
-
-${TESTDIR}/simpleLinkedList/test/simpleLinkedListTest.o: simpleLinkedList/test/simpleLinkedListTest.cpp 
-	${MKDIR} -p ${TESTDIR}/simpleLinkedList/test
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/simpleLinkedList/test/simpleLinkedListTest.o simpleLinkedList/test/simpleLinkedListTest.cpp
-
-
-${TESTDIR}/simpleLinkedList/test/simpleLinkedListTestRunner.o: simpleLinkedList/test/simpleLinkedListTestRunner.cpp 
-	${MKDIR} -p ${TESTDIR}/simpleLinkedList/test
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/simpleLinkedList/test/simpleLinkedListTestRunner.o simpleLinkedList/test/simpleLinkedListTestRunner.cpp
 
 
 ${OBJECTDIR}/binsearch/src/binsearch_nomain.o: ${OBJECTDIR}/binsearch/src/binsearch.o binsearch/src/binsearch.cpp 
@@ -239,19 +216,6 @@ ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp
 	    ${CP} ${OBJECTDIR}/main.o ${OBJECTDIR}/main_nomain.o;\
 	fi
 
-${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList_nomain.o: ${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList.o simpleLinkedList/src/SimpleLinkedList.cpp 
-	${MKDIR} -p ${OBJECTDIR}/simpleLinkedList/src
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList_nomain.o simpleLinkedList/src/SimpleLinkedList.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList.o ${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList_nomain.o;\
-	fi
-
 # Run Test Targets
 .test-conf:
 	@if [ "${TEST}" = "" ]; \
@@ -260,7 +224,6 @@ ${OBJECTDIR}/simpleLinkedList/src/SimpleLinkedList_nomain.o: ${OBJECTDIR}/simple
 	    ${TESTDIR}/TestFiles/f4 || true; \
 	    ${TESTDIR}/TestFiles/f3 || true; \
 	    ${TESTDIR}/TestFiles/f5 || true; \
-	    ${TESTDIR}/TestFiles/f1 || true; \
 	else  \
 	    ./${TEST} || true; \
 	fi

@@ -6,7 +6,6 @@
                    projectFiles="true">
       <itemPath>chainedHashTable/src/ChainedHashTable.h</itemPath>
       <itemPath>doublyLinkedList/src/DoublyLinkedList.h</itemPath>
-      <itemPath>simpleLinkedList/src/SimpleLinkedList.h</itemPath>
       <itemPath>binsearch/src/binsearch.h</itemPath>
       <itemPath>bitflags/src/bitflags.h</itemPath>
     </logicalFolder>
@@ -19,7 +18,6 @@
                    projectFiles="true">
       <itemPath>chainedHashTable/src/ChainedHashTable.cpp</itemPath>
       <itemPath>doublyLinkedList/src/DoublyLinkedList.cpp</itemPath>
-      <itemPath>simpleLinkedList/src/SimpleLinkedList.cpp</itemPath>
       <itemPath>binsearch/src/binsearch.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -59,14 +57,6 @@
         <itemPath>doublyLinkedList/test/doublyLinkedListTest.cpp</itemPath>
         <itemPath>doublyLinkedList/test/doublyLinkedListTest.h</itemPath>
         <itemPath>doublyLinkedList/test/doublyLinkedListTestRunner.cpp</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f1"
-                     displayName="Simple Linked List Test"
-                     projectFiles="true"
-                     kind="TEST">
-        <itemPath>simpleLinkedList/test/simpleLinkedListTest.cpp</itemPath>
-        <itemPath>simpleLinkedList/test/simpleLinkedListTest.h</itemPath>
-        <itemPath>simpleLinkedList/test/simpleLinkedListTestRunner.cpp</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -234,31 +224,6 @@
         </linkerTool>
       </folder>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="simpleLinkedList/src/SimpleLinkedList.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="simpleLinkedList/src/SimpleLinkedList.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="simpleLinkedList/test/simpleLinkedListTest.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="simpleLinkedList/test/simpleLinkedListTest.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="simpleLinkedList/test/simpleLinkedListTestRunner.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
       </item>
       <item path="tests/binsearchTest.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -428,31 +393,6 @@
         </linkerTool>
       </folder>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="simpleLinkedList/src/SimpleLinkedList.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="simpleLinkedList/src/SimpleLinkedList.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="simpleLinkedList/test/simpleLinkedListTest.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="simpleLinkedList/test/simpleLinkedListTest.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="simpleLinkedList/test/simpleLinkedListTestRunner.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
       </item>
       <item path="tests/binsearchTest.h" ex="false" tool="3" flavor2="0">
       </item>
