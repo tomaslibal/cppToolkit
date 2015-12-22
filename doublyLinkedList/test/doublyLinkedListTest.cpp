@@ -66,3 +66,14 @@ void doublyLinkedListTest::testRemove() {
     
     CPPUNIT_ASSERT(this->list->head->next->key == "Baz");
 }
+
+void doublyLinkedListTest::testSum() {
+    list->insert("a", 1);
+    list->insert("b", 2);
+    
+    CPPUNIT_ASSERT(list->sum() == 3);
+    
+    list->insert("c", 3);
+    
+    CPPUNIT_ASSERT(list->sum() == 6);
+}

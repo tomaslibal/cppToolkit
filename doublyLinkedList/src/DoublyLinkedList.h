@@ -31,6 +31,7 @@ public:
     void insert(std::string key, T value);
     void remove(DoubleLinkNode<T>* node);
     void remove(std::string key);
+    int sum();
 private:
 
 };

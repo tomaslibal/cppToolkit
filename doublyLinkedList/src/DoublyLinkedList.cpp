@@ -73,4 +73,15 @@ template <class T> void DoublyLinkedList<T>::insert(std::string key, T value) {
     this->insert(node);
 }
 
+template <class T>
+int DoublyLinkedList<T>::sum() {
+    DoubleLinkNode<T>* node = this->head;
+    int sum = 0;
+    while(node) {
+        sum += node->value;
+        node = node->next;
+    }
+    return sum;
+}
+
 template class DoublyLinkedList<int>;
