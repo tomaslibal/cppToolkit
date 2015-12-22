@@ -9,11 +9,13 @@
 
 using namespace std;
 
-template <class T> DoublyLinkedList<T>::DoublyLinkedList() {
+template <class T> 
+DoublyLinkedList<T>::DoublyLinkedList() {
     this->head = NULL;
 }
 
-template <class T> DoublyLinkedList<T>::~DoublyLinkedList() {
+template <class T> 
+DoublyLinkedList<T>::~DoublyLinkedList() {
     DoubleLinkNode<T>* x = this->head;
     DoubleLinkNode<T>* next = NULL;
     
@@ -24,7 +26,8 @@ template <class T> DoublyLinkedList<T>::~DoublyLinkedList() {
     }
 }
 
-template <class T> DoubleLinkNode<T>* DoublyLinkedList<T>::search(string key) {
+template <class T> 
+DoubleLinkNode<T>* DoublyLinkedList<T>::search(string key) {
     DoubleLinkNode<T>* x = this->head;
     
     while(x && x->key != key) {
@@ -34,7 +37,8 @@ template <class T> DoubleLinkNode<T>* DoublyLinkedList<T>::search(string key) {
     return x;
 }
 
-template <class T> void DoublyLinkedList<T>::remove(DoubleLinkNode<T>* node) {
+template <class T> 
+void DoublyLinkedList<T>::remove(DoubleLinkNode<T>* node) {
     if (node->prev) {
         node->prev->next = node->next;
     }
@@ -44,14 +48,16 @@ template <class T> void DoublyLinkedList<T>::remove(DoubleLinkNode<T>* node) {
     delete node;
 }
 
-template <class T> void DoublyLinkedList<T>::remove(std::string key) {
+template <class T> 
+void DoublyLinkedList<T>::remove(std::string key) {
     DoubleLinkNode<T>* x = this->search(key);
     if (x) {
         this->remove(x);
     }
 }
 
-template <class T> DoubleLinkNode<T>* DoublyLinkedList<T>::createNode(string key, T value) {
+template <class T> 
+DoubleLinkNode<T>* DoublyLinkedList<T>::createNode(string key, T value) {
     DoubleLinkNode<T>* node = new DoubleLinkNode<T>;
     node->key = key;
     node->value = value;
@@ -59,7 +65,8 @@ template <class T> DoubleLinkNode<T>* DoublyLinkedList<T>::createNode(string key
     return node;
 }
 
-template <class T> void DoublyLinkedList<T>::insert(DoubleLinkNode<T>* node) {
+template <class T> 
+void DoublyLinkedList<T>::insert(DoubleLinkNode<T>* node) {
     node->next = this->head;
     node->prev = NULL;
     if (this->head) {
@@ -68,7 +75,8 @@ template <class T> void DoublyLinkedList<T>::insert(DoubleLinkNode<T>* node) {
     this->head = node;
 }
 
-template <class T> void DoublyLinkedList<T>::insert(std::string key, T value) {
+template <class T> 
+void DoublyLinkedList<T>::insert(std::string key, T value) {
     DoubleLinkNode<T>* node = this->createNode(key, value);
     this->insert(node);
 }
@@ -77,7 +85,7 @@ template <class T>
 int DoublyLinkedList<T>::sum() {
     DoubleLinkNode<T>* node = this->head;
     int sum = 0;
-    while(node) {
+    while (node) {
         sum += node->value;
         node = node->next;
     }
