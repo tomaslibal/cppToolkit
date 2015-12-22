@@ -7,12 +7,11 @@
              |----------------------|          |----------------------|
              | std::string key      |          | std::string key      |
              | <T> value            |          | <T> value            |
-  / <--------- node<T>* prev        |-<--------- node<T>* prev        |
+  / <--------- node<T>* prev        | <--------- node<T>* prev        |
              | node<T>* next   --------------> | node<T>* next ----------------> /
              |----------------------|          |----------------------|
 ```
 
-- *Simple Linked List*
 - *Binary search algorithm*
 - *Bit flags operations* set and unset flag bitwise operations, as a header file only implementation
 
