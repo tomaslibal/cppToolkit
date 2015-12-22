@@ -20,6 +20,7 @@ class doublyLinkedListTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST(testSearch);
     CPPUNIT_TEST(testRemove);
     CPPUNIT_TEST(testSum);
+    CPPUNIT_TEST(testGetLength);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -36,6 +37,7 @@ private:
     void testSearch();
     void testRemove();
     void testSum();
+    void testGetLength();
 };
 
 #endif	/* DOUBLYLINKEDLISTTEST_H */

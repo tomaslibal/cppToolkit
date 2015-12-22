@@ -84,4 +84,15 @@ int DoublyLinkedList<T>::sum() {
     return sum;
 }
 
+template <class T>
+int DoublyLinkedList<T>::getLength() {
+    DoubleLinkNode<T>* node = this->head;
+    int l = 0;
+    while (node) {
+        l++;
+        node = node->next;
+    }
+    return l;
+}
+
 template class DoublyLinkedList<int>;

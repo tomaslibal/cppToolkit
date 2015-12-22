@@ -77,3 +77,16 @@ void doublyLinkedListTest::testSum() {
     
     CPPUNIT_ASSERT(list->sum() == 6);
 }
+
+void doublyLinkedListTest::testGetLength() {
+    CPPUNIT_ASSERT(list->getLength() == 0);
+    
+    list->insert("a", 0);
+    
+    CPPUNIT_ASSERT(list->getLength() == 1);
+    
+    list->insert("b", 0);
+    list->insert("c", 0);
+    
+    CPPUNIT_ASSERT(list->getLength() == 3);
+}

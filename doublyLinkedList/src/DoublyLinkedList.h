@@ -32,6 +32,7 @@ public:
     void remove(DoubleLinkNode<T>* node);
     void remove(std::string key);
     int sum();
+    int getLength();
 private:
 
 };
