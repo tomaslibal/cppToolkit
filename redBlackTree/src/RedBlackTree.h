@@ -14,13 +14,28 @@
 #ifndef REDBLACKTREE_H
 #define REDBLACKTREE_H
 
+#include <string>
+
+#define RBCOLOR_BLACK 1
+#define RBCOLOR_RED   0
+
+struct RBTreeNode {
+    std::string key;
+    int value;
+    int color;
+    
+    RBTreeNode* parent;
+    RBTreeNode* left;
+    RBTreeNode* right;
+};
+
 class RedBlackTree {
 public:
     RedBlackTree();
     RedBlackTree(const RedBlackTree& orig);
     virtual ~RedBlackTree();
 private:
-
+    RBTreeNode root;
 };
 
 #endif /* REDBLACKTREE_H */
