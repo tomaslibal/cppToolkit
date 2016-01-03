@@ -38,7 +38,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/binsearch/src/binsearch.o \
 	${OBJECTDIR}/chainedHashTable/src/ChainedHashTable.o \
 	${OBJECTDIR}/doublyLinkedList/src/DoublyLinkedList.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/redBlackTree/src/RedBlackTree.o
 
 # Test Directory
 TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
@@ -104,6 +105,11 @@ ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/redBlackTree/src/RedBlackTree.o: redBlackTree/src/RedBlackTree.cpp 
+	${MKDIR} -p ${OBJECTDIR}/redBlackTree/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/redBlackTree/src/RedBlackTree.o redBlackTree/src/RedBlackTree.cpp
 
 # Subprojects
 .build-subprojects:
@@ -227,6 +233,19 @@ ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp
 	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main_nomain.o main.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/main.o ${OBJECTDIR}/main_nomain.o;\
+	fi
+
+${OBJECTDIR}/redBlackTree/src/RedBlackTree_nomain.o: ${OBJECTDIR}/redBlackTree/src/RedBlackTree.o redBlackTree/src/RedBlackTree.cpp 
+	${MKDIR} -p ${OBJECTDIR}/redBlackTree/src
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/redBlackTree/src/RedBlackTree.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -std=c++11 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/redBlackTree/src/RedBlackTree_nomain.o redBlackTree/src/RedBlackTree.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/redBlackTree/src/RedBlackTree.o ${OBJECTDIR}/redBlackTree/src/RedBlackTree_nomain.o;\
 	fi
 
 # Run Test Targets
