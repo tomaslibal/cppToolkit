@@ -7,13 +7,13 @@ CND_BASEDIR=`pwd`
 CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Debug configuration
-CND_PLATFORM_Debug=GNU-Linux-x86
-CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux-x86
-CND_ARTIFACT_NAME_Debug=cpptoolkit
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux-x86/cpptoolkit
-CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux-x86/package
+CND_PLATFORM_Debug=GNU-Linux
+CND_ARTIFACT_DIR_Debug=build/Debug/GNU-Linux/tests/TestFiles
+CND_ARTIFACT_NAME_Debug=f1
+CND_ARTIFACT_PATH_Debug=build/Debug/GNU-Linux/tests/TestFiles/f1
+CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
 CND_PACKAGE_NAME_Debug=cpptoolkit.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux-x86/package/cpptoolkit.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/cpptoolkit.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-MacOSX
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-MacOSX

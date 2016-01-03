@@ -21,7 +21,7 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=GNU-Linux-x86
+CND_PLATFORM=GNU-Linux
 CND_DLIB_EXT=so
 CND_CONF=Debug
 CND_DISTDIR=dist
@@ -50,12 +50,23 @@ TESTFILES= \
 	${TESTDIR}/TestFiles/f3 \
 	${TESTDIR}/TestFiles/f5
 
+# Test Object Files
+TESTOBJECTFILES= \
+	${TESTDIR}/binsearch/test/binsearchTest.o \
+	${TESTDIR}/binsearch/test/binsearchTestRunner.o \
+	${TESTDIR}/bitflags/test/BitflagsTest.o \
+	${TESTDIR}/bitflags/test/bitflagsTestRunner.o \
+	${TESTDIR}/chainedHashTable/test/chainedHashTableTest.o \
+	${TESTDIR}/chainedHashTable/test/chainedHashTableTestRunner.o \
+	${TESTDIR}/doublyLinkedList/test/doublyLinkedListTest.o \
+	${TESTDIR}/doublyLinkedList/test/doublyLinkedListTestRunner.o
+
 # C Compiler Flags
-CFLAGS=
+CFLAGS=`cppunit-config --cflags` 
 
 # CC Compiler Flags
-CCFLAGS=
-CXXFLAGS=
+CCFLAGS=`cppunit-config --cflags` 
+CXXFLAGS=`cppunit-config --cflags` 
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -64,15 +75,15 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=`cppunit-config --libs`  
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cpptoolkit
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${TESTDIR}/TestFiles/f1
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cpptoolkit: ${OBJECTFILES}
-	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cpptoolkit ${OBJECTFILES} ${LDLIBSOPTIONS}
+${TESTDIR}/TestFiles/f1: ${OBJECTFILES}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f1 ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/binsearch/src/binsearch.o: binsearch/src/binsearch.cpp 
 	${MKDIR} -p ${OBJECTDIR}/binsearch/src
@@ -98,7 +109,9 @@ ${OBJECTDIR}/main.o: main.cpp
 .build-subprojects:
 
 # Build Test Targets
-.build-tests-conf: .build-conf ${TESTFILES}
+.build-tests-conf: .build-tests-subprojects .build-conf ${TESTFILES}
+.build-tests-subprojects:
+
 ${TESTDIR}/TestFiles/f2: ${TESTDIR}/binsearch/test/binsearchTest.o ${TESTDIR}/binsearch/test/binsearchTestRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f2 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
@@ -231,7 +244,7 @@ ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cpptoolkit
+	${RM} ${TESTDIR}/TestFiles/f1
 
 # Subprojects
 .clean-subprojects:
