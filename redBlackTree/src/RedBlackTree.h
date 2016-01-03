@@ -35,7 +35,7 @@ public:
     RedBlackTree(const RedBlackTree& orig);
     virtual ~RedBlackTree();
 private:
-    RBTreeNode root;
+    RBTreeNode* root;
 };
 
 #endif /* REDBLACKTREE_H */

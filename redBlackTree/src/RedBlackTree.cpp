@@ -14,11 +14,13 @@
 #include "RedBlackTree.h"
 
 RedBlackTree::RedBlackTree() {
+    root = new RBTreeNode();
 }
 
 RedBlackTree::RedBlackTree(const RedBlackTree& orig) {
 }
 
 RedBlackTree::~RedBlackTree() {
+    delete root;
 }
 
