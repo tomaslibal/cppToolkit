@@ -15,6 +15,16 @@
 
 RedBlackTree::RedBlackTree() {
     root = new RBTreeNode();
+    root->color = RBCOLOR_BLACK;
+    
+    // sentinel node representing NULL
+    nil = new RBTreeNode();
+    nil->color = RBCOLOR_BLACK;
+    
+    root->parent = nil;
+    root->left = nil;
+    root->right = nil;
+    
 }
 
 RedBlackTree::RedBlackTree(const RedBlackTree& orig) {
@@ -22,5 +32,28 @@ RedBlackTree::RedBlackTree(const RedBlackTree& orig) {
 
 RedBlackTree::~RedBlackTree() {
     delete root;
+    delete nil;
 }
 
+/*
+ * x - the node to have its child nodes left rotated
+ */
+void RedBlackTree::leftRotate(RBTreeNode* x) {
+    RBTreeNode* y = x->right;
+    x->right = y->left;
+    
+    if (y->left != nil) {
+        y->left->parent = x;
+    }
+    y->parent = x->parent;
+    
+    if (x->parent == nil) {
+        root = y;
+    } else if (x == x->parent->left) {
+        x->parent->left = y;
+    } else {
+        x->parent->right = y;
+    }
+    y->left = x;
+    x->parent = y;
+}

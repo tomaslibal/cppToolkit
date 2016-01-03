@@ -34,8 +34,18 @@ public:
     RedBlackTree();
     RedBlackTree(const RedBlackTree& orig);
     virtual ~RedBlackTree();
+    
+    void insert();
+    void remove();
 private:
     RBTreeNode* root;
+    RBTreeNode* nil;
+    
+    /*
+     * insertion and deletion may violate the red-black tree conditions so
+     * this function is called to restore them if needed.
+     */
+    void leftRotate(RBTreeNode* x);
 };
 
 #endif /* REDBLACKTREE_H */
