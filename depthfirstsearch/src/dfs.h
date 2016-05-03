@@ -5,6 +5,6 @@
 
 BinNode* dfs(BinNode* root, int search_val);
 
-void visit_node(BinNode* node);
+BinNode* visit_node(BinNode* node, int search_val);
 
 #endif /* _DFS_H_ */
