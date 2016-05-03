@@ -1,5 +1,5 @@
 #ifndef _NODE_H_
-#def _NODE_H_
+#define _NODE_H_
 
 struct BinNode {
   int value;
@@ -9,18 +9,18 @@ struct BinNode {
   BinNode* right;
 };
 
-BinNode getNewBinNode(int val);
+BinNode* getNewBinNode(int val);
 
 struct SquareNode {
   bool visited;
   char color;
 
-  Node* north;
-  Node* east;
-  Node* south;
-  Node* west;
+  SquareNode* north;
+  SquareNode* east;
+  SquareNode* south;
+  SquareNode* west;
 };
 
-Node getNewSquareNode(char color);
+SquareNode* getNewSquareNode(char color);
 
 #endif
