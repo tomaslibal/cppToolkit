@@ -18,6 +18,8 @@ void dfsTest::tearDown() {
 
 void dfsTest::testCreateBinNode() {
   BinNode* n = getNewBinNode(42);
-  
+
   CPPUNIT_ASSERT(n->value == 42);
+
+  delete n;
 }
