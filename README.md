@@ -17,15 +17,22 @@
 
 ## Working with the project
 
-The project can be best opened with Netbeans IDE. This repository contains a *nbproject* folder with the configuration which adds *Logical folders*, and Debug and Release build steps into the IDE.
+required:
+
+- `CMake 2.6+` 
+- `C++11`
 
 ### Tests
 
+Run in the project root:
+
 ```
-make test
+cmake .
+make
+ctest .
 ```
 
-Each item in the toolkit has a `src` source directory and a `test` directory with tests. Netbeans project is setup with logical folders and each test suite can be run from there or from the command line using the GNU make utility.
+Each item in the toolkit has a `src` source directory and a `test` directory with tests.
 
 ----
 
