@@ -1,15 +1,15 @@
-
+#include <cstddef>
 #include "dfs.h"
 #include "node.h"
 
 BinNode* dfs(BinNode* root, int search_val)
 {
-  return null;
+  return NULL;
 }
 
 void visit_node(BinNode* node)
 {
-  if (vertex->visited) return;
-  else vertex->visited = true;
+  if (node->visited) return;
+  else node->visited = true;
 
 }
