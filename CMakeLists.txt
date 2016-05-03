@@ -10,3 +10,12 @@ enable_testing()
 
 # Depth First Search Test Suite
 add_subdirectory(depthfirstsearch/test)
+
+# Doubly Linked List Test Suite
+add_subdirectory(doublyLinkedList/test)
+
+# Bit Flags
+add_subdirectory(bitflags/test)
+
+# Chained Hash Table
+add_subdirectory(chainedHashTable/test)
