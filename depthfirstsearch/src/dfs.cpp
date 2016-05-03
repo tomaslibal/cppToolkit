@@ -1,12 +1,13 @@
 
+#include "dfs.h"
 #include "node.h"
 
-Node* dfs(Node* root, int search_val)
+BinNode* dfs(BinNode* root, int search_val)
 {
   return null;
 }
 
-void visit_vertex(Node* vertex)
+void visit_node(BinNode* node)
 {
   if (vertex->visited) return;
   else vertex->visited = true;
