@@ -4,3 +4,8 @@ GNU*
 nbproject/private
 Testing
 *.*~
+*.cmake
+*/test/Makefile
+CMakeFiles
+CMakeCache.txt
+Makefile
