@@ -1,0 +1,16 @@
+#ifndef _NODE_H_
+#def _NODE_H_
+
+struct Node {
+  bool visited;
+  char color;
+
+  Node* north;
+  Node* east;
+  Node* south;
+  Node* west;
+};
+
+Node getNewNode(char color);
+
+#endif
