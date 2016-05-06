@@ -29,6 +29,11 @@ public:
     void tearDown();
 
 private:
+    BinNode* root = nullptr;
+    BinNode* l1 = nullptr;
+    BinNode* r1 = nullptr;
+    BinNode* l2 = nullptr;
+    
     void testCreateBinNode();
     void testDFSReturnsNullIfValueNotPresent();
     void testDFSReturnsTheNodeIfValuePresent();
