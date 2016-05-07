@@ -60,3 +60,8 @@ void dfsTest::testDFSMarksVisitedNodesAsVisited()
   CPPUNIT_ASSERT(r1->visited == true);
   CPPUNIT_ASSERT(l2->visited == true);
 }
+
+void dfsTest::testNewBinNodeIsMarkedUnvisited()
+{
+  CPPUNIT_ASSERT(root->visited == false);
+}

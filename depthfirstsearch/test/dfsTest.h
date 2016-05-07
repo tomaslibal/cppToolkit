@@ -19,6 +19,7 @@ class dfsTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST(testDFSReturnsNullIfValueNotPresent);
     CPPUNIT_TEST(testDFSReturnsTheNodeIfValuePresent);
     CPPUNIT_TEST(testDFSMarksVisitedNodesAsVisited);
+    CPPUNIT_TEST(testNewBinNodeIsMarkedUnvisited);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -35,6 +36,7 @@ private:
     BinNode* l2 = nullptr;
     
     void testCreateBinNode();
+    void testNewBinNodeIsMarkedUnvisited();
     void testDFSReturnsNullIfValueNotPresent();
     void testDFSReturnsTheNodeIfValuePresent();
     void testDFSMarksVisitedNodesAsVisited();
