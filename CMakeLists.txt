@@ -19,3 +19,6 @@ add_subdirectory(bitflags/test)
 
 # Chained Hash Table
 add_subdirectory(chainedHashTable/test)
+
+# Binary Tree Traversal
+add_subdirectory(binTreeTraversal/test)
