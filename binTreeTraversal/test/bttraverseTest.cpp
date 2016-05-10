@@ -51,3 +51,15 @@ void bttraverseTest::testInorder()
 
   CPPUNIT_ASSERT(oss.str() == "40\n41\n42\n43\n");
 }
+
+void bttraverseTest::testPostorder()
+{
+  std::ostringstream oss;
+  std::streambuf* obuf(std::cout.rdbuf(oss.rdbuf()));
+
+  postorder(root);
+
+  std::cout.rdbuf(obuf);
+  std::cout << oss.str();
+  CPPUNIT_ASSERT(oss.str() == "40\n41\n43\n42\n");
+}
