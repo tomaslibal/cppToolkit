@@ -12,10 +12,13 @@
 
 #include "../src/bttraverse.h"
 
+#include <iostream>
+
 class bttraverseTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST_SUITE(bttraverseTest);
 
     CPPUNIT_TEST(testPreorder);
+    CPPUNIT_TEST(testInorder);
    
     CPPUNIT_TEST_SUITE_END();
 
@@ -30,8 +33,9 @@ private:
     BinNode* l1 = nullptr;
     BinNode* r1 = nullptr;
     BinNode* l2 = nullptr;
-    
+  
     void testPreorder();
+    void testInorder();
 };
 
 #endif	/* _bttraverseTEST_H_ */
