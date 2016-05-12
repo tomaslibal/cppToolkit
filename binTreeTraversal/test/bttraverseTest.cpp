@@ -63,3 +63,39 @@ void bttraverseTest::testPostorder()
   std::cout << oss.str();
   CPPUNIT_ASSERT(oss.str() == "40\n41\n43\n42\n");
 }
+
+void bttraverseTest::testRootIsNullForPreorder()
+{
+  std::ostringstream oss;
+  std::streambuf* obuf(std::cout.rdbuf(oss.rdbuf()));
+
+  preorder(nullptr);
+
+  std::cout.rdbuf(obuf);
+
+  CPPUNIT_ASSERT(oss.str() == "");
+}
+
+void bttraverseTest::testRootIsNullForInorder()
+{
+  std::ostringstream oss;
+  std::streambuf* obuf(std::cout.rdbuf(oss.rdbuf()));
+
+  inorder(nullptr);
+
+  std::cout.rdbuf(obuf);
+
+  CPPUNIT_ASSERT(oss.str() == "");
+}
+
+void bttraverseTest::testRootIsNullForPostorder()
+{
+  std::ostringstream oss;
+  std::streambuf* obuf(std::cout.rdbuf(oss.rdbuf()));
+
+  postorder(nullptr);
+
+  std::cout.rdbuf(obuf);
+
+  CPPUNIT_ASSERT(oss.str() == "");
+}

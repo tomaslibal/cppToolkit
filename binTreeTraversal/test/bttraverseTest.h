@@ -20,6 +20,9 @@ class bttraverseTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST(testPreorder);
     CPPUNIT_TEST(testInorder);
     CPPUNIT_TEST(testPostorder);
+    CPPUNIT_TEST(testRootIsNullForPreorder);
+    CPPUNIT_TEST(testRootIsNullForInorder);
+    CPPUNIT_TEST(testRootIsNullForPostorder);
    
     CPPUNIT_TEST_SUITE_END();
 
@@ -38,6 +41,9 @@ private:
     void testPreorder();
     void testInorder();
     void testPostorder();
+    void testRootIsNullForPreorder();
+    void testRootIsNullForInorder();
+    void testRootIsNullForPostorder();
 };
 
 #endif	/* _bttraverseTEST_H_ */
