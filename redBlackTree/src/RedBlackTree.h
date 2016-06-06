@@ -46,6 +46,7 @@ private:
      * this function is called to restore them if needed.
      */
     void leftRotate(RBTreeNode* x);
+    void rightRotate(RBTreeNode* x);
 };
 
 #endif /* REDBLACKTREE_H */

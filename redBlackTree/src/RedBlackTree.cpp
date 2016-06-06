@@ -57,3 +57,26 @@ void RedBlackTree::leftRotate(RBTreeNode* x) {
     y->left = x;
     x->parent = y;
 }
+
+void RedBlackTree::rightRotate(RBTreeNode* x)
+{
+    RBTreeNode* y = x->left;
+    x->left = y->right;
+    
+    if (y->right != nil) {
+        y->right->parent = x;
+    }
+    
+    y->parent = x->parent;
+    
+    if (x->parent == nil) {
+        root = y;
+    } else if (x == x->parent->right) {
+        x->parent->right = y;
+    } else {
+        x->parent->left = y;
+    }
+    
+    y->right = x;
+    x->parent = y;
+}
