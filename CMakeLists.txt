@@ -22,3 +22,6 @@ add_subdirectory(chainedHashTable/test)
 
 # Binary Tree Traversal
 add_subdirectory(binTreeTraversal/test)
+
+# Red Black Tree 
+add_subdirectory(redBlackTree/test)
