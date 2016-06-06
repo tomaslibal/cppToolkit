@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   RedBlackTree.h
  * Author: tlibal
@@ -29,13 +23,17 @@ struct RBTreeNode {
     RBTreeNode* right;
 };
 
+/*
+ * Red-Black Tree with sentinel nodes.
+ * 
+ */
 class RedBlackTree {
 public:
     RedBlackTree();
-    RedBlackTree(const RedBlackTree& orig);
+    RedBlackTree(RedBlackTree const& orig);
     virtual ~RedBlackTree();
     
-    void insert();
+    void insert(RBTreeNode const& z);
     void remove();
 private:
     RBTreeNode* root;

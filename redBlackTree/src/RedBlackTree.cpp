@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   RedBlackTree.cpp
  * Author: tlibal
@@ -80,3 +74,9 @@ void RedBlackTree::rightRotate(RBTreeNode* x)
     y->right = x;
     x->parent = y;
 }
+
+void RedBlackTree::insert(RBTreeNode const& z)
+{
+    
+}
+
