@@ -4,11 +4,11 @@
 
 ### Hash table
 
-- *Hash Table (chained)* Contains a string hashing function. Collisions are stored at the same index as a linked list of values. Uses the Linked List from the next example.
+*Hash Table (chained)* Contains a string hashing function. Collisions are stored at the same index as a linked list of values. Uses the Linked List from the next example.
 
 ### Double Linked List
 
-- *Double Linked List:* Each node points to the next and previous link in the chain.
+*Double Linked List:* Each node points to the next and previous link in the chain.
     
 ```
              |----------------------|          |----------------------|
@@ -21,11 +21,15 @@
 
 ### Binary search
 
-- *Binary search algorithm*
+*Binary search algorithm*
 
 ### Bit flags
 
-- *Bit flags operations* set and unset flag bitwise operations, as a header file only implementation
+*Bit flags operations* set and unset flag bitwise operations, as a header file only implementation
+
+### Binary Tree Traversal
+
+Preorder, Inorder, and Postorder binary tree traversal methods are illustrated.
 
 ## Working with the project
 
