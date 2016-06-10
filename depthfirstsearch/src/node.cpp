@@ -10,3 +10,11 @@ BinNode* getNewBinNode(int value)
   n->right = NULL;
   return n;
 }
+
+SquareNode* getNewSquareNode(char color)
+{
+  SquareNode* n = new SquareNode;
+  n->visited = false;
+  n->color = color;
+  return n;
+}

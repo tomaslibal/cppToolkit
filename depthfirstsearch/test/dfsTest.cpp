@@ -65,3 +65,8 @@ void dfsTest::testNewBinNodeIsMarkedUnvisited()
 {
   CPPUNIT_ASSERT(root->visited == false);
 }
+
+void dfsTest::testSquareNodePartitionProblem()
+{
+
+}
