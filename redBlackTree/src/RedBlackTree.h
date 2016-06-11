@@ -35,6 +35,9 @@ public:
     
     void insert(RBTreeNode const& z);
     void remove();
+    RBTreeNode* getRoot();
+    RBTreeNode* getNil();
+    bool isNil(RBTreeNode const& node);
 private:
     RBTreeNode* root;
     RBTreeNode* nil;

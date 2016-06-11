@@ -29,6 +29,21 @@ RedBlackTree::~RedBlackTree() {
     delete nil;
 }
 
+RBTreeNode* RedBlackTree::getRoot()
+{
+    return root;
+}
+
+RBTreeNode* RedBlackTree::getNil()
+{
+    return nil;
+}
+
+bool RedBlackTree::isNil(RBTreeNode const& node)
+{
+    return &node == nil;
+}
+
 /*
  * x - the node to have its child nodes left rotated
  */
