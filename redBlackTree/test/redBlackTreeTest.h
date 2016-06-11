@@ -15,7 +15,8 @@
 class redBlackTreeTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST_SUITE(redBlackTreeTest);
 
-    CPPUNIT_TEST(testVoid);
+    CPPUNIT_TEST(testCreateVoid);
+    CPPUNIT_TEST(testRootIsBlack);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -28,6 +29,7 @@ public:
 private:
     RedBlackTree* rbtree;
     void testCreateVoid();
+    void testRootIsBlack();
 };
 
 #endif	/* REDBLACKTREETEST_H */

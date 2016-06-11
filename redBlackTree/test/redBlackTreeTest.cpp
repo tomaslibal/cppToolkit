@@ -17,9 +17,22 @@ redBlackTreeTest::~redBlackTreeTest() {
 }
 
 void redBlackTreeTest::setUp() {
-    
+    rbtree = new RedBlackTree();  
 }
 
 void redBlackTreeTest::tearDown() {
-    
+    delete rbtree;
+}
+
+void redBlackTreeTest::testCreateVoid()
+{
+    CPPUNIT_ASSERT(rbtree->isNil(*rbtree->getRoot()) == false);
+    CPPUNIT_ASSERT(rbtree->isNil(*rbtree->getRoot()->parent) == true);
+    CPPUNIT_ASSERT(rbtree->isNil(*rbtree->getRoot()->left) == true);
+    CPPUNIT_ASSERT(rbtree->isNil(*rbtree->getRoot()->right) == true);
+}
+
+void redBlackTreeTest::testRootIsBlack()
+{
+    // CPPUNIT_ASSERT(rbtree->root->color == RBCOLOR_BLACK);
 }
