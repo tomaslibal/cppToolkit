@@ -31,6 +31,10 @@
 
 Preorder, Inorder, and Postorder binary tree traversal methods are illustrated.
 
+### Red-Black Tree
+
+An implementation of a balanced search tree. 
+
 ## Working with the project
 
 required:
