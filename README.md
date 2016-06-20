@@ -2,10 +2,6 @@
 
 ## Components
 
-### Hash table
-
-*Hash Table (chained)* Contains a string hashing function. Collisions are stored at the same index as a linked list of values. Uses the Linked List from the next example.
-
 ### Double Linked List
 
 *Double Linked List:* Each node points to the next and previous link in the chain.
@@ -18,6 +14,12 @@
              | node<T>* next   --------------> | node<T>* next ----------------> /
              |----------------------|          |----------------------|
 ```
+
+### Hash table
+
+The hash table is an array of linked lists. Because each link in the linked list can store a key-value pair, this is what the hash table can also store.
+
+The key is always a string and the type of the value can be templated. A hashing algorithm is used to compute the index of the list in which a key-value pair is stored.
 
 ### Binary search
 
