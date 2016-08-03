@@ -25,3 +25,6 @@ add_subdirectory(binTreeTraversal/test)
 
 # Red Black Tree 
 add_subdirectory(redBlackTree/test)
+
+# Quicksort
+add_subdirectory(quicksort/test)
