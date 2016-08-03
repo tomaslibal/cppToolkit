@@ -1,6 +1,8 @@
 # In the toolkit
 
-"[Y]ou must read and write computer programs -- many of them... The programmer must seek both perfection of part and adequacy of collection" (Abelson, Sussman and Sussman, 1996, p. xiii).
+"[Y]ou must read and write computer programs -- many of them... The programmer must seek both perfection of part and adequacy of collection... Since large programs grow from small ones, it is crucial that we develop an arsenal of standard program structures of whose correctness we have become sure--we call them idioms--and learn to combine them into larger structures using organizational techniques of proven value" (Abelson, Sussman and Sussman, 1996, p. xiii).
+
+
 
 ## Components
 
