@@ -31,6 +31,18 @@ The hash table is an array of linked lists. Because each link in the linked list
 
 The key is always a string and the type of the value can be parameterized by the template. A hashing algorithm is used to compute the index of the list in which a key-value pair is stored.
 
+Simplified Interface
+
+```
+class HashTable {
+public:
+    void insert(const char* key, T value);
+    void remove(const char* key);
+    T search(const char* key);
+};
+
+```
+
 ### Double Linked List
 
 In a double linked list each node points to the next and the previous link in the chain.
