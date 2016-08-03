@@ -1,5 +1,7 @@
 # In the toolkit
 
+"[Y]ou must read and write computer programs -- many of them... The programmer must seek both perfection of part and adequacy of collection" (Abelson, Sussman and Sussman, 1996, p. xiii).
+
 ## Components
 
 ### Double Linked List
@@ -58,4 +60,4 @@ Each item in the toolkit has a `src` source directory and a `test` directory wit
 
 ----
 
-Tomas
+Harold Abelson , Gerald Jay Sussman, Julie Sussman. 1996. *Structure and Interpretation of Computer Programs - 2nd Edition*
