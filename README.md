@@ -2,13 +2,38 @@
 
 "[Y]ou must read and write computer programs -- many of them... The programmer must seek both perfection of part and adequacy of collection... Since large programs grow from small ones, it is crucial that we develop an arsenal of standard program structures of whose correctness we have become sure--we call them idioms--and learn to combine them into larger structures using organizational techniques of proven value" (Abelson, Sussman and Sussman, 1996, pp. xiii-xiv).
 
-
+As the repository name suggests, the reference code implementations are written in C++. For some components it will be necessary to use a C++11 compiler.
 
 ## Components
 
+- Bit flags
+- Binary search algorithm
+- Binary tree traversal
+- Hash table
+- Double linked list
+- Red-black tree
+
+### Bit flags
+
+Bit flags operations implemented are *set* and *unset* flag bitwise operations. This is a header file only implementation.
+
+### Binary search
+
+A templated binary search function which can be parameterized with the type of the array in which the lookup is performed.
+
+### Binary Tree Traversal
+
+Preorder, Inorder, and Postorder binary tree traversal methods are illustrated.
+
+### Hash table
+
+The hash table is an array of linked lists. Because each link in the linked list stores a key-value pair, this is what the hash table can store.
+
+The key is always a string and the type of the value can be parameterized by the template. A hashing algorithm is used to compute the index of the list in which a key-value pair is stored.
+
 ### Double Linked List
 
-*Double Linked List:* Each node points to the next and previous link in the chain.
+In a double linked list each node points to the next and the previous link in the chain.
     
 ```
              |----------------------|          |----------------------|
@@ -18,24 +43,6 @@
              | node<T>* next   --------------> | node<T>* next ----------------> /
              |----------------------|          |----------------------|
 ```
-
-### Hash table
-
-The hash table is an array of linked lists. Because each link in the linked list can store a key-value pair, this is what the hash table can also store.
-
-The key is always a string and the type of the value can be templated. A hashing algorithm is used to compute the index of the list in which a key-value pair is stored.
-
-### Binary search
-
-*Binary search algorithm*
-
-### Bit flags
-
-*Bit flags operations* set and unset flag bitwise operations, as a header file only implementation
-
-### Binary Tree Traversal
-
-Preorder, Inorder, and Postorder binary tree traversal methods are illustrated.
 
 ### Red-Black Tree
 
@@ -62,4 +69,4 @@ Each item in the toolkit has a `src` source directory and a `test` directory wit
 
 ----
 
-Harold Abelson , Gerald Jay Sussman, Julie Sussman. 1996. *Structure and Interpretation of Computer Programs - 2nd Edition*
+Harold Abelson , Gerald Jay Sussman, Julie Sussman (1996). *Structure and Interpretation of Computer Programs - 2nd Edition.* Cambridge, MA: MIT.
