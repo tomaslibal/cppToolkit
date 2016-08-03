@@ -9,6 +9,7 @@ As the repository name suggests, the reference code implementations are written 
 - Bit flags
 - Binary search algorithm
 - Binary tree traversal
+- Quicksort
 - Hash table
 - Double linked list
 - Red-black tree
@@ -24,6 +25,14 @@ A templated binary search function which can be parameterized with the type of t
 ### Binary Tree Traversal
 
 Preorder, Inorder, and Postorder binary tree traversal methods are illustrated.
+
+### Quicksort
+
+Quicksort (Partition exchange sort) is a divide-and-conquer search algorithm:
+
+- split the array into smaller subarrays
+- sort the subarrays
+- merge the sorted subarrays
 
 ### Hash table
 
@@ -82,3 +91,5 @@ Each item in the toolkit has a `src` source directory and a `test` directory wit
 ----
 
 Harold Abelson , Gerald Jay Sussman, Julie Sussman (1996). *Structure and Interpretation of Computer Programs - 2nd Edition.* Cambridge, MA: MIT.
+
+Saumyendra Sengupta, Carl P. Korobkin (2012). *C++: Object-Oriented Data Structures.* Springer.
