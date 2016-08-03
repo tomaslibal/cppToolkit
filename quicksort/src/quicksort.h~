@@ -1,6 +1,0 @@
-#ifndef QUICKSORT_H
-#def QUICKSORT_H
-
-template <typename T> quicksort(T** array, int lo, int hi);
-
-#endif /* QUICKSORT_H */
