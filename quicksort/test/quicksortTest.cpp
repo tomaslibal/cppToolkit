@@ -56,3 +56,13 @@ void quicksortTest::testOrderedList() {
 
     assertIntArrayEquals(array, expected, 5);
 }
+
+void quicksortTest::testListOfSizeOne() {
+    int array[1] = { 42 };
+    int expected[1] = { 42 };
+
+    quicksort(array, 0, 0);
+
+    assertIntArrayEquals(array, expected, 1);
+
+}

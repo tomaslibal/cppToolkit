@@ -16,6 +16,8 @@ class quicksortTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST_SUITE(quicksortTest);
 
     CPPUNIT_TEST(testBasicCase);
+    CPPUNIT_TEST(testOrderedList);
+    CPPUNIT_TEST(testListOfSizeOne);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -26,6 +28,7 @@ public:
 private: 
     void testBasicCase();
     void testOrderedList();
+    void testListOfSizeOne();
 
     void printIntArray(int* array, int len);
 
