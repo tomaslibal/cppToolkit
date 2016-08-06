@@ -34,6 +34,8 @@ Quicksort (Partition exchange sort) is a divide-and-conquer search algorithm:
 - sort the subarrays
 - merge the sorted subarrays
 
+Part of the algorithm's performance comes from the strategy used to choose the pivot. This implementation uses the original pivot choosing strategy which is to initially set the beginning of a partition to be the pivot. The worst-case asymptotical running time n^2 is largely due to this choice for an input which is already sorted in an descending order.
+
 ### Hash table
 
 The hash table is an array of linked lists. Because each link in the linked list stores a key-value pair, this is what the hash table can store.
