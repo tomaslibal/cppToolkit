@@ -25,6 +25,7 @@ public:
 
 private: 
     void testBasicCase();
+    void testOrderedList();
 
     void printIntArray(int* array, int len);
 

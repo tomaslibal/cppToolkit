@@ -47,3 +47,12 @@ void quicksortTest::testBasicCase() {
     
     assertIntArrayEquals(array, expected, 5);
 }
+
+void quicksortTest::testOrderedList() {
+    int array[5] = { 1, 2, 3, 4, 5 };
+    int expected[5] = { 1, 2, 3, 4, 5 };
+
+    quicksort(array, 0, 4);
+
+    assertIntArrayEquals(array, expected, 5);
+}
