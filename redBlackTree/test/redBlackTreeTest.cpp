@@ -61,3 +61,14 @@ void redBlackTreeTest::testNodeCopyConstructorCopiesValues()
     CPPUNIT_ASSERT(n.value == orig.value);
     CPPUNIT_ASSERT(n.color == orig.color);
 }
+
+void redBlackTreeTest::testNodeCopyConstructorCreatesNewObjects()
+{
+    RBTreeNode orig;
+
+    orig.key = "foo";
+
+    RBTreeNode n = orig;
+
+    CPPUNIT_ASSERT(&orig != &n);
+}
