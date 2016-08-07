@@ -36,3 +36,13 @@ void redBlackTreeTest::testRootIsBlack()
 {
     // CPPUNIT_ASSERT(rbtree->root->color == RBCOLOR_BLACK);
 }
+
+void redBlackTreeTest::testIsNilTest() {
+    RBTreeNode* notNil = new RBTreeNode();
+    RBTreeNode* nil = rbtree->getNil();
+
+    CPPUNIT_ASSERT(rbtree->isNil(*notNil) == false);
+    CPPUNIT_ASSERT(rbtree->isNil(*nil) == true);
+
+    delete notNil;
+}
