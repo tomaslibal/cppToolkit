@@ -21,6 +21,9 @@ struct RBTreeNode {
     RBTreeNode* parent;
     RBTreeNode* left;
     RBTreeNode* right;
+
+    RBTreeNode();
+    RBTreeNode(RBTreeNode const& orig);
 };
 
 /*

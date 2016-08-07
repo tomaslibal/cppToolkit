@@ -7,6 +7,22 @@
 
 #include "RedBlackTree.h"
 
+RBTreeNode::RBTreeNode()
+{
+    
+}
+
+RBTreeNode::RBTreeNode(RBTreeNode const& orig)
+{
+    key = orig.key;
+    value = orig.value;
+    color = orig.color;
+
+    parent = orig.parent;
+    left = orig.left;
+    right = orig.right;
+}
+
 RedBlackTree::RedBlackTree() {
     root = new RBTreeNode();
     root->color = RBCOLOR_BLACK;
@@ -92,6 +108,5 @@ void RedBlackTree::rightRotate(RBTreeNode* x)
 
 void RedBlackTree::insert(RBTreeNode const& z)
 {
-    
-}
 
+}
