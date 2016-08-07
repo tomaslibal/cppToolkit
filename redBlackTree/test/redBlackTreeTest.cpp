@@ -46,3 +46,18 @@ void redBlackTreeTest::testIsNilTest() {
 
     delete notNil;
 }
+
+void redBlackTreeTest::testNodeCopyConstructorCopiesValues()
+{
+    RBTreeNode orig;
+
+    orig.key = "bar";
+    orig.value = 1;
+    orig.color = RBCOLOR_BLACK;
+
+    RBTreeNode n = orig;
+
+    CPPUNIT_ASSERT(n.key.compare(orig.key) == 0);
+    CPPUNIT_ASSERT(n.value == orig.value);
+    CPPUNIT_ASSERT(n.color == orig.color);
+}
