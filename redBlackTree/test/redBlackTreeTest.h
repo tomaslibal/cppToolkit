@@ -17,7 +17,7 @@ class redBlackTreeTest : public CPPUNIT_NS::TestFixture {
 
     CPPUNIT_TEST(testCreateVoid);
     CPPUNIT_TEST(testRootIsBlack);
-    CPPUNIT_TEST(testIsNilTest);
+    CPPUNIT_TEST(testIsNilTest);    
 
     CPPUNIT_TEST_SUITE_END();
 
