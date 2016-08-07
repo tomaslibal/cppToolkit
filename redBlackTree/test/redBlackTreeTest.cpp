@@ -34,7 +34,7 @@ void redBlackTreeTest::testCreateVoid()
 
 void redBlackTreeTest::testRootIsBlack()
 {
-    // CPPUNIT_ASSERT(rbtree->root->color == RBCOLOR_BLACK);
+    CPPUNIT_ASSERT(rbtree->getRoot()->color == RBCOLOR_BLACK);
 }
 
 void redBlackTreeTest::testIsNilTest() {
