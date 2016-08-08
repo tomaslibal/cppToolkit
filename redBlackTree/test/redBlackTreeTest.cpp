@@ -72,3 +72,12 @@ void redBlackTreeTest::testNodeCopyConstructorCreatesNewObjects()
 
     CPPUNIT_ASSERT(&orig != &n);
 }
+
+void redBlackTreeTest::testNodeInsertRootStillBlack()
+{
+    RBTreeNode z;
+
+    rbtree->insert(z);
+
+    CPPUNIT_ASSERT(rbtree->getRoot()->color == RBCOLOR_BLACK);
+}

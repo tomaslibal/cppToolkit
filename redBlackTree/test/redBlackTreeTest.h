@@ -20,6 +20,7 @@ class redBlackTreeTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST(testIsNilTest);   
     CPPUNIT_TEST(testNodeCopyConstructorCopiesValues); 
     CPPUNIT_TEST(testNodeCopyConstructorCreatesNewObjects);
+    CPPUNIT_TEST(testNodeInsertRootStillBlack);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -36,6 +37,7 @@ private:
     void testIsNilTest();
     void testNodeCopyConstructorCopiesValues();
     void testNodeCopyConstructorCreatesNewObjects();
+    void testNodeInsertRootStillBlack();
 };
 
 #endif	/* REDBLACKTREETEST_H */
