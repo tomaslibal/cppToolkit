@@ -92,6 +92,8 @@ Each item in the toolkit has a `src` source directory and a `test` directory wit
 
 ----
 
+## Bibliography
+
 Harold Abelson , Gerald Jay Sussman, Julie Sussman (1996). *Structure and Interpretation of Computer Programs - 2nd Edition.* Cambridge, MA: MIT.
 
 Saumyendra Sengupta, Carl P. Korobkin (2012). *C++: Object-Oriented Data Structures.* Springer.
