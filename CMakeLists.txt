@@ -28,3 +28,6 @@ add_subdirectory(redBlackTree/test)
 
 # Quicksort
 add_subdirectory(quicksort/test)
+
+# Heap (sorting)
+add_subdirectory(heap/test)
