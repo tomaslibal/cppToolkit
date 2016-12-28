@@ -16,6 +16,9 @@ class heapTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST_SUITE(heapTest);
 
     CPPUNIT_TEST(testLen);
+    CPPUNIT_TEST(testParentIdx);
+    CPPUNIT_TEST(testLeftIdx);
+    CPPUNIT_TEST(testRightIdx);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -26,7 +29,11 @@ public:
     void tearDown();
 
 private:
+    HeapArray * heap;
     void testLen();
+    void testParentIdx();
+    void testLeftIdx();
+    void testRightIdx();
 };
 
 #endif	/* heapTest_H */

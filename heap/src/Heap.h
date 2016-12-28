@@ -11,6 +11,10 @@ public:
     HeapArray(std::vector<int> const& a) : oarray(a.begin(), a.end()) { len = a.size(); }
     int len;
     int heapsize = 0;
+
+    static int getParentIdx(int idx);
+    static int getLeftChildIdx(int idx);
+    static int getRightChildIdx(int idx);
 };
 
 void max_heapify(HeapArray & ha, int index);
