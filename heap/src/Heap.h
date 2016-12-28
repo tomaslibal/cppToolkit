@@ -8,8 +8,8 @@ class HeapArray
 private:
     std::vector<int> oarray;
 public:
-    HeapArray(std::vector<int> const& a) : oarray(a.begin(), a.end()) {}
-    int len = 0;
+    HeapArray(std::vector<int> const& a) : oarray(a.begin(), a.end()) { len = a.size(); }
+    int len;
     int heapsize = 0;
 };
 
