@@ -24,6 +24,12 @@ void heapTest::tearDown() {
 
 }
 
-void heapTest::testFoo() {
-    CPPUNIT_ASSERT_MESSAGE("foo", 42 == 42);
+void heapTest::testLen() {
+    std::vector<int> vec;
+    vec.push_back(1);
+    vec.push_back(2);
+    vec.push_back(3);
+    HeapArray a (vec);
+
+    CPPUNIT_ASSERT_MESSAGE("HeapArray.len should be 3", 3 == a.len);
 }
