@@ -27,12 +27,12 @@ void max_heapify(HeapArray & ha, int index)
     int largest;
     int l = ha.getLeftChildIdx(index);
     int r = ha.getRightChildIdx(index);
-    if (l < ha.heapsize && ha.get(l) > ha.get(index)) {
+    if (l < ha.heapsize && ha[l] > ha[index]) {
         largest = l;
     } else {
         largest = index;
     }
-    if (r < ha.heapsize && ha.get(r) > ha.get(largest)) {
+    if (r < ha.heapsize && ha[r] > ha[largest]) {
         largest = r;
     } 
     if (largest != index) {
