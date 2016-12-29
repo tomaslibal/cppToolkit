@@ -20,6 +20,7 @@ class heapTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST(testParentIdx);
     CPPUNIT_TEST(testLeftIdx);
     CPPUNIT_TEST(testRightIdx);
+    CPPUNIT_TEST(testMaxHeapifyOnRoot);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -36,6 +37,7 @@ private:
     void testParentIdx();
     void testLeftIdx();
     void testRightIdx();
+    void testMaxHeapifyOnRoot();
 };
 
 #endif	/* heapTest_H */

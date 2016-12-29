@@ -7,7 +7,6 @@
 
 #include "heapTest.h"
 
-
 CPPUNIT_TEST_SUITE_REGISTRATION(heapTest);
 
 heapTest::heapTest() {
@@ -18,9 +17,9 @@ heapTest::~heapTest() {
 
 void heapTest::setUp() {
     std::vector<int> vec;
-    vec.push_back(1);
-    vec.push_back(2);
     vec.push_back(3);
+    vec.push_back(4);
+    vec.push_back(1);
     heap = new HeapArray(vec);
 }
 
@@ -34,7 +33,7 @@ void heapTest::testLen() {
 
 void heapTest::testHeapSizeIsZeroOnInit()
 {
-    CPPUNIT_ASSERT_MESSAGE("HeapArray.heapsize should be 0", 0 == heap->heapsize);
+    CPPUNIT_ASSERT_MESSAGE("HeapArray.heapsize should be 3", 3 == heap->heapsize);
 }
 
 void heapTest::testParentIdx()
@@ -50,4 +49,11 @@ void heapTest::testLeftIdx()
 void heapTest::testRightIdx()
 {
     CPPUNIT_ASSERT_MESSAGE("right child should be 2*i + 1", 11 == heap->getRightChildIdx(5));
+}
+
+void heapTest::testMaxHeapifyOnRoot()
+{
+    max_heapify(*heap, 0);
+
+    CPPUNIT_ASSERT_MESSAGE("root should be 4", 4 == heap->get(0));
 }
