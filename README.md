@@ -39,7 +39,7 @@ Part of the algorithm's performance comes from the strategy used to choose the p
 
 ### Heapsort
 
-Implemented using the max-heap data structure.
+Implemented using the max-heap data structure. This max-heap implementation uses 1-indexed array access because operations getLeftChildIdx and getRightChildIdx use left bitshift by 1 and so if it were a 0-indexed array, it would require a different operation for the first element to get its left and right child nodes' indexes (`0 << 1` is still a zero).
 
 ### Hash table
 
