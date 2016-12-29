@@ -1,10 +1,10 @@
 #include "Heap.h"
 
 #include <cmath>
-
+#include <iostream>
 HeapArray::HeapArray(std::vector<int> const& a)
 {
-    oarray = a; //(a.begin(), a.end());  
+    oarray = a;
     len = a.size(); 
     build_max_heap(*this); 
 }
@@ -20,6 +20,12 @@ int HeapArray::getLeftChildIdx(int idx)
 int HeapArray::getRightChildIdx(int idx)
 {
     return (idx << 1) + 1;
+}
+void HeapArray::exchange(int const a_idx, int const b_idx) 
+{
+    int const temp = oarray[a_idx]; 
+    oarray[a_idx] = oarray[b_idx]; 
+    oarray[b_idx] = temp;
 }
 
 void max_heapify(HeapArray & ha, int index)
@@ -48,4 +54,16 @@ void build_max_heap(HeapArray & ha)
     for (int i = start; i > 0; i -= 1) {
         max_heapify(ha, i);
     }
+}
+
+std::vector<int> heapsort(std::vector<int> const& array)
+{
+    HeapArray sort (array);
+    int start = sort.len-1;
+    for (int i = sort.len-1; i > 1; i -= 1) {
+        sort.exchange(i, 0);
+        sort.heapsize--;
+        max_heapify(sort, 0);
+    }
+    return sort.getAsVector();
 }

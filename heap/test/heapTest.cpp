@@ -6,7 +6,7 @@
  */
 
 #include "heapTest.h"
-
+#include <iostream>
 CPPUNIT_TEST_SUITE_REGISTRATION(heapTest);
 
 heapTest::heapTest() {
@@ -56,4 +56,21 @@ void heapTest::testMaxHeapifyOnRoot()
     max_heapify(*heap, 0);
 
     CPPUNIT_ASSERT_MESSAGE("root should be 4", 4 == (*heap)[0]);
+}
+
+void heapTest::testHeapsort()
+{
+    const int aux[] = { 6, 1, 7, 10, 8, 5, 2, 4, 9, 3 };
+    std::vector<int> nums (aux, aux + sizeof(aux) / sizeof(aux[0]) );
+    const int aux2[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+    std::vector<int> expected (aux2, aux2 + sizeof(aux2) / sizeof(aux2[0]) );
+    
+    std::vector<int> actual = heapsort(nums);
+
+    std::cout << std::endl << "*********";
+    for(int i=0; i<actual.size(); ++i)
+        std::cout << actual[i] << ' ';
+    std::cout << std::endl;
+
+    CPPUNIT_ASSERT_MESSAGE("numbers should be sorted", expected == actual);
 }

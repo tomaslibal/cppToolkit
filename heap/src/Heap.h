@@ -13,7 +13,8 @@ public:
     int heapsize = 0;
 
     int get(int idx) { return oarray[idx]; }
-    void exchange(int a_idx, int b_idx) { int temp = oarray[a_idx]; oarray[a_idx] = oarray[b_idx]; oarray[b_idx] = temp; }
+    std::vector<int> getAsVector() { return oarray; }
+    void exchange(int const a_idx, int const b_idx);
 
     int& operator[] (int const idx) { return oarray[idx]; }
     int const& operator[] (int const idx) const { return oarray[idx]; }
@@ -31,6 +32,6 @@ public:
 void max_heapify(HeapArray & ha, int index);
 void build_max_heap(HeapArray & ha);
 
-int heapsearch(std::vector<int> const& array, int needle);
+std::vector<int> heapsort(std::vector<int> const& array);
 
 #endif
