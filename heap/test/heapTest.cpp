@@ -32,6 +32,11 @@ void heapTest::testLen() {
     CPPUNIT_ASSERT_MESSAGE("HeapArray.len should be 3", 3 == heap->len);
 }
 
+void heapTest::testHeapSizeIsZeroOnInit()
+{
+    CPPUNIT_ASSERT_MESSAGE("HeapArray.heapsize should be 0", 0 == heap->heapsize);
+}
+
 void heapTest::testParentIdx()
 {
     CPPUNIT_ASSERT_MESSAGE("parent index should be floor(i / 2)", 2 == heap->getParentIdx(5));
