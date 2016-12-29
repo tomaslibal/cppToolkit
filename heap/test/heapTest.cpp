@@ -55,5 +55,5 @@ void heapTest::testMaxHeapifyOnRoot()
 {
     max_heapify(*heap, 0);
 
-    CPPUNIT_ASSERT_MESSAGE("root should be 4", 4 == heap->get(0));
+    CPPUNIT_ASSERT_MESSAGE("root should be 4", 4 == (*heap)[0]);
 }

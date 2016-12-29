@@ -16,6 +16,7 @@ public:
     void exchange(int a_idx, int b_idx) { int temp = oarray[a_idx]; oarray[a_idx] = oarray[b_idx]; oarray[b_idx] = temp; }
 
     int& operator[] (int const idx) { return oarray[idx]; }
+    int const& operator[] (int const idx) const { return oarray[idx]; }
 
     static int getParentIdx(int idx);
     static int getLeftChildIdx(int idx);
