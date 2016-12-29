@@ -9,10 +9,11 @@ As the repository name suggests, the reference code implementations are written 
 - Bit flags
 - Binary search algorithm
 - Binary tree traversal
-- Quicksort
 - Hash table
 - Double linked list
 - Red-black tree
+- Quicksort
+- Heapsort and max-heap data structure
 
 ### Bit flags
 
@@ -35,6 +36,10 @@ Quicksort (Partition exchange sort) is a divide-and-conquer search algorithm:
 - merge the sorted subarrays
 
 Part of the algorithm's performance comes from the strategy used to choose the pivot. This implementation uses the original pivot choosing strategy which is to initially set the beginning of a partition to be the pivot. The worst-case asymptotical running time n^2 is largely due to this choice for an input which is already sorted in an descending order.
+
+### Heapsort
+
+Implemented using the max-heap data structure.
 
 ### Hash table
 
