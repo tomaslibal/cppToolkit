@@ -59,7 +59,6 @@ void build_max_heap(HeapArray & ha)
 std::vector<int> heapsort(std::vector<int> const& array)
 {
     HeapArray sort (array);
-    int start = static_cast<int>(std::floor(sort.len / 2));
     for (int i = sort.len; i >= 2; i -= 1) {
         sort.exchange(i, 1);
         sort.heapsize--;
