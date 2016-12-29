@@ -12,12 +12,11 @@ public:
     int len;
     int heapsize = 0;
 
-    int get(int idx) { return oarray[idx]; }
     std::vector<int> getAsVector() { return oarray; }
     void exchange(int const a_idx, int const b_idx);
 
-    int& operator[] (int const idx) { return oarray[idx]; }
-    int const& operator[] (int const idx) const { return oarray[idx]; }
+    int& operator[] (int const idx) { return oarray[idx-1]; }
+    int const& operator[] (int const idx) const { return oarray[idx-1]; }
 
     static int getParentIdx(int idx);
     static int getLeftChildIdx(int idx);
