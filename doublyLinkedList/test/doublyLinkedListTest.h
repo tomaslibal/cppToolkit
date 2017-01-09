@@ -25,6 +25,7 @@ class doublyLinkedListTest : public CPPUNIT_NS::TestFixture {
     
     CPPUNIT_TEST(testFindMiddleElementOne);
     CPPUNIT_TEST(testFindMiddleElementThree);
+    CPPUNIT_TEST(testFindMiddleElementEven);
 
 
     CPPUNIT_TEST_SUITE_END();
@@ -46,6 +47,7 @@ private:
     
     void testFindMiddleElementOne();
     void testFindMiddleElementThree();
+    void testFindMiddleElementEven();
 };
 
 #endif	/* DOUBLYLINKEDLISTTEST_H */

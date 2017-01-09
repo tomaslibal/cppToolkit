@@ -111,3 +111,16 @@ void doublyLinkedListTest::testFindMiddleElementThree()
     CPPUNIT_ASSERT(result == 42);
 }
 
+void doublyLinkedListTest::testFindMiddleElementEven()
+{
+    list->insert("binky", 40);
+    list->insert("bar", 41);
+    list->insert("foo", 42);
+    list->insert("minky", 43);
+    
+    int result = middleElement<int>(*list);
+    
+    CPPUNIT_ASSERT(result == 41);
+}
+
+
