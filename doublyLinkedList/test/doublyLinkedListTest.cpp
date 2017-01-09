@@ -90,3 +90,24 @@ void doublyLinkedListTest::testGetLength() {
     
     CPPUNIT_ASSERT(list->getLength() == 3);
 }
+
+void doublyLinkedListTest::testFindMiddleElementOne()
+{
+    list->insert("bar", 42);
+    
+    int result = middleElement<int>(*list);
+    
+    CPPUNIT_ASSERT(result == 42);
+}
+
+void doublyLinkedListTest::testFindMiddleElementThree()
+{
+    list->insert("bar", 41);
+    list->insert("foo", 42);
+    list->insert("minky", 43);
+    
+    int result = middleElement<int>(*list);
+    
+    CPPUNIT_ASSERT(result == 42);
+}
+

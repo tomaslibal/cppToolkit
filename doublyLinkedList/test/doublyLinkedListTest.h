@@ -11,6 +11,7 @@
 #include <cppunit/extensions/HelperMacros.h>
 
 #include "../src/DoublyLinkedList.h"
+#include "../src/MiddleElementLinkedList.h"
 
 class doublyLinkedListTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST_SUITE(doublyLinkedListTest);
@@ -21,6 +22,10 @@ class doublyLinkedListTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST(testRemove);
     CPPUNIT_TEST(testSum);
     CPPUNIT_TEST(testGetLength);
+    
+    CPPUNIT_TEST(testFindMiddleElementOne);
+    CPPUNIT_TEST(testFindMiddleElementThree);
+
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -38,6 +43,9 @@ private:
     void testRemove();
     void testSum();
     void testGetLength();
+    
+    void testFindMiddleElementOne();
+    void testFindMiddleElementThree();
 };
 
 #endif	/* DOUBLYLINKEDLISTTEST_H */
