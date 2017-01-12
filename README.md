@@ -72,6 +72,8 @@ In a double linked list each node points to the next and the previous link in th
              |----------------------|          |----------------------|
 ```
 
+This exercise includes an algorithm to find the middle element of the linked list.
+
 ### Red-Black Tree
 
 An implementation of a balanced search tree. 
