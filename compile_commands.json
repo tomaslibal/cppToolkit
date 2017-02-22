@@ -1,0 +1,142 @@
+[
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/depthfirstsearch/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/dfs.dir/dfsTest.cpp.o -c /home/tlibal/workspace/cppToolkit/depthfirstsearch/test/dfsTest.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/depthfirstsearch/test/dfsTest.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/depthfirstsearch/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/dfs.dir/dfsTestRunner.cpp.o -c /home/tlibal/workspace/cppToolkit/depthfirstsearch/test/dfsTestRunner.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/depthfirstsearch/test/dfsTestRunner.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/depthfirstsearch/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/dfs.dir/__/src/dfs.cpp.o -c /home/tlibal/workspace/cppToolkit/depthfirstsearch/src/dfs.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/depthfirstsearch/src/dfs.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/depthfirstsearch/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/dfs.dir/__/src/node.cpp.o -c /home/tlibal/workspace/cppToolkit/depthfirstsearch/src/node.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/depthfirstsearch/src/node.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/doublyLinkedList/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/dbllink.dir/doublyLinkedListTest.cpp.o -c /home/tlibal/workspace/cppToolkit/doublyLinkedList/test/doublyLinkedListTest.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/doublyLinkedList/test/doublyLinkedListTest.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/doublyLinkedList/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/dbllink.dir/doublyLinkedListTestRunner.cpp.o -c /home/tlibal/workspace/cppToolkit/doublyLinkedList/test/doublyLinkedListTestRunner.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/doublyLinkedList/test/doublyLinkedListTestRunner.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/doublyLinkedList/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/dbllink.dir/__/src/DoublyLinkedList.cpp.o -c /home/tlibal/workspace/cppToolkit/doublyLinkedList/src/DoublyLinkedList.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/doublyLinkedList/src/DoublyLinkedList.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/doublyLinkedList/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/dbllink.dir/__/src/MiddleElementLinkedList.cpp.o -c /home/tlibal/workspace/cppToolkit/doublyLinkedList/src/MiddleElementLinkedList.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/doublyLinkedList/src/MiddleElementLinkedList.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/bitflags/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/bitflags.dir/BitflagsTest.cpp.o -c /home/tlibal/workspace/cppToolkit/bitflags/test/BitflagsTest.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/bitflags/test/BitflagsTest.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/bitflags/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/bitflags.dir/bitflagsTestRunner.cpp.o -c /home/tlibal/workspace/cppToolkit/bitflags/test/bitflagsTestRunner.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/bitflags/test/bitflagsTestRunner.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/chainedHashTable/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/hashtbl.dir/chainedHashTableTest.cpp.o -c /home/tlibal/workspace/cppToolkit/chainedHashTable/test/chainedHashTableTest.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/chainedHashTable/test/chainedHashTableTest.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/chainedHashTable/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/hashtbl.dir/chainedHashTableTestRunner.cpp.o -c /home/tlibal/workspace/cppToolkit/chainedHashTable/test/chainedHashTableTestRunner.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/chainedHashTable/test/chainedHashTableTestRunner.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/chainedHashTable/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/hashtbl.dir/__/src/ChainedHashTable.cpp.o -c /home/tlibal/workspace/cppToolkit/chainedHashTable/src/ChainedHashTable.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/chainedHashTable/src/ChainedHashTable.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/chainedHashTable/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/hashtbl.dir/__/__/doublyLinkedList/src/DoublyLinkedList.cpp.o -c /home/tlibal/workspace/cppToolkit/doublyLinkedList/src/DoublyLinkedList.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/doublyLinkedList/src/DoublyLinkedList.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/chainedHashTable/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/hashtbl.dir/__/__/doublyLinkedList/src/MiddleElementLinkedList.cpp.o -c /home/tlibal/workspace/cppToolkit/doublyLinkedList/src/MiddleElementLinkedList.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/doublyLinkedList/src/MiddleElementLinkedList.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/binTreeTraversal/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/bttraverse.dir/__/__/depthfirstsearch/src/node.cpp.o -c /home/tlibal/workspace/cppToolkit/depthfirstsearch/src/node.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/depthfirstsearch/src/node.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/binTreeTraversal/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/bttraverse.dir/bttraverseTest.cpp.o -c /home/tlibal/workspace/cppToolkit/binTreeTraversal/test/bttraverseTest.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/binTreeTraversal/test/bttraverseTest.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/binTreeTraversal/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/bttraverse.dir/bttraverseTestRunner.cpp.o -c /home/tlibal/workspace/cppToolkit/binTreeTraversal/test/bttraverseTestRunner.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/binTreeTraversal/test/bttraverseTestRunner.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/binTreeTraversal/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/bttraverse.dir/__/src/bttraverse.cpp.o -c /home/tlibal/workspace/cppToolkit/binTreeTraversal/src/bttraverse.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/binTreeTraversal/src/bttraverse.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/redBlackTree/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/rbtree.dir/redBlackTreeTest.cpp.o -c /home/tlibal/workspace/cppToolkit/redBlackTree/test/redBlackTreeTest.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/redBlackTree/test/redBlackTreeTest.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/redBlackTree/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/rbtree.dir/redBlackTreeTestRunner.cpp.o -c /home/tlibal/workspace/cppToolkit/redBlackTree/test/redBlackTreeTestRunner.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/redBlackTree/test/redBlackTreeTestRunner.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/redBlackTree/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/rbtree.dir/__/src/RedBlackTree.cpp.o -c /home/tlibal/workspace/cppToolkit/redBlackTree/src/RedBlackTree.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/redBlackTree/src/RedBlackTree.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/quicksort/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/quicksort.dir/quicksortTest.cpp.o -c /home/tlibal/workspace/cppToolkit/quicksort/test/quicksortTest.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/quicksort/test/quicksortTest.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/quicksort/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/quicksort.dir/quicksortTestRunner.cpp.o -c /home/tlibal/workspace/cppToolkit/quicksort/test/quicksortTestRunner.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/quicksort/test/quicksortTestRunner.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/quicksort/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/quicksort.dir/__/src/quicksort.cpp.o -c /home/tlibal/workspace/cppToolkit/quicksort/src/quicksort.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/quicksort/src/quicksort.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/heap/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/heap.dir/heapTest.cpp.o -c /home/tlibal/workspace/cppToolkit/heap/test/heapTest.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/heap/test/heapTest.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/heap/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/heap.dir/heapTestRunner.cpp.o -c /home/tlibal/workspace/cppToolkit/heap/test/heapTestRunner.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/heap/test/heapTestRunner.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/heap/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/heap.dir/__/src/Heap.cpp.o -c /home/tlibal/workspace/cppToolkit/heap/src/Heap.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/heap/src/Heap.cpp"
+}
+]
