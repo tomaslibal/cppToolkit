@@ -12,9 +12,13 @@ namespace cpptoolkit {
             ValueType getValue();
     }
 
+    template<class T1, class T2>
     class Edge {
+        private:
+            T1 from;
+            T2 to;
         public:
-            Edge();
+            Edge(const &T1 from, const &T2 to);
             virtual ~Edge();
     }
 
