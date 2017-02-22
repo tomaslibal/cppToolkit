@@ -14,6 +14,7 @@ As the repository name suggests, the reference code implementations are written 
 - Red-black tree
 - Quicksort
 - Heapsort and max-heap data structure
+- LRU Cache
 
 ### Bit flags
 
@@ -77,6 +78,10 @@ This exercise includes an algorithm to find the middle element of the linked lis
 ### Red-Black Tree
 
 An implementation of a balanced search tree. 
+
+### LRU (Least Recently Used) Cache 
+
+Cache with the Least Recently Used (LRU) Cache Replacement Policy. Some other replacement policies are listed on [wikipedia](https://en.wikipedia.org/wiki/Cache_replacement_policies).
 
 ## Working with the project
 

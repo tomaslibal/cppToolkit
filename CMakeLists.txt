@@ -31,3 +31,6 @@ add_subdirectory(quicksort/test)
 
 # Heap (sorting)
 add_subdirectory(heap/test)
+
+# LRU Cache
+add_subdirectory(LRUCache/test)
