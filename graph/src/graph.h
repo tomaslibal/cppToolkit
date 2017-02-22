@@ -8,8 +8,10 @@ namespace cpptoolkit {
             ValueType value;
         public:
             Vertex();
+            Vertex(const &ValueType v);
             virtual ~Vertex();
             ValueType getValue();
+            void setValue(const &ValueType v);
     }
 
     template<class T1, class T2>
