@@ -24,4 +24,23 @@ namespace cpptoolkit {
             virtual ~Edge();
     }
 
+    class Graph {
+        private:
+
+        public:
+            Graph();
+            virtual ~Graph();
+            template<class T> addVertex(T v);
+            bool addEge(Edge e);
+            bool removeVertex();
+            bool removeEdge();
+            template<class T1, class T2> bool adjacent(T1 v1, T2 v2);
+            template<class T> std::vector<Vertex> neighbors(T v);
+            template<class T> T getVertexValue();
+            void setVertexValue();
+            double getEdgeValue(); //weight
+            void setEdgeValue(Edge e, double v);
+
+
+    }
 }
