@@ -15,6 +15,7 @@ As the repository name suggests, the reference code implementations are written 
 - Quicksort
 - Heapsort and max-heap data structure
 - LRU Cache
+- Warshall algorithm
 
 ### Bit flags
 
@@ -82,6 +83,10 @@ An implementation of a balanced search tree.
 ### LRU (Least Recently Used) Cache 
 
 Cache with the Least Recently Used (LRU) Cache Replacement Policy. Some other replacement policies are listed on [wikipedia](https://en.wikipedia.org/wiki/Cache_replacement_policies).
+
+### Warshall algorithm
+
+Warshall's algorithm finds for all pairs of nodes whether there is a path between them. This is implemented as `cpptoolkit::warshall` and the invariant is that the int[][] array is the adjacency matrix of a given graph. The algorithm works in-place so you want to make a copy of the adjancency matrix if you'll need the original one.
 
 ## Working with the project
 
