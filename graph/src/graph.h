@@ -2,17 +2,17 @@
 
 namespace cpptoolkit {
 
-    template <class ValueType>
+    template <class T>
     class Vertex {
         private:
-            ValueType value;
+            T value;
         public:
             Vertex();
             Vertex(const &ValueType v);
             virtual ~Vertex();
-            ValueType getValue();
+            T getValue();
             void setValue(const &ValueType v);
-    }
+    };
 
     template<class T1, class T2>
     class Edge {
