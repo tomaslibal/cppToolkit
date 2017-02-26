@@ -1,5 +1,5 @@
 #pragma once
 
 namespace cpptoolkit{
-void warshall(int** adjMatrix, int m, int n);
+    void warshall(int** adjMatrix, int m);
 }

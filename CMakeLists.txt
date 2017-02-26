@@ -34,3 +34,6 @@ add_subdirectory(heap/test)
 
 # LRU Cache
 add_subdirectory(LRUCache/test)
+
+# warshall
+add_subdirectory(warshall/test)
