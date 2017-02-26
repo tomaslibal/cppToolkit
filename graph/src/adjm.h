@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stdlib.h>
+#include <vector>
 
 namespace cpptoolkit {
     /**
@@ -45,6 +46,13 @@ namespace cpptoolkit {
             }
             free(matrix);
         }
+        
+        void copyRow(int rowNum, std::vector<int> const& row) 
+        {
+            for (int i = 0; i < this->m; i++) {
+                matrix[rowNum][i] = row[i];
+            }
+        }
             
-    }
+    };
 }
