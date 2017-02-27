@@ -1,5 +1,7 @@
 #pragma once
 
-namespace cpptoolkit {
+#include <vector>
 
+namespace cpptoolkit {
+    std::vector<?> kruskal(std::vector<?> v, std::vector<?> e);
 }
