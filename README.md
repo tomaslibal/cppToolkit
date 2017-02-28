@@ -76,6 +76,10 @@ In a double linked list each node points to the next and the previous link in th
 
 This exercise includes an algorithm to find the middle element of the linked list.
 
+#### Find the middle element in a linked list
+
+Implemented using two pointers `slow` and `fast`.
+
 ### Red-Black Tree
 
 An implementation of a balanced search tree. 
