@@ -8,6 +8,7 @@ As the repository name suggests, the reference code implementations are written 
 
 - Bit flags
 - Binary search algorithm
+- Find pivot in a sorted array
 - Binary tree traversal
 - Hash table
 - Double linked list
@@ -24,6 +25,13 @@ Bit flags operations implemented are *set* and *unset* flag bitwise operations. 
 ### Binary search
 
 A templated binary search function which can be parameterized with the type of the array in which the lookup is performed.
+
+### Find pivot in a sorted array
+
+Assumes an ascending order sorting. Let a = [6, 7, 8, 1, 2]. Then the number 1 at index 4 (assuming a zero indexed array)
+is the pivot in this array.
+
+This is implemented as `cpptoolkit::findpivot(int* arr, int len)`.
 
 ### Binary Tree Traversal
 
