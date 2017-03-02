@@ -138,5 +138,20 @@
   "directory": "/home/tlibal/workspace/cppToolkit/heap/test",
   "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/heap.dir/__/src/Heap.cpp.o -c /home/tlibal/workspace/cppToolkit/heap/src/Heap.cpp",
   "file": "/home/tlibal/workspace/cppToolkit/heap/src/Heap.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/warshall/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/warshall.dir/warshallTest.cpp.o -c /home/tlibal/workspace/cppToolkit/warshall/test/warshallTest.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/warshall/test/warshallTest.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/warshall/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/warshall.dir/warshallRunner.cpp.o -c /home/tlibal/workspace/cppToolkit/warshall/test/warshallRunner.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/warshall/test/warshallRunner.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/warshall/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/warshall.dir/__/src/warshall.cpp.o -c /home/tlibal/workspace/cppToolkit/warshall/src/warshall.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/warshall/src/warshall.cpp"
 }
 ]
