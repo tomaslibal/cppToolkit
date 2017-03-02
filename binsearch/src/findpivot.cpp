@@ -1,19 +1,32 @@
 #include "findpivot.h"
-#include <math>
 
-int cpptoolkit::findpivot(int* array, int len, int key)
+int cpptoolkit::findpivot(int* array, int len)
 {
     int a = 0;
-    int b = len;
+    int b = len - 1;
     int m;
-
-    while (a<b) {
-        m = floor((a+b)/2);
-        if (array[m-1]>array[m]) {
-            return m;
-        }
-        a = m + 1;
+    
+    if (len == 0 || array == nullptr) {
+        return -1;
     }
-    return -1;
+    
+    if (array[a] < array[b]) {
+        return 0;
+    }
+
+    while (a <= b) {
+        m = (a + b) / 2;
+        
+        if (m < len-1 && array[m] > array[m + 1]) {
+            return m+1;
+        }
+        
+        if (array[a] < array[m]) {
+            a = m + 1;
+        } else {
+            b = m - 1;
+        }        
+    }
+    return a;
 }
 

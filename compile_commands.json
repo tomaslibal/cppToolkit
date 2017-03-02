@@ -153,5 +153,35 @@
   "directory": "/home/tlibal/workspace/cppToolkit/warshall/test",
   "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/warshall.dir/__/src/warshall.cpp.o -c /home/tlibal/workspace/cppToolkit/warshall/src/warshall.cpp",
   "file": "/home/tlibal/workspace/cppToolkit/warshall/src/warshall.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/binsearch/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/binsearch.dir/binsearchTest.cpp.o -c /home/tlibal/workspace/cppToolkit/binsearch/test/binsearchTest.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/binsearch/test/binsearchTest.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/binsearch/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/binsearch.dir/binsearchTestRunner.cpp.o -c /home/tlibal/workspace/cppToolkit/binsearch/test/binsearchTestRunner.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/binsearch/test/binsearchTestRunner.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/binsearch/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/binsearch.dir/__/src/binsearch.cpp.o -c /home/tlibal/workspace/cppToolkit/binsearch/src/binsearch.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/binsearch/src/binsearch.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/binsearch/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/findpivot.dir/findpivotTest.cpp.o -c /home/tlibal/workspace/cppToolkit/binsearch/test/findpivotTest.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/binsearch/test/findpivotTest.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/binsearch/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/findpivot.dir/findpivotTestRunner.cpp.o -c /home/tlibal/workspace/cppToolkit/binsearch/test/findpivotTestRunner.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/binsearch/test/findpivotTestRunner.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/binsearch/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/findpivot.dir/__/src/findpivot.cpp.o -c /home/tlibal/workspace/cppToolkit/binsearch/src/findpivot.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/binsearch/src/findpivot.cpp"
 }
 ]

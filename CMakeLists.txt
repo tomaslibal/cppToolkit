@@ -37,3 +37,6 @@ add_subdirectory(LRUCache/test)
 
 # warshall
 add_subdirectory(warshall/test)
+
+# binsearch, findpivot
+add_subdirectory(binsearch/test)
