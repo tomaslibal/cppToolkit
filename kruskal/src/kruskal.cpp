@@ -1,7 +1,7 @@
 #include "kruskal.h"
 
 
-std::vector<cpptoolkit::Edge> cpptoolkit::kruskal()
+std::vector<cpptoolkit::Edge> cpptoolkit::kruskal(std::vector<cpptoolkit::Vertex> v, std::vector<cpptoolkit::Edge> e)
 {
     std::vector<cpptoolkit::Edge> mst;
 
