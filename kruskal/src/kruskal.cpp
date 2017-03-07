@@ -1,6 +1,8 @@
 #include "kruskal.h"
 
-
+/*
+ * p. 631 in Cormen's Algo book has a reference pseudo-code
+ */
 std::vector<cpptoolkit::Edge> cpptoolkit::kruskal(std::vector<cpptoolkit::Vertex> v, std::vector<cpptoolkit::Edge> e)
 {
     std::vector<cpptoolkit::Edge> mst;
