@@ -1,5 +1,4 @@
 #include "haversine.h"
-#include <math.h>
 #include <cmath>
 
 using std::sin;
