@@ -1,5 +1,9 @@
 #include "haversine.h"
 #include <math.h>
+#include <cmath>
+
+using std::sin;
+using std::cos;
 
 double cpptoolkit::haversine(double lon1, double lat1, double lon2, double lat2, double r)
 {
