@@ -75,26 +75,6 @@
   "file": "/home/tlibal/workspace/cppToolkit/doublyLinkedList/src/MiddleElementLinkedList.cpp"
 },
 {
-  "directory": "/home/tlibal/workspace/cppToolkit/binTreeTraversal/test",
-  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/bttraverse.dir/__/__/depthfirstsearch/src/node.cpp.o -c /home/tlibal/workspace/cppToolkit/depthfirstsearch/src/node.cpp",
-  "file": "/home/tlibal/workspace/cppToolkit/depthfirstsearch/src/node.cpp"
-},
-{
-  "directory": "/home/tlibal/workspace/cppToolkit/binTreeTraversal/test",
-  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/bttraverse.dir/bttraverseTest.cpp.o -c /home/tlibal/workspace/cppToolkit/binTreeTraversal/test/bttraverseTest.cpp",
-  "file": "/home/tlibal/workspace/cppToolkit/binTreeTraversal/test/bttraverseTest.cpp"
-},
-{
-  "directory": "/home/tlibal/workspace/cppToolkit/binTreeTraversal/test",
-  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/bttraverse.dir/bttraverseTestRunner.cpp.o -c /home/tlibal/workspace/cppToolkit/binTreeTraversal/test/bttraverseTestRunner.cpp",
-  "file": "/home/tlibal/workspace/cppToolkit/binTreeTraversal/test/bttraverseTestRunner.cpp"
-},
-{
-  "directory": "/home/tlibal/workspace/cppToolkit/binTreeTraversal/test",
-  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/bttraverse.dir/__/src/bttraverse.cpp.o -c /home/tlibal/workspace/cppToolkit/binTreeTraversal/src/bttraverse.cpp",
-  "file": "/home/tlibal/workspace/cppToolkit/binTreeTraversal/src/bttraverse.cpp"
-},
-{
   "directory": "/home/tlibal/workspace/cppToolkit/redBlackTree/test",
   "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/rbtree.dir/redBlackTreeTest.cpp.o -c /home/tlibal/workspace/cppToolkit/redBlackTree/test/redBlackTreeTest.cpp",
   "file": "/home/tlibal/workspace/cppToolkit/redBlackTree/test/redBlackTreeTest.cpp"
