@@ -17,6 +17,7 @@ As the repository name suggests, the reference code implementations are written 
 - Heapsort and max-heap data structure
 - LRU Cache
 - Warshall algorithm
+- Depth First Search
 
 ### Bit flags
 
