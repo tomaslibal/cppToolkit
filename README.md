@@ -101,6 +101,10 @@ Cache with the Least Recently Used (LRU) Cache Replacement Policy. Some other re
 
 Warshall's algorithm finds for all pairs of nodes whether there is a path between them. This is implemented as `cpptoolkit::warshall` and the invariant is that the int[][] array is the adjacency matrix of a given graph. The algorithm works in-place so you want to make a copy of the adjancency matrix if you'll need the original one.
 
+### Depth First Search (DFS)
+
+A recursive implementation of the DFS tree search algorithm.
+
 ## Working with the project
 
 required:
