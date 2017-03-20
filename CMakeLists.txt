@@ -40,3 +40,6 @@ add_subdirectory(warshall/test)
 
 # binsearch, findpivot
 add_subdirectory(binsearch/test)
+
+# breadthfirstsearch
+add_subdirectory(breadthfirstsearch/test)

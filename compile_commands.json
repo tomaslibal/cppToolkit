@@ -163,5 +163,25 @@
   "directory": "/home/tlibal/workspace/cppToolkit/binsearch/test",
   "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/findpivot.dir/__/src/findpivot.cpp.o -c /home/tlibal/workspace/cppToolkit/binsearch/src/findpivot.cpp",
   "file": "/home/tlibal/workspace/cppToolkit/binsearch/src/findpivot.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/breadthfirstsearch/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/bfs.dir/bfsTest.cpp.o -c /home/tlibal/workspace/cppToolkit/breadthfirstsearch/test/bfsTest.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/breadthfirstsearch/test/bfsTest.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/breadthfirstsearch/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/bfs.dir/bfsTestRunner.cpp.o -c /home/tlibal/workspace/cppToolkit/breadthfirstsearch/test/bfsTestRunner.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/breadthfirstsearch/test/bfsTestRunner.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/breadthfirstsearch/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/bfs.dir/__/src/bfs.cpp.o -c /home/tlibal/workspace/cppToolkit/breadthfirstsearch/src/bfs.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/breadthfirstsearch/src/bfs.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/breadthfirstsearch/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/bfs.dir/__/__/depthfirstsearch/src/node.cpp.o -c /home/tlibal/workspace/cppToolkit/depthfirstsearch/src/node.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/depthfirstsearch/src/node.cpp"
 }
 ]
