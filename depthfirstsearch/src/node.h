@@ -7,6 +7,10 @@ struct BinNode {
 
   BinNode* left;
   BinNode* right;
+  
+  friend bool operator<(const BinNode& l, const BinNode& r) {
+    return l.value < r.value;
+  }
 };
 
 BinNode* getNewBinNode(int val);
