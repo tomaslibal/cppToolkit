@@ -8,7 +8,7 @@ namespace cpptoolkit {
 
     BinNode* visit_node(BinNode* node, int search_val);
 
-    BinNode* dfs_nonrecursive(BinNode* root, int search_val);
+    BinNode dfs_nonrecursive(BinNode const& root, int search_val);
 }
 
 #endif /* _DFS_H_ */
