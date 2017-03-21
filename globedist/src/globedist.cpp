@@ -1,11 +1,11 @@
-#include "haversine.h"
+#include "globedist.h"
 #include <cmath>
 
 using std::sin;
 using std::cos;
 using std::asin;
 
-double cpptoolkit::haversine(double lon1, double lat1, double lon2, double lat2, double r)
+double cpptoolkit::globedist(double lon1, double lat1, double lon2, double lat2, double r)
 {
     double dlon = (lon2-lon1)*M_PI/180;
     double dlat = (lat2-lat1)*M_PI/180;
