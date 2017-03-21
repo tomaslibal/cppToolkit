@@ -4,7 +4,7 @@
 #include "dfs.h"
 #include "node.h"
 
-BinNode* dfs(BinNode* root, int search_val)
+BinNode* cpptoolkit::dfs(BinNode* root, int search_val)
 {
   std::vector<int> visited;
   
@@ -23,7 +23,7 @@ bool contains_element(std::vector<int>& vec, int lookup)
   return false;
 }
 
-BinNode* visit_node(BinNode* node, int search_val)
+BinNode* cpptoolkit::visit_node(BinNode* node, int search_val)
 {
   if (node == NULL) return NULL;
   

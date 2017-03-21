@@ -39,21 +39,21 @@ void dfsTest::testCreateBinNode()
 
 void dfsTest::testDFSReturnsNullIfValueNotPresent()
 {
-  BinNode* res = dfs(root, 1);
+  BinNode* res = cpptoolkit::dfs(root, 1);
   
   CPPUNIT_ASSERT(res == NULL);
 }
 
 void dfsTest::testDFSReturnsTheNodeIfValuePresent()
 {
-  BinNode* res = dfs(root, 40);
+  BinNode* res = cpptoolkit::dfs(root, 40);
   
   CPPUNIT_ASSERT(res == l2);
 }
 
 void dfsTest::testDFSMarksVisitedNodesAsVisited()
 {
-  BinNode* res = dfs(root, 40);
+  BinNode* res = cpptoolkit::dfs(root, 40);
   
   CPPUNIT_ASSERT(root->visited == true);
   CPPUNIT_ASSERT(l1->visited == true);
