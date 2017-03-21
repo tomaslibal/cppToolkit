@@ -183,5 +183,20 @@
   "directory": "/home/tlibal/workspace/cppToolkit/breadthfirstsearch/test",
   "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/bfs.dir/__/__/depthfirstsearch/src/node.cpp.o -c /home/tlibal/workspace/cppToolkit/depthfirstsearch/src/node.cpp",
   "file": "/home/tlibal/workspace/cppToolkit/depthfirstsearch/src/node.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/globedist/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/globedist.dir/globedistTestRunner.cpp.o -c /home/tlibal/workspace/cppToolkit/globedist/test/globedistTestRunner.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/globedist/test/globedistTestRunner.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/globedist/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/globedist.dir/globedistTest.cpp.o -c /home/tlibal/workspace/cppToolkit/globedist/test/globedistTest.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/globedist/test/globedistTest.cpp"
+},
+{
+  "directory": "/home/tlibal/workspace/cppToolkit/globedist/test",
+  "command": "/usr/bin/c++    -std=c++11 -g -g   -o CMakeFiles/globedist.dir/__/src/globedist.cpp.o -c /home/tlibal/workspace/cppToolkit/globedist/src/globedist.cpp",
+  "file": "/home/tlibal/workspace/cppToolkit/globedist/src/globedist.cpp"
 }
 ]

@@ -43,3 +43,6 @@ add_subdirectory(binsearch/test)
 
 # breadthfirstsearch
 add_subdirectory(breadthfirstsearch/test)
+
+# globedist
+add_subdirectory(globedist/test)
