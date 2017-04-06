@@ -1,5 +1,7 @@
 package eu.libal.cpptoolkit.graphs;
 
+import java.util.List;
+
 public class Graph {
     public Graph() {
     }
