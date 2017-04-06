@@ -4,11 +4,11 @@ public class Graph {
     public Graph() {
     }
 
-    public void <T> addVertex(Vertex<T> v) {
+    public <T> void addVertex(Vertex<T> v) {
 
     }
 
-    public boolean <T, U> addEdge(Edge<Vertex<T>, Vertex<U>> e) {
+    public <T, U> boolean addEdge(Edge<Vertex<T>, Vertex<U>> e) {
 
     }
 
@@ -16,31 +16,31 @@ public class Graph {
 
     }
 
-    public boolean <T, U> removeEdge(Edge<Vertex<T>, Vertex<U>> e) {
+    public <T, U> boolean removeEdge(Edge<Vertex<T>, Vertex<U>> e) {
 
     }
 
-    public boolean <T, U> adjacent(Vertex<T> v, Vertex<U> w) {
+    public <T, U> boolean adjacent(Vertex<T> v, Vertex<U> w) {
 
     }
 
-    public List<Vertex> <T> neighbors(Vertex<T> v) {
+    public <T> List<Vertex> neighbors(Vertex<T> v) {
 
     }
 
-    public T <T> getVertexValue(Vertex<T> v) {
+    public <T> T getVertexValue(Vertex<T> v) {
 
     }
 
-    public void <T> setVertexValue(Vertex<T> v, T val) {
+    public <T> void setVertexValue(Vertex<T> v, T val) {
 
     }
 
-    public Double <T, U> getEdgeValue(Edge<Vertex<T>, Vertex<U>> e) {
+    public <T, U> Double getEdgeValue(Edge<Vertex<T>, Vertex<U>> e) {
     
     }
 
-    public void <T, U> setEdgeValue(Edge<Vertex<T>, Vertex<U>> e, Double val) {
+    public <T, U> void setEdgeValue(Edge<Vertex<T>, Vertex<U>> e, Double val) {
 
     }
 }
