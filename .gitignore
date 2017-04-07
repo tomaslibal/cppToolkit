@@ -13,3 +13,4 @@ Makefile
 .kdev4
 *.kdev4
 .idea
+target
