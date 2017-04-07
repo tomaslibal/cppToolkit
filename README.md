@@ -18,6 +18,7 @@ As the repository name suggests, the reference code implementations are written 
 - LRU Cache
 - Warshall algorithm
 - Depth First Search
+- Condorcet method
 
 ### Bit flags
 
@@ -104,6 +105,12 @@ Warshall's algorithm finds for all pairs of nodes whether there is a path betwee
 ### Depth First Search (DFS)
 
 A recursive implementation of the DFS tree search algorithm.
+
+## Condorcet method
+
+In the game theory a condorcet method is a procedure to choose a winner from ordered sets of rankings, such that the candidate who is preferred most over the most other candidates wins.
+
+This is an experimental implementation and is not based on literature review.
 
 ## Working with the project
 
