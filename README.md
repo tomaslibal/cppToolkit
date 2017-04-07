@@ -108,7 +108,7 @@ A recursive implementation of the DFS tree search algorithm.
 
 ## Condorcet method
 
-In the game theory a condorcet method is a procedure to choose a winner from ordered sets of rankings, such that the candidate who is preferred most over the most other candidates wins.
+In the game theory a condorcet method is a procedure to choose a winner from sets of ordered rankings, such that the candidate who is preferred over the most other candidates wins (this is done using a pair-wise comparison of all pairs).
 
 This is an experimental implementation and is not based on literature review.
 
