@@ -2,6 +2,7 @@ class Vertex:
     def __init__(self, value):
         self.value = value
         self.adjacent = []
+        self.parent = None
 
     def __eq__(self, other):
         return isinstance(other, Vertex) and other.value == self.value
