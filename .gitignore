@@ -14,3 +14,5 @@ Makefile
 *.kdev4
 .idea
 target
+*.swp
+
