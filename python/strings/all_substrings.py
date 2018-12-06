@@ -8,7 +8,7 @@ def make_substrings(string):
     while len_ > 0:
         parts.add(aux)
         i = len_
-        while i >= 0:
+        while i > 0:
             parts.add(aux[:i])
             i -= 1
         aux = aux[1:]
