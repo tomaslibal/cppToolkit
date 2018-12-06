@@ -1,17 +1,22 @@
 def make_substrings(string):
-    parts = [string]
+    parts = set([string])
     i = 0
 
-    parts.extend(list(set([i for i in string])))
-
     aux = string
+    len_ = len(aux)
 
-    while len(aux) > 0:
-        parts.append(aux)
-        i = len(aux)
+    while len_ > 0:
+        parts.add(aux)
+        i = len_
         while i >= 0:
-            parts.append(aux[:i])
+            parts.add(aux[:i])
             i -= 1
         aux = aux[1:]
+        len_ -= 1
 
-    return list(filter(lambda x: x != '', set(parts)))
+    try:
+        parts.remove('')
+    except KeyError:
+        pass
+
+    return parts
