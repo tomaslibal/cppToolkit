@@ -1,7 +1,5 @@
 def make_substrings(string):
     parts = set([string])
-    i = 0
-
     aux = string
     len_ = len(aux)
 
