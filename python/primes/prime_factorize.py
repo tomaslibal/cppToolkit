@@ -1,4 +1,4 @@
-from primes import least_factor
+from primes.least_factor import least_factor
 
 
 def prime_factorize(n):
