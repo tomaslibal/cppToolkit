@@ -10,6 +10,19 @@ class Node:
         return "<Node(data='{}',next='{}')>".format(self.data, self.next != None)
 
 
+def reverse_list(head):
+    prev = None
+    current = head
+
+    while current is not None:
+        next = current.next
+        current.next = prev
+        prev = current
+        current = next
+
+    return prev  # new head...
+
+
 def get_middle_element(head):
     fast = head
     slow = head
@@ -36,3 +49,4 @@ h = Node('A', Node('B', Node('C', Node('D', Node('E')))))
 h = Node('A', Node('B', Node('C', Node('D'))))
 print_list(h)
 print(get_middle_element(h))
+print_list(reverse_list(h))
