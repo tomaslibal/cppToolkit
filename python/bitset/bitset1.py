@@ -23,7 +23,6 @@ def get_random():
 
 
 objs = [get_random() for x in range(128)]
-# objs = [Foo('baz'),Foo(),Foo(),Foo('baz', True),Foo('baz', True),Foo('baz'),Foo(),Foo()]
 
 a = bitarray(len(objs))
 a.setall(True)
