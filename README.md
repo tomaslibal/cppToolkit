@@ -2,11 +2,11 @@
 
 "[Y]ou must read and write computer programs -- many of them... The programmer must seek both perfection of part and adequacy of collection... Since large programs grow from small ones, it is crucial that we develop an arsenal of standard program structures of whose correctness we have become sure--we call them idioms--and learn to combine them into larger structures using organizational techniques of proven value" (Abelson, Sussman and Sussman, 1996, pp. xiii-xiv).
 
-As the repository name suggests, the reference code implementations are written in C++. For some components it will be necessary to use a C++11 compiler.
+Originally, this repository consisted of C++ implementations only. I have since added more languages that I used.
 
 ## Components
 
-- Bit flags
+- Bitset and Bit flags
 - Binary search algorithm
 - Find pivot in a sorted array
 - Binary tree traversal
@@ -18,7 +18,13 @@ As the repository name suggests, the reference code implementations are written 
 - LRU Cache
 - Warshall algorithm
 - Depth First Search
+- Breadth First Search
 - Condorcet method
+- Prime factorization
+- Prime testing
+- Coins/notes splitting (giving change)
+- Recursive fibonacci
+- Reverse linked-list and find the middle element in a linked list
 
 ### Bit flags
 
